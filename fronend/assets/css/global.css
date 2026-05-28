@@ -1,0 +1,108 @@
+/* ============================================================
+   GLOBAL.CSS — Estilos compartidos en toda la app Rappi Lima
+   ============================================================ */
+
+:root {
+    /* Colores principales */
+    --orange: #FF6B2C;
+    --orange2: #FF8C5A;
+    --orange-dim: rgba(255, 107, 44, 0.15);
+    --green: #2ECDA7;
+    --green-dim: rgba(46, 205, 167, 0.12);
+    --red: #FF4D6D;
+    --red-dim: rgba(255, 77, 109, 0.12);
+    --blue: #4D9FFF;
+    --blue-dim: rgba(77, 159, 255, 0.12);
+    --yellow: #FFD166;
+    --yellow-dim: rgba(255, 209, 102, 0.12);
+
+    /* Tipografía */
+    --font: 'Space Grotesk', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+
+    /* Border radius */
+    --r: 10px;
+    --r2: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    min-height: 100vh;
+}
+
+/* ── Chips / Badges ─────────────────────────────────── */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.chip-green {
+    background: var(--green-dim);
+    color: var(--green);
+}
+
+.chip-red {
+    background: var(--red-dim);
+    color: var(--red);
+}
+
+.chip-yellow {
+    background: var(--yellow-dim);
+    color: var(--yellow);
+}
+
+.chip-blue {
+    background: var(--blue-dim);
+    color: var(--blue);
+}
+
+.chip-orange {
+    background: var(--orange-dim);
+    color: var(--orange2);
+}
+
+/* ── Toast global ───────────────────────────────────── */
+#toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #1E2435;
+    border: 1px solid var(--orange);
+    color: #E8EBF4;
+    padding: 12px 20px;
+    border-radius: var(--r);
+    font-size: 13px;
+    font-family: var(--font);
+    font-weight: 500;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.25s;
+    pointer-events: none;
+}
+
+/* ── Scrollbar global ───────────────────────────────── */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1E2435;
+    border-radius: 10px;
+}

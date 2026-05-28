@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse — Rappi Lima</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-bg"></div>
+
+    <div class="auth-card" style="max-width:480px">
+        <!-- Header -->
+        <div class="auth-header">
+            <span class="logo">🎉</span>
+            <h1>Crea tu cuenta</h1>
+            <p>Únete a Rappi y pide en minutos</p>
+        </div>
+
+        <!-- Body -->
+        <div class="auth-body">
+
+            <!-- Alerta de error -->
+            <div class="auth-alert" id="reg-alert"></div>
+
+            <!-- Éxito -->
+            <div class="auth-alert" id="reg-success"
+                style="background:rgba(46,205,167,0.12); border-color:var(--green); color:var(--green); display:none; align-items:center; gap:8px;">
+                ✅ ¡Cuenta creada! Redirigiendo al login…
+            </div>
+
+            <form id="register-form" autocomplete="off">
+
+                <!-- Selector de rol -->
+                <div style="margin-bottom:18px;">
+                    <label
+                        style="display:block; font-size:11px; font-weight:600; color:#8A91A8; text-transform:uppercase; letter-spacing:.07em; margin-bottom:8px;">
+                        Tipo de cuenta
+                    </label>
+                    <div class="rol-selector">
+                        <div class="rol-card selected" data-rol="usuario">
+                            <span class="rol-icon">👤</span>
+                            <div class="rol-name">Usuario</div>
+                            <div class="rol-desc">Hacer pedidos</div>
+                        </div>
+                        <div class="rol-card" data-rol="admin">
+                            <span class="rol-icon">🔑</span>
+                            <div class="rol-name">Admin</div>
+                            <div class="rol-desc">Gestionar sistema</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nombre -->
+                <div class="form-group">
+                    <label>Nombre completo *</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">👤</span>
+                        <input id="inp-nombre" type="text" placeholder="Tu nombre completo" autocomplete="name">
+                    </div>
+                    <div class="field-error"></div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label>Correo electrónico *</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">📧</span>
+                        <input id="inp-email-reg" type="email" placeholder="tu@correo.com" autocomplete="email">
+                    </div>
+                    <div class="field-error"></div>
+                </div>
+
+                <!-- Teléfono y Distrito en dos columnas -->
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">📱</span>
+                            <input id="inp-telefono" type="tel" placeholder="+51 999 000 000">
+                        </div>
+                        <div class="field-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Distrito</label>
+                        <div class="input-wrap">
+                            <span class="input-icon" style="z-index:1">📍</span>
+                            <select id="inp-distrito" style="padding-left:36px">
+                                <option value="Miraflores">Miraflores</option>
+                                <option value="San Isidro">San Isidro</option>
+                                <option value="Barranco">Barranco</option>
+                                <option value="Surco">Surco</option>
+                                <option value="San Borja">San Borja</option>
+                                <option value="La Molina">La Molina</option>
+                                <option value="Chorrillos">Chorrillos</option>
+                                <option value="Lince">Lince</option>
+                                <option value="Callao">Callao</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="form-group">
+                    <label>Contraseña *</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">🔒</span>
+                        <input id="inp-pass-reg" type="password" placeholder="Mínimo 6 caracteres"
+                            autocomplete="new-password">
+                        <button type="button" class="toggle-pass" data-target="inp-pass-reg" title="Mostrar">👁</button>
+                    </div>
+                    <div class="password-strength">
+                        <div class="strength-bar" id="sb1"></div>
+                        <div class="strength-bar" id="sb2"></div>
+                        <div class="strength-bar" id="sb3"></div>
+                        <div class="strength-bar" id="sb4"></div>
+                    </div>
+                    <div class="strength-label" id="strength-label"></div>
+                    <div class="field-error"></div>
+                </div>
+
+                <!-- Confirmar contraseña -->
+                <div class="form-group">
+                    <label>Confirmar contraseña *</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">🔒</span>
+                        <input id="inp-pass2" type="password" placeholder="Repite tu contraseña"
+                            autocomplete="new-password">
+                        <button type="button" class="toggle-pass" data-target="inp-pass2" title="Mostrar">👁</button>
+                    </div>
+                    <div class="field-error"></div>
+                </div>
+
+                <button type="submit" class="btn-primary" id="btn-submit-reg">Crear cuenta →</button>
+
+            </form>
+
+            <!-- Enlace a login -->
+            <div class="auth-switch">
+                ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"></div>
+
+    <script src="../assets/js/auth/session.js"></script>
+    <script src="../assets/js/auth/register.js"></script>
+</body>
+
+</html>
