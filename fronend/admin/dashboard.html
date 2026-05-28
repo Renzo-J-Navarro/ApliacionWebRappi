@@ -1,0 +1,162 @@
+<!-- ─── DASHBOARD ─── -->
+<div id="page-dashboard">
+    <div class="page-header">
+        <h1>Panel de Control Rappi Lima</h1>
+        <p>Monitoreo en tiempo real · Dataset: 1500 nodos · Red de calles Lima Metropolitana</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card c-orange" onclick="showPage('pedidos')">
+            <div class="stat-label">Pedidos activos</div>
+            <div class="stat-value" id="stat-pedidos">247</div>
+            <div class="stat-delta delta-up">▲ 12% vs ayer</div>
+            <div class="stat-icon">📦</div>
+        </div>
+        <div class="stat-card c-green">
+            <div class="stat-label">Entregados hoy</div>
+            <div class="stat-value" id="stat-entregados">1,839</div>
+            <div class="stat-delta delta-up">▲ 8% vs ayer</div>
+            <div class="stat-icon">✅</div>
+        </div>
+        <div class="stat-card c-blue">
+            <div class="stat-label">Tiempo promedio</div>
+            <div class="stat-value" id="stat-tiempo">23<small style="font-size:16px">min</small></div>
+            <div class="stat-delta delta-down">▼ 2 min vs ayer</div>
+            <div class="stat-icon">⏱️</div>
+        </div>
+        <div class="stat-card c-red">
+            <div class="stat-label">Cancelados</div>
+            <div class="stat-value" id="stat-cancelados">34</div>
+            <div class="stat-delta delta-down">▲ 3 cancels</div>
+            <div class="stat-icon">❌</div>
+        </div>
+    </div>
+
+    <div class="grid-3-1">
+        <!-- Mapa -->
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">Mapa de calor — Lima Metropolitana</div>
+                    <div class="panel-subtitle">Rutas activas y nodos del sistema</div>
+                </div>
+                <button class="panel-action">Ver completo →</button>
+            </div>
+            <div class="panel-body">
+                <div class="map-box" id="map-box">
+                    <div class="map-grid"></div>
+                    <!-- Dots generados por JS -->
+                </div>
+                <div style="display:flex; gap:16px; margin-top:12px; flex-wrap:wrap;">
+                    <div class="legend-row">
+                        <div class="legend-dot" style="background:var(--orange)"></div> Restaurante
+                    </div>
+                    <div class="legend-row">
+                        <div class="legend-dot" style="background:var(--yellow)"></div> Hub Rappi
+                    </div>
+                    <div class="legend-row">
+                        <div class="legend-dot" style="background:var(--blue)"></div> Intersección
+                    </div>
+                    <div class="legend-row">
+                        <div class="legend-dot" style="background:var(--green)"></div> Cliente
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estadísticas rápidas -->
+        <div style="display:flex; flex-direction:column; gap:16px;">
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">Algoritmo en uso</div>
+                </div>
+                <div class="panel-body">
+                    <div style="text-align:center; padding:8px 0;">
+                        <div style="font-size:28px; font-weight:700; color:var(--orange); font-family:var(--mono)">
+                            Dijkstra</div>
+                        <div style="font-size:12px; color:var(--text3); margin-top:4px;">Ruta mínima garantizada</div>
+                        <div style="font-size:11px; color:var(--text2); margin-top:8px; font-family:var(--mono);">
+                            O((V+E) log V)</div>
+                    </div>
+                    <div style="margin-top:12px; border-top:1px solid var(--border); padding-top:12px;">
+                        <div class="algo-metric">Nodos grafo <span id="nodos-count">1,500</span></div>
+                        <div class="algo-metric">Aristas <span id="aristas-count">~8,400</span></div>
+                        <div class="algo-metric">Última ejecución <span>34ms</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">Tráfico por zona</div>
+                </div>
+                <div class="panel-body">
+                    <div class="progress-row">
+                        <div class="progress-label">Miraflores</div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width:82%; background:var(--red)"></div>
+                        </div>
+                        <div class="progress-val">82%</div>
+                    </div>
+                    <div class="progress-row">
+                        <div class="progress-label">San Isidro</div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width:75%; background:var(--orange)"></div>
+                        </div>
+                        <div class="progress-val">75%</div>
+                    </div>
+                    <div class="progress-row">
+                        <div class="progress-label">Barranco</div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width:60%; background:var(--yellow)"></div>
+                        </div>
+                        <div class="progress-val">60%</div>
+                    </div>
+                    <div class="progress-row">
+                        <div class="progress-label">Surco</div>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width:45%; background:var(--green)"></div>
+                        </div>
+                        <div class="progress-val">45%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pedidos recientes + Actividad -->
+    <div class="grid-2">
+        <div class="panel">
+            <div class="panel-header">
+                <div>
+                    <div class="panel-title">Pedidos recientes</div>
+                    <div class="panel-subtitle">Últimos 5 pedidos procesados</div>
+                </div>
+                <button class="panel-action" onclick="showPage('pedidos')">Ver todos →</button>
+            </div>
+            <div style="overflow-x:auto;">
+                <table id="tabla-pedidos-dash">
+                    <thead>
+                        <tr>
+                            <th>#ID</th>
+                            <th>Restaurante</th>
+                            <th>Algoritmo</th>
+                            <th>Tiempo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-recientes"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-title">Log de actividad</div>
+            </div>
+            <div class="panel-body" id="log-container">
+            </div>
+        </div>
+    </div>
+
+</div>
