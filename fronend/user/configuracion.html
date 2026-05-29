@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración — Rappi Lima</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/user.css">
+    <style>
+        .page-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 32px 20px;
+        }
+
+        .config-panel {
+            background: var(--bg2);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r2);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .config-header {
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .config-body {
+            padding: 20px;
+        }
+
+        .config-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .config-row:last-child {
+            border-bottom: none;
+        }
+
+        .config-row-info .title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .config-row-info .desc {
+            font-size: 12px;
+            color: var(--text2);
+            margin-top: 2px;
+        }
+
+        /* Toggle switch */
+        .toggle {
+            position: relative;
+            width: 44px;
+            height: 24px;
+            cursor: pointer;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            inset: 0;
+            background: var(--border);
+            border-radius: 24px;
+            transition: background .25s;
+        }
+
+        .toggle-slider::before {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #fff;
+            transition: transform .25s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+        }
+
+        .toggle input:checked+.toggle-slider {
+            background: var(--orange);
+        }
+
+        .toggle input:checked+.toggle-slider::before {
+            transform: translateX(20px);
+        }
+
+        /* Select */
+        .config-select {
+            background: var(--bg3);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r);
+            padding: 7px 12px;
+            font-family: var(--font);
+            font-size: 13px;
+            color: var(--text);
+            outline: none;
+            cursor: pointer;
+            transition: border-color .15s;
+        }
+
+        .config-select:focus {
+            border-color: var(--orange);
+        }
+
+        .btn-save {
+            background: var(--orange);
+            color: #fff;
+            border: none;
+            border-radius: var(--r);
+            padding: 11px 28px;
+            font-family: var(--font);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .15s;
+        }
+
+        .btn-save:hover {
+            background: var(--orange2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="user-nav">
+        <div class="nav-logo" onclick="window.location.href='home.html'">
+            <div class="nav-logo-icon">🛵</div>
+            <div class="nav-logo-text"><span>Rappi</span> Lima</div>
+        </div>
+        <div class="nav-right">
+            <button class="nav-btn" onclick="window.location.href='home.html'">← Inicio</button>
+            <button class="nav-btn" onclick="window.location.href='perfil.html'">Mi perfil</button>
+            <button class="nav-btn" onclick="logout()"
+                style="border-color:transparent;color:var(--text3)">Salir</button>
+        </div>
+    </nav>
+
+    <div class="page-wrap">
+        <div style="margin-bottom:24px;">
+            <h1 style="font-size:22px;font-weight:900;color:var(--text);">⚙️ Configuración</h1>
+            <p style="font-size:14px;color:var(--text2);margin-top:4px;">Personaliza tu experiencia en Rappi Lima</p>
+        </div>
+
+        <!-- Notificaciones -->
+        <div class="config-panel">
+            <div class="config-header">🔔 Notificaciones</div>
+            <div class="config-body">
+                <div class="config-row">
+                    <div class="config-row-info">
+                        <div class="title">Pedido confirmado</div>
+                        <div class="desc">Recibe aviso cuando el restaurante acepte tu pedido</div>
+                    </div>
+                    <label class="toggle"><input type="checkbox" checked id="notif-confirmado"><span
+                            class="toggle-slider"></span></label>
+                </div>
+                <div class="config-row">
+                    <div class="config-row-info">
+                        <div class="title">Repartidor en camino</div>
+                        <div class="desc">Aviso cuando el repartidor recoja tu pedido</div>
+                    </div>
+                    <label class="toggle"><input type="checkbox" checked id="notif-camino"><span
+                            class="toggle-slider"></span></label>
+                </div>
+                <div class="config-row">
+                    <div class="config-row-info">
+                        <div class="title">Pedido entregado</div>
+                        <div class="desc">Confirmación al recibir tu pedido</div>
+                    </div>
+                    <label class="toggle"><input type="checkbox" checked id="notif-entregado"><span
+                            class="toggle-slider"></span></label>
+                </div>
+                <div class="config-row">
+                    <div class="config-row-info">
+                        <div class="title">Promociones y descuentos</div>
+                        <div class="desc">Ofertas exclusivas y códigos de descuento</div>
+                    </div>
+                    <label class="toggle"><input type="checkbox" id="notif-promo"><span
+                            class="toggle-slider"></span></label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preferencias de entrega -->
+        <div class="config-panel">
+            <div class="config-header">🛵 Preferencias de entrega</div>
+            <div class="config-body">
+                <div class="config-row">
+                    <div class="config-row-info">
+                        <div class="title">Algoritmo de ruta preferido</div>
+                        <div class="desc">Dijkstra garantiza el tiempo mínimo</div>
+                    </div>
+                    <select class="config-select" id="sel-algoritmo">
+                        <option value="dijkstra">Dijkstra (recomendado)</option>
+                        <option value="bfs">BFS (menos paradas)</option>
+                        <option value="dfs">DFS (exploración)</option>
+                    </select>
+                </div>
+                <div class="config-row">
+                    <div class="config-row-info">
+                        <div class="title">Instrucciones de entrega por defecto</div>
+                        <div class="desc">Se añade automáticamente a cada pedido</div>
+                    </div>
+                </div>
+                <textarea id="instrucciones" placeholder="Ej: Dejar en portería, tocar timbre 2 veces..." style="width:100%;padding:10px 14px;background:var(--bg3);border:1.5px solid var(--border);
+               border-radius:var(--r);font-family:var(--font);font-size:13px;color:var(--text);
+               outline:none;resize:vertical;min-height:70px;margin-top:8px;transition:border-color .15s;"
+                    onfocus="this.style.borderColor='var(--orange)'"
+                    onblur="this.style.borderColor='var(--border)'"></textarea>
+            </div>
+        </div>
+
+        <!-- Privacidad -->
+        <div class="config-panel">
+            <div class="config-header">🔒 Privacidad</div>
+            <div class="config-body">
+                <div class="config-row">
+                    <div class="config-row-info">
+                        <div class="title">Compartir ubicación</div>
+                        <div class="desc">Mejora la precisión de entrega</div>
+                    </div>
+                    <label class="toggle"><input type="checkbox" checked id="priv-ubicacion"><span
+                            class="toggle-slider"></span></label>
+                </div>
+                <div class="config-row">
+                    <div class="config-row-info">
+                        <div class="title">Historial de pedidos visible</div>
+                        <div class="desc">Permite recomendaciones personalizadas</div>
+                    </div>
+                    <label class="toggle"><input type="checkbox" checked id="priv-historial"><span
+                            class="toggle-slider"></span></label>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-save" onclick="guardarConfig()">💾 Guardar configuración</button>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="../assets/js/auth/session.js"></script>
+    <script>
+        Session.requireAuth('usuario');
+        function logout() { Session.logout(); }
+
+        function guardarConfig() {
+            const config = {
+                notificaciones: {
+                    confirmado: document.getElementById('notif-confirmado').checked,
+                    camino: document.getElementById('notif-camino').checked,
+                    entregado: document.getElementById('notif-entregado').checked,
+                    promo: document.getElementById('notif-promo').checked,
+                },
+                algoritmo: document.getElementById('sel-algoritmo').value,
+                instrucciones: document.getElementById('instrucciones').value,
+                privacidad: {
+                    ubicacion: document.getElementById('priv-ubicacion').checked,
+                    historial: document.getElementById('priv-historial').checked,
+                }
+            };
+            localStorage.setItem('rappi_config_' + Session.current()?.id, JSON.stringify(config));
+            showToast('Configuración guardada ✅');
+        }
+
+        /* Cargar config guardada */
+        function cargarConfig() {
+            const raw = localStorage.getItem('rappi_config_' + Session.current()?.id);
+            if (!raw) return;
+            const c = JSON.parse(raw);
+            if (c.notificaciones) {
+                document.getElementById('notif-confirmado').checked = c.notificaciones.confirmado ?? true;
+                document.getElementById('notif-camino').checked = c.notificaciones.camino ?? true;
+                document.getElementById('notif-entregado').checked = c.notificaciones.entregado ?? true;
+                document.getElementById('notif-promo').checked = c.notificaciones.promo ?? false;
+            }
+            if (c.algoritmo) document.getElementById('sel-algoritmo').value = c.algoritmo;
+            if (c.instrucciones) document.getElementById('instrucciones').value = c.instrucciones;
+            if (c.privacidad) {
+                document.getElementById('priv-ubicacion').checked = c.privacidad.ubicacion ?? true;
+                document.getElementById('priv-historial').checked = c.privacidad.historial ?? true;
+            }
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.style.opacity = '1'; t.style.transform = 'translateY(0)';
+            setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateY(10px)'; }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', cargarConfig);
+    </script>
+</body>
+
+</html>

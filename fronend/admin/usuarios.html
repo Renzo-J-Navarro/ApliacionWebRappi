@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios — Rappi Admin</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <style>
+        /* ── Avatar mini ──────────────────────────────────── */
+        .user-avatar-mini {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--orange-dim);
+            color: var(--orange2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── Estadísticas de usuarios ─────────────────────── */
+        .user-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width:700px) {
+            .user-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ── Modal de edición ─────────────────────────────── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .7);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg2);
+            border: 1px solid var(--border2);
+            border-radius: var(--r2);
+            padding: 28px;
+            width: 460px;
+            max-width: 95vw;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideUp .2s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+
+        .modal h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .modal p {
+            font-size: 13px;
+            color: var(--text2);
+            margin-bottom: 20px;
+        }
+
+        .modal-btns {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════ SIDEBAR ══════════ -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo-area">
+            <div class="logo-icon">🛵</div>
+            <div class="logo-text"><span>Rappi</span>Admin</div>
+        </div>
+        <div class="nav-section">
+            <div class="nav-group-label">Principal</div>
+            <div class="nav-item" onclick="window.location.href='dashboard.html'">
+                <span class="nav-icon">📊</span><span class="nav-label">Dashboard</span>
+            </div>
+            <div class="nav-item" onclick="window.location.href='dashboard.html'">
+                <span class="nav-icon">📦</span><span class="nav-label">Pedidos</span>
+            </div>
+            <div class="nav-group-label">Config</div>
+            <div class="nav-item active">
+                <span class="nav-icon">👥</span><span class="nav-label">Usuarios</span>
+            </div>
+            <div class="nav-item" onclick="window.location.href='dashboard.html'">
+                <span class="nav-icon">📋</span><span class="nav-label">Logs</span>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <div class="avatar" id="sidebar-avatar">AD</div>
+            <div>
+                <p id="sidebar-user-name">Admin</p>
+                <span>Super Usuario</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ══════════ MAIN ══════════ -->
+    <div class="main" id="main">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="topbar-left">
+                <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+                <div class="breadcrumb">Panel / <strong>Usuarios</strong></div>
+            </div>
+            <div class="topbar-right">
+                <button class="top-btn" onclick="exportarCSV()">📥 Exportar CSV</button>
+                <button class="top-btn primary" onclick="openModal('add')">+ Nuevo usuario</button>
+                <button class="top-btn" onclick="Session.logout()" style="color:var(--red)">Salir</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="page-header">
+                <h1>👥 Gestión de usuarios</h1>
+                <p>Todos los usuarios registrados en el sistema Rappi Lima</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="user-stats">
+                <div class="stat-card c-orange">
+                    <div class="stat-label">Total usuarios</div>
+                    <div class="stat-value" id="cnt-total">—</div>
+                    <div class="stat-icon">👥</div>
+                </div>
+                <div class="stat-card c-blue">
+                    <div class="stat-label">Activos</div>
+                    <div class="stat-value" id="cnt-activos">—</div>
+                    <div class="stat-icon">✅</div>
+                </div>
+                <div class="stat-card c-red">
+                    <div class="stat-label">Inactivos</div>
+                    <div class="stat-value" id="cnt-inactivos">—</div>
+                    <div class="stat-icon">⏸</div>
+                </div>
+                <div class="stat-card c-green">
+                    <div class="stat-label">Admins</div>
+                    <div class="stat-value" id="cnt-admins">—</div>
+                    <div class="stat-icon">🔑</div>
+                </div>
+            </div>
+
+            <!-- Panel de tabla -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <div class="panel-title">Listado de usuarios</div>
+                        <div class="panel-subtitle"><span id="total-users">0</span> registros encontrados</div>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding-bottom:0">
+                    <!-- Búsqueda y filtros -->
+                    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                        <div class="search-box" style="flex:1;margin-bottom:0">
+                            <span>🔍</span>
+                            <input type="text" id="search-users" placeholder="Buscar por nombre, correo o rol...">
+                        </div>
+                        <select id="filtro-rol" onchange="renderUsuarios(document.getElementById('search-users').value)"
+                            style="background:var(--bg3);border:1px solid var(--border);color:var(--text2);
+                   padding:8px 12px;border-radius:var(--r);font-family:var(--font);font-size:13px;outline:none;">
+                            <option value="">Todos los roles</option>
+                            <option value="usuario">Usuario</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <select id="filtro-estado"
+                            onchange="renderUsuarios(document.getElementById('search-users').value)" style="background:var(--bg3);border:1px solid var(--border);color:var(--text2);
+                   padding:8px 12px;border-radius:var(--r);font-family:var(--font);font-size:13px;outline:none;">
+                            <option value="">Todos los estados</option>
+                            <option value="activo">Activos</option>
+                            <option value="inactivo">Inactivos</option>
+                        </select>
+                    </div>
+                    <div style="height:16px"></div>
+                </div>
+
+                <!-- Tabla -->
+                <div style="overflow-x:auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Correo</th>
+                                <th>Rol</th>
+                                <th>Distrito</th>
+                                <th>Estado</th>
+                                <th>Registro</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-usuarios"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div><!-- /content -->
+    </div><!-- /main -->
+
+    <!-- ══════════ MODAL: AGREGAR USUARIO ══════════ -->
+    <div class="modal-overlay" id="modal-add" onclick="if(event.target===this) closeModal('add')">
+        <div class="modal">
+            <h2>➕ Agregar usuario</h2>
+            <p>Crea una cuenta nueva desde el panel de administración.</p>
+
+            <div id="add-alert" style="background:var(--red-dim);border:1px solid var(--red);color:var(--red);
+             border-radius:var(--r);padding:10px 14px;font-size:13px;margin-bottom:14px;display:none;">
+            </div>
+
+            <div class="form-row"><label>Nombre completo</label><input id="add-nombre" placeholder="Nombre completo">
+            </div>
+            <div class="form-row"><label>Correo electrónico</label><input id="add-email" type="email"
+                    placeholder="correo@ejemplo.com"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div class="form-row"><label>Contraseña</label><input id="add-pass" type="password"
+                        placeholder="Mínimo 6 caracteres"></div>
+                <div class="form-row"><label>Teléfono</label><input id="add-telefono" placeholder="+51 999 000 000">
+                </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div class="form-row">
+                    <label>Rol</label>
+                    <select id="add-rol">
+                        <option value="usuario">Usuario</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Distrito</label>
+                    <select id="add-distrito">
+                        <option>Miraflores</option>
+                        <option>San Isidro</option>
+                        <option>Barranco</option>
+                        <option>Surco</option>
+                        <option>San Borja</option>
+                        <option>La Molina</option>
+                        <option>Chorrillos</option>
+                        <option>Lince</option>
+                        <option>Callao</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-btns">
+                <button class="top-btn" onclick="closeModal('add')">Cancelar</button>
+                <button class="top-btn primary" onclick="crearUsuario()">Crear usuario</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ MODAL: CONFIRMAR ELIMINAR ══════════ -->
+    <div class="modal-overlay" id="modal-delete" onclick="if(event.target===this) closeModal('delete')">
+        <div class="modal" style="max-width:380px">
+            <h2>⚠ Eliminar usuario</h2>
+            <p>¿Estás seguro de eliminar a <strong id="del-nombre"></strong>? Esta acción no se puede deshacer.</p>
+            <input type="hidden" id="del-id">
+            <div class="modal-btns">
+                <button class="top-btn" onclick="closeModal('delete')">Cancelar</button>
+                <button class="top-btn primary" style="background:var(--red)" onclick="eliminarUsuario()">Sí,
+                    eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast"></div>
+
+    <script src="../assets/js/auth/session.js"></script>
+    <script src="../assets/js/admin/usuario.js"></script>
+    <script>
+        /* ── Sidebar toggle ──────────────────────────────────── */
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+            document.getElementById('main').classList.toggle('shifted');
+        }
+
+        /* ── Actualizar stats ────────────────────────────────── */
+        function actualizarStats() {
+            const users = Session.getAllUsers();
+            const activos = users.filter(u => u.activo);
+            const inactivos = users.filter(u => !u.activo);
+            const admins = users.filter(u => u.rol === 'admin');
+            setText('cnt-total', users.length);
+            setText('cnt-activos', activos.length);
+            setText('cnt-inactivos', inactivos.length);
+            setText('cnt-admins', admins.length);
+        }
+        function setText(id, val) {
+            const el = document.getElementById(id);
+            if (el) el.textContent = val;
+        }
+
+        /* ── Render con filtros adicionales ──────────────────── */
+        const _renderBase = renderUsuarios; /* función de usuario.js */
+        renderUsuarios = function (filtro = '') {
+            const rolFiltro = document.getElementById('filtro-rol')?.value || '';
+            const estadoFiltro = document.getElementById('filtro-estado')?.value || '';
+            let users = Session.getAllUsers();
+
+            /* Filtro de texto */
+            if (filtro) {
+                users = users.filter(u =>
+                    u.nombre.toLowerCase().includes(filtro.toLowerCase()) ||
+                    u.email.toLowerCase().includes(filtro.toLowerCase()) ||
+                    u.rol.toLowerCase().includes(filtro.toLowerCase()));
+            }
+            /* Filtro de rol */
+            if (rolFiltro) users = users.filter(u => u.rol === rolFiltro);
+            /* Filtro de estado */
+            if (estadoFiltro) users = users.filter(u =>
+                estadoFiltro === 'activo' ? u.activo : !u.activo);
+
+            const tbody = document.getElementById('tbody-usuarios');
+            const totalEl = document.getElementById('total-users');
+            if (totalEl) totalEl.textContent = users.length;
+
+            if (users.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;color:var(--text3);padding:28px;">
+      Sin resultados</td></tr>`;
+                return;
+            }
+            tbody.innerHTML = users.map(u => `
+    <tr>
+      <td>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="user-avatar-mini">${u.nombre.slice(0, 2).toUpperCase()}</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--text)">${u.nombre}</div>
+            <div style="font-size:11px;color:var(--text3)">${u.telefono || '—'}</div>
+          </div>
+        </div>
+      </td>
+      <td style="font-size:12px">${u.email}</td>
+      <td>
+        <span class="chip ${u.rol === 'admin' ? 'chip-orange' : 'chip-blue'}">
+          ${u.rol === 'admin' ? '🔑 Admin' : '👤 Usuario'}
+        </span>
+      </td>
+      <td style="font-size:12px;color:var(--text2)">${u.distrito || '—'}</td>
+      <td>${u.activo
+                    ? '<span class="chip chip-green">● Activo</span>'
+                    : '<span class="chip chip-red">● Inactivo</span>'}
+      </td>
+      <td style="font-size:11px;color:var(--text3);font-family:var(--mono)">
+        ${new Date(u.createdAt).toLocaleDateString('es-PE')}
+      </td>
+      <td>
+        <div style="display:flex;gap:6px;">
+          <button class="top-btn" style="padding:5px 10px;font-size:11px;"
+            onclick="toggleStatus('${u.id}')">
+            ${u.activo ? '⏸' : '▶'}
+          </button>
+          ${u.rol !== 'admin' ? `
+          <button class="top-btn" style="padding:5px 10px;font-size:11px;color:var(--red);"
+            onclick="confirmarEliminar('${u.id}','${u.nombre.replace(/'/g, "\\'")}')">
+            🗑
+          </button>` : ''}
+        </div>
+      </td>
+    </tr>`).join('');
+
+            actualizarStats();
+        };
+
+        /* ── Override de toggleStatus para refrescar stats ───── */
+        const _baseToggle = toggleStatus;
+        toggleStatus = function (id) {
+            Session.toggleUserStatus(id);
+            renderUsuarios(document.getElementById('search-users')?.value || '');
+            showToast('Estado actualizado ✓');
+        };
+
+        /* ── Crear usuario desde admin ───────────────────────── */
+        function crearUsuario() {
+            const nombre = document.getElementById('add-nombre').value.trim();
+            const email = document.getElementById('add-email').value.trim();
+            const password = document.getElementById('add-pass').value;
+            const telefono = document.getElementById('add-telefono').value.trim();
+            const rol = document.getElementById('add-rol').value;
+            const distrito = document.getElementById('add-distrito').value;
+            const alertEl = document.getElementById('add-alert');
+
+            alertEl.style.display = 'none';
+
+            const result = Session.register({ nombre, email, password, telefono, rol, distrito });
+            if (result.ok) {
+                closeModal('add');
+                renderUsuarios('');
+                showToast(`Usuario "${nombre}" creado correctamente ✓`);
+                /* Limpiar form */
+                ['add-nombre', 'add-email', 'add-pass', 'add-telefono'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.value = '';
+                });
+            } else {
+                alertEl.textContent = '⚠ ' + result.error;
+                alertEl.style.display = 'block';
+            }
+        }
+
+        /* ── Eliminar ─────────────────────────────────────────── */
+        function eliminarUsuario() {
+            const id = document.getElementById('del-id').value;
+            Session.deleteUser(id);
+            closeModal('delete');
+            renderUsuarios(document.getElementById('search-users')?.value || '');
+            showToast('Usuario eliminado del sistema');
+        }
+        function confirmarEliminar(id, nombre) {
+            document.getElementById('del-nombre').textContent = nombre;
+            document.getElementById('del-id').value = id;
+            openModal('delete');
+        }
+
+        /* ── Modal utils ─────────────────────────────────────── */
+        function openModal(id) { document.getElementById('modal-' + id).classList.add('open'); }
+        function closeModal(id) { document.getElementById('modal-' + id).classList.remove('open'); }
+
+        /* ── CSV ──────────────────────────────────────────────── */
+        function exportarCSV() {
+            const users = Session.getAllUsers();
+            const header = 'Nombre,Email,Rol,Distrito,Estado,Teléfono,Registro'.split(',');
+            const rows = users.map(u => [
+                `"${u.nombre}"`, u.email, u.rol, u.distrito || '',
+                u.activo ? 'activo' : 'inactivo', u.telefono || '',
+                new Date(u.createdAt).toLocaleDateString('es-PE')
+            ]);
+            const csv = [header, ...rows].map(r => r.join(',')).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const a = Object.assign(document.createElement('a'), {
+                href: URL.createObjectURL(blob),
+                download: `usuarios_rappi_${Date.now()}.csv`
+            });
+            a.click();
+            showToast('CSV exportado ✓');
+        }
+
+        /* ── Sidebar usuario ─────────────────────────────────── */
+        const u = Session.current();
+        if (u) {
+            const av = document.getElementById('sidebar-avatar');
+            const nm = document.getElementById('sidebar-user-name');
+            if (av) av.textContent = u.nombre.slice(0, 2).toUpperCase();
+            if (nm) nm.textContent = u.nombre;
+        }
+
+        /* ── Init ────────────────────────────────────────────── */
+        document.addEventListener('DOMContentLoaded', () => {
+            renderUsuarios('');
+            actualizarStats();
+
+            document.getElementById('search-users').addEventListener('input', function () {
+                renderUsuarios(this.value);
+            });
+        });
+    </script>
+</body>
+
+</html>

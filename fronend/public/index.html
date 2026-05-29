@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rappi Lima</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <style>
+        body.auth-page {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-card {
+            background: #111520;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+            width: 320px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 107, 44, 0.2);
+            border-top-color: #FF6B2C;
+            border-radius: 50%;
+            animation: spin .8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="auth-page">
+    <div class="auth-bg"></div>
+    <div class="loading-card">
+        <div class="spinner"></div>
+        <div style="font-size:22px;font-weight:700;color:#E8EBF4;">🛵 Rappi Lima</div>
+        <div style="font-size:13px;color:#8A91A8;margin-top:6px;">Verificando sesión...</div>
+    </div>
+    <script src="assets/js/auth/session.js"></script>
+    <script>
+        /* Redirigir según estado de sesión */
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                if (!Session.isLogged()) {
+                    window.location.href = 'public/login.html';
+                } else if (Session.isAdmin()) {
+                    window.location.href = 'admin/dashboard.html';
+                } else {
+                    window.location.href = 'user/home.html';
+                }
+            }, 600);
+        });
+    </script>
+</body>
+
+</html>
