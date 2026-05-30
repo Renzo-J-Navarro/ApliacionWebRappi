@@ -48,7 +48,7 @@ const Session = (() => {
             users.push({
                 id: 'admin-default',
                 nombre: 'Administrador',
-                email: 'admin@rappi.pe',
+                email: 'admin@rappi.pe'.toLowerCase(),
                 password: _hashSimple('admin123'),
                 rol: 'admin',
                 distrito: 'Miraflores',
@@ -119,7 +119,7 @@ const Session = (() => {
     /* ── Logout ───────────────────────────────────────── */
     function logout() {
         localStorage.removeItem(KEY_SESSION);
-        window.location.href = '/public/login.html';
+        window.location.href = '../public/login.html';
     }
 
     /* ── Sesión activa ────────────────────────────────── */
@@ -131,12 +131,21 @@ const Session = (() => {
 
     /* ── Guard de ruta ────────────────────────────────── */
     function requireAuth(rol) {
+        // Obtenemos dónde estamos parados actualmente
+        const pathActual = window.location.pathname;
+
         if (!isLogged()) {
-            window.location.href = '/public/login.html';
+            // Si no está logueado y NO estamos ya en la página de login, redirige correctamente
+            if (!pathActual.includes('login.html')) {
+                // Si estás en /admin/dashboard.html, necesitas subir un nivel para buscar public
+                window.location.href = '../public/login.html';
+            }
             return;
         }
+
         if (rol === 'admin' && !isAdmin()) {
-            window.location.href = '/user/home.html';
+            // Si un usuario normal quiere entrar al admin, lo mandamos a su home
+            window.location.href = '../user/home.html';
         }
     }
 
