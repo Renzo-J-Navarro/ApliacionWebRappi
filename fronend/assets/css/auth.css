@@ -1,0 +1,169 @@
+/* ============================================================
+   AUTH.CSS — Layout de páginas de autenticación
+   (login.html y register.html)
+   ============================================================ */
+
+body.auth-page {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ── Fondo decorativo ────────────────────────────────── */
+.auth-bg {
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 20%, rgba(255, 107, 44, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(77, 159, 255, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Tarjeta central ─────────────────────────────────── */
+.auth-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r3);
+    width: 100%;
+    max-width: 440px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Header de la tarjeta ────────────────────────────── */
+.auth-header {
+    background: linear-gradient(135deg, #FF6B2C, #ff3e5e);
+    padding: 32px 32px 28px;
+    text-align: center;
+}
+
+.auth-header .logo {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.auth-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.auth-header p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Cuerpo de la tarjeta ────────────────────────────── */
+.auth-body {
+    padding: 28px 32px 32px;
+}
+
+/* ── Enlace alternativa ──────────────────────────────── */
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.auth-switch a {
+    color: var(--orange);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* ── Rol selector ────────────────────────────────────── */
+.rol-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.rol-card {
+    background: var(--surface2);
+    border: 2px solid var(--border);
+    border-radius: var(--r);
+    padding: 14px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.rol-card:hover {
+    border-color: rgba(255, 107, 44, 0.4);
+}
+
+.rol-card.selected {
+    border-color: var(--orange);
+    background: var(--orange-dim);
+}
+
+.rol-card .rol-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.rol-card .rol-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.rol-card .rol-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ── Loading card (index.html) ───────────────────────── */
+.loading-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r3);
+    padding: 40px 32px;
+    text-align: center;
+    width: 320px;
+    position: relative;
+    z-index: 1;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 107, 44, 0.2);
+    border-top-color: var(--orange);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 480px) {
+    .auth-body {
+        padding: 22px 20px 28px;
+    }
+
+    .auth-header {
+        padding: 24px 20px 22px;
+    }
+}

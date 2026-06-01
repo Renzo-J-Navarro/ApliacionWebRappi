@@ -1,6 +1,8 @@
 /* ============================================================
-   GLOBAL.CSS — Estilos compartidos en toda la app Rappi Lima
+   GLOBAL.CSS — Variables, reset y utilitarios base
    ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root {
     /* Colores principales */
@@ -16,6 +18,19 @@
     --yellow: #FFD166;
     --yellow-dim: rgba(255, 209, 102, 0.12);
 
+    /* Superficies */
+    --bg: #0A0D14;
+    --surface: #111520;
+    --surface2: #181D2A;
+    --surface3: #1E2435;
+    --border: rgba(255, 255, 255, 0.07);
+    --border2: rgba(255, 255, 255, 0.12);
+
+    /* Texto */
+    --text: #E8EBF4;
+    --text-muted: #8A91A8;
+    --text-dim: #5A6178;
+
     /* Tipografía */
     --font: 'Space Grotesk', sans-serif;
     --mono: 'JetBrains Mono', monospace;
@@ -23,9 +38,13 @@
     /* Border radius */
     --r: 10px;
     --r2: 14px;
+    --r3: 20px;
 }
 
-* {
+/* ── Reset ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -33,67 +52,17 @@
 
 body {
     font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
     min-height: 100vh;
 }
 
-/* ── Chips / Badges ─────────────────────────────────── */
-.chip {
-    display: inline-flex;
-    align-items: center;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 600;
-    gap: 4px;
-    white-space: nowrap;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.chip-green {
-    background: var(--green-dim);
-    color: var(--green);
-}
-
-.chip-red {
-    background: var(--red-dim);
-    color: var(--red);
-}
-
-.chip-yellow {
-    background: var(--yellow-dim);
-    color: var(--yellow);
-}
-
-.chip-blue {
-    background: var(--blue-dim);
-    color: var(--blue);
-}
-
-.chip-orange {
-    background: var(--orange-dim);
-    color: var(--orange2);
-}
-
-/* ── Toast global ───────────────────────────────────── */
-#toast {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    background: #1E2435;
-    border: 1px solid var(--orange);
-    color: #E8EBF4;
-    padding: 12px 20px;
-    border-radius: var(--r);
-    font-size: 13px;
-    font-family: var(--font);
-    font-weight: 500;
-    z-index: 9999;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.25s;
-    pointer-events: none;
-}
-
-/* ── Scrollbar global ───────────────────────────────── */
+/* ── Scrollbar ─────────────────────────────────────── */
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -103,6 +72,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1E2435;
+    background: var(--surface3);
     border-radius: 10px;
 }

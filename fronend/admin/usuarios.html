@@ -417,12 +417,16 @@
 
             alertEl.style.display = 'none';
 
-            const result = Session.register({ nombre, email, password, telefono, rol, distrito });
+            // Si el rol es admin, usar createAdmin(); si no, register()
+            const result = (rol === 'admin')
+                ? Session.createAdmin({ nombre, email, password, telefono, distrito })
+                : Session.register({ nombre, email, password, telefono, distrito });
+
             if (result.ok) {
                 closeModal('add');
                 renderUsuarios('');
-                showToast(`Usuario "${nombre}" creado correctamente ✓`);
-                /* Limpiar form */
+                actualizarStats();
+                showToast(`${rol === 'admin' ? 'Admin' : 'Usuario'} "${nombre}" creado ✓`);
                 ['add-nombre', 'add-email', 'add-pass', 'add-telefono'].forEach(id => {
                     const el = document.getElementById(id);
                     if (el) el.value = '';

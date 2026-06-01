@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Administrador — Rappi Lima</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/forms.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+    <style>
+        body.auth-page {
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        .admins-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .admins-table th {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .admins-table td {
+            padding: 10px;
+            font-size: 13px;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        .admins-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .root-row td {
+            opacity: .65;
+        }
+
+        .root-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--orange-dim);
+            color: var(--orange2);
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .btn-sm {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-family: var(--font);
+            transition: opacity .15s;
+        }
+
+        .btn-sm:hover {
+            opacity: .8;
+        }
+
+        .btn-sm:disabled {
+            opacity: .35;
+            cursor: not-allowed;
+        }
+
+        .btn-sm-red {
+            background: var(--red-dim);
+            color: var(--red);
+        }
+
+        .btn-sm-yellow {
+            background: var(--yellow-dim);
+            color: var(--yellow);
+        }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 24px 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: color .15s;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: var(--orange);
+        }
+    </style>
+</head>
+
+<body class="auth-page">
+    <div class="auth-bg"></div>
+
+    <div class="auth-card" style="max-width:580px; overflow:visible;">
+        <div class="auth-header">
+            <span class="logo">🔐</span>
+            <h1>Gestión de Administradores</h1>
+            <p>Crea y administra cuentas de administrador</p>
+        </div>
+
+        <div class="auth-body">
+            <a class="back-link" href="dashboard.html">← Volver al dashboard</a>
+
+            <div class="auth-alert" id="create-alert"></div>
+            <div class="auth-alert success" id="create-success" style="display:none">
+                ✅ ¡Administrador creado correctamente!
+            </div>
+
+            <div class="section-title">➕ Nuevo administrador</div>
+
+            <form id="form-new-admin" autocomplete="off">
+                <div class="form-group">
+                    <label>Nombre completo *</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">👤</span>
+                        <input id="adm-nombre" type="text" placeholder="Nombre del administrador">
+                    </div>
+                    <div class="field-error"></div>
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico *</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">📧</span>
+                        <input id="adm-email" type="email" placeholder="admin@empresa.com">
+                    </div>
+                    <div class="field-error"></div>
+                </div>
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label>Teléfono</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">📱</span>
+                            <input id="adm-tel" type="tel" placeholder="+51 999 000 000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Distrito</label>
+                        <div class="input-wrap">
+                            <span class="input-icon">📍</span>
+                            <select id="adm-distrito">
+                                <option>Miraflores</option>
+                                <option>San Isidro</option>
+                                <option>Barranco</option>
+                                <option>Surco</option>
+                                <option>San Borja</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Contraseña temporal *</label>
+                    <div class="input-wrap">
+                        <span class="input-icon">🔒</span>
+                        <input id="adm-pass" type="password" placeholder="Mínimo 6 caracteres">
+                        <button type="button" class="toggle-pass" data-target="adm-pass">👁</button>
+                    </div>
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                        <div class="strength-bar"></div>
+                    </div>
+                    <div class="strength-label" id="adm-strength-label"></div>
+                    <div class="field-error"></div>
+                </div>
+                <button type="submit" class="btn-primary" id="btn-create-admin">Crear administrador →</button>
+            </form>
+
+            <div class="section-title">👥 Administradores existentes</div>
+            <table class="admins-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="admins-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+    <script src="../assets/js/auth/session.js"></script>
+    <script>
+        Session.requireAuth('admin');
+
+        async function renderAdmins() {
+            const admins = await Session.getAllAdmins();
+            const tbody = document.getElementById('admins-tbody');
+            tbody.innerHTML = '';
+            admins.forEach(a => {
+                const isRoot = a.esRaiz;
+                const tr = document.createElement('tr');
+                if (isRoot) tr.classList.add('root-row');
+                tr.innerHTML = `
+                    <td>${a.nombre} ${isRoot ? '<span class="root-badge">🛡 Principal</span>' : ''}</td>
+                    <td style="font-family:var(--mono);font-size:12px">${a.email}</td>
+                    <td><span class="chip ${a.activo ? 'chip-green' : 'chip-red'}">${a.activo ? '● Activo' : '● Inactivo'}</span></td>
+                    <td style="display:flex;gap:6px">
+                        <button class="btn-sm btn-sm-yellow" onclick="toggleAdmin('${a.id}')" ${isRoot ? 'disabled' : ''}>${a.activo ? 'Desactivar' : 'Activar'}</button>
+                        <button class="btn-sm btn-sm-red"    onclick="deleteAdmin('${a.id}')" ${isRoot ? 'disabled' : ''}>Eliminar</button>
+                    </td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        async function toggleAdmin(id) {
+            const r = await Session.toggleAdminStatus(id);
+            if (!r.ok) { alert(r.error); return; }
+            renderAdmins();
+        }
+        async function deleteAdmin(id) {
+            if (!confirm('¿Eliminar este administrador?')) return;
+            const r = await Session.deleteAdmin(id);
+            if (!r.ok) { alert(r.error); return; }
+            renderAdmins();
+        }
+
+        document.querySelectorAll('.toggle-pass').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const t = document.getElementById(btn.dataset.target);
+                const isText = t.type === 'text';
+                t.type = isText ? 'password' : 'text';
+                btn.textContent = isText ? '👁' : '🙈';
+            });
+        });
+
+        const passInp = document.getElementById('adm-pass');
+        passInp.addEventListener('input', () => {
+            const pw = passInp.value;
+            const bars = passInp.closest('.form-group').querySelectorAll('.strength-bar');
+            const label = document.getElementById('adm-strength-label');
+            let s = 0;
+            if (pw.length >= 6) s++; if (pw.length >= 10) s++;
+            if (/[A-Z]/.test(pw) && /[0-9]/.test(pw)) s++;
+            if (/[^A-Za-z0-9]/.test(pw)) s++;
+            s = Math.min(s, 4);
+            const colors = ['', '#FF4D6D', '#FFD166', '#2ECDA7', '#4D9FFF'];
+            const labels = ['', 'Muy débil', 'Débil', 'Buena', 'Fuerte'];
+            bars.forEach((b, i) => { b.style.background = i < s ? colors[s] : '#1E2435'; });
+            label.textContent = pw.length ? labels[s] : '';
+        });
+
+        const form = document.getElementById('form-new-admin');
+        const alertBox = document.getElementById('create-alert');
+        const successBox = document.getElementById('create-success');
+        const submitBtn = document.getElementById('btn-create-admin');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            alertBox.classList.remove('show');
+            form.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+
+            const nombre = document.getElementById('adm-nombre').value.trim();
+            const email = document.getElementById('adm-email').value.trim();
+            const telefono = document.getElementById('adm-tel').value.trim();
+            const distrito = document.getElementById('adm-distrito').value;
+            const password = passInp.value;
+            let valid = true;
+
+            function setErr(id, msg) {
+                const g = document.getElementById(id).closest('.form-group');
+                if (!g) return; g.classList.add('has-error');
+                const el = g.querySelector('.field-error'); if (el) el.textContent = msg;
+                valid = false;
+            }
+            if (!nombre) setErr('adm-nombre', 'Ingresa el nombre.');
+            if (!email) setErr('adm-email', 'Ingresa el correo.');
+            if (!password) setErr('adm-pass', 'Ingresa una contraseña.');
+            if (!valid) return;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Creando...';
+
+            const r = await Session.registerAdmin({ nombre, email, password, telefono, distrito });
+            if (r.ok) {
+                successBox.style.display = 'flex'; successBox.classList.add('show');
+                form.reset(); renderAdmins();
+                setTimeout(() => { successBox.classList.remove('show'); successBox.style.display = 'none'; }, 3000);
+            } else {
+                alertBox.textContent = '⚠ ' + r.error; alertBox.classList.add('show');
+            }
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Crear administrador →';
+        });
+
+        renderAdmins();
+    </script>
+</body>
+
+</html>
