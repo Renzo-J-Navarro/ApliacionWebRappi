@@ -209,16 +209,128 @@ app.delete('/api/admins/:id', (req, res) => {
   res.json({ ok: true });
 });
 
+
+/* ════════════════════════════════════════════════════
+   ALGORITMOS — Bridge con Python
+   POST /api/algoritmos/ejecutar
+   Body: { nodos?: 1500, semilla?: 42 }
+
+   Node lanza rappi_bridge.py como proceso hijo,
+   captura su stdout (JSON) y lo devuelve al frontend.
+   Timeout de 120 segundos.
+═══════════════════════════════════════════════════ */
+const { spawn } = require('child_process');
+
+app.post('/api/algoritmos/ejecutar', (req, res) => {
+  const nodos = parseInt(req.body?.nodos) || 1500;
+  const semilla = parseInt(req.body?.semilla) || Math.floor(Math.random() * 9999);
+
+  const PYTHON_CMD = process.platform === 'win32' ? 'python' : 'python3';
+  const BRIDGE_PATH = path.join(__dirname, '../rappi_bridge.py');
+
+  let stdout = '', stderr = '', terminado = false;
+
+  const proceso = spawn(PYTHON_CMD, [BRIDGE_PATH, String(nodos), String(semilla)], {
+    cwd: path.join(__dirname, '..'),
+  });
+
+  const timeout = setTimeout(() => {
+    if (!terminado) {
+      proceso.kill();
+      res.status(504).json({ ok: false, error: 'Timeout: Python tardó más de 120s.' });
+    }
+  }, 120_000);
+
+  proceso.stdout.on('data', chunk => { stdout += chunk.toString(); });
+  proceso.stderr.on('data', chunk => { stderr += chunk.toString(); });
+
+  proceso.on('close', () => {
+    terminado = true;
+    clearTimeout(timeout);
+    if (res.headersSent) return;
+    try {
+      const lineas = stdout.trim().split('\n');
+      const jsonLine = lineas.reverse().find(l => l.trim().startsWith('{'));
+      if (!jsonLine) throw new Error('Python no devolvió JSON válido.');
+      res.json(JSON.parse(jsonLine));
+    } catch (e) {
+      res.status(500).json({
+        ok: false,
+        error: 'Error al parsear respuesta de Python: ' + e.message,
+        stderr: stderr.slice(-300),
+      });
+    }
+  });
+
+  proceso.on('error', err => {
+    terminado = true;
+    clearTimeout(timeout);
+    if (!res.headersSent)
+      res.status(500).json({
+        ok: false,
+        error: `No se pudo iniciar Python: ${err.message}`,
+      });
+  });
+});
+
+/* ════════════════════════════════════════════════════
+   UTILIDAD — Verificar hash (solo desarrollo)
+   GET /api/dev/hash?texto=admin123
+   Devuelve el hash para que puedas pegarlo en el JSON
+═══════════════════════════════════════════════════ */
+app.get('/api/dev/hash', (req, res) => {
+  const texto = req.query.texto;
+  if (!texto) return res.status(400).json({ error: 'Falta ?texto=...' });
+  res.json({ texto, hash: hash(texto) });
+});
+
 /* ── Ruta raíz ──────────────────────────────────────── */
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../fronend/public/login.html'));
 });
 
-/* ── Arrancar servidor ──────────────────────────────── */
+/* ════════════════════════════════════════════════════
+   ARRANQUE — Verifica y repara el admin-root
+   Si el hash en el JSON no coincide con admin123,
+   lo corrige automáticamente al iniciar el servidor.
+═══════════════════════════════════════════════════ */
+function verificarAdminRoot() {
+  const admins = leerAdmins();
+  const rootIdx = admins.findIndex(a => a.id === 'admin-root');
+  const hashCorr = hash('admin123');
+
+  if (rootIdx === -1) {
+    // No existe → crearlo
+    admins.unshift({
+      id: 'admin-root',
+      nombre: 'Administrador Principal',
+      email: 'admin@rappi.pe',
+      password: hashCorr,
+      rol: 'admin',
+      distrito: 'Miraflores',
+      telefono: '+51 999 000 000',
+      createdAt: new Date().toISOString(),
+      activo: true,
+      esRaiz: true,
+    });
+    guardarAdmins(admins);
+    console.log('✅  Admin-root creado automáticamente.');
+  } else if (admins[rootIdx].password !== hashCorr) {
+    // Existe pero el hash está mal → corregirlo
+    admins[rootIdx].password = hashCorr;
+    guardarAdmins(admins);
+    console.log('🔧  Hash del admin-root corregido automáticamente.');
+  } else {
+    console.log('✅  Admin-root verificado correctamente.');
+  }
+}
+
 const PUERTO = 3000;
 app.listen(PUERTO, () => {
   console.log(`\n==================================================`);
   console.log(`🛵  Rappi Lima corriendo en http://localhost:${PUERTO}`);
   console.log(`     Datos en: backend/data/`);
+  console.log(`==================================================`);
+  verificarAdminRoot();
   console.log(`==================================================\n`);
 });

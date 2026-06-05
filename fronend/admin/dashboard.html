@@ -4,515 +4,976 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard — Rappi Admin</title>
+    <title>Dashboard — Rappi Lima Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="../assets/css/global.css">
-    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <style>
+        /* ── Layout ─────────────────────────────────────────── */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #080B12;
+            color: #E2E8F0;
+            min-height: 100vh;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            min-height: 100vh;
+        }
+
+        /* ── Sidebar ─────────────────────────────────────────── */
+        .sidebar {
+            background: #0D1117;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 28px 0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-logo {
+            padding: 0 24px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 16px;
+        }
+
+        .sidebar-logo .brand {
+            font-family: 'Syne', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .sidebar-logo .sub {
+            font-size: 10px;
+            color: #4A5568;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            margin-top: 2px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #718096;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+            transition: all .15s;
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            color: #E2E8F0;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .nav-item.active {
+            color: #FF6B2C;
+            border-left-color: #FF6B2C;
+            background: rgba(255, 107, 44, 0.08);
+        }
+
+        .nav-icon {
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-bottom {
+            margin-top: auto;
+            padding: 16px 24px;
+        }
+
+        .btn-logout {
+            width: 100%;
+            padding: 9px;
+            background: rgba(255, 77, 109, 0.1);
+            border: 1px solid rgba(255, 77, 109, 0.2);
+            border-radius: 8px;
+            color: #FF4D6D;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .15s;
+        }
+
+        .btn-logout:hover {
+            background: rgba(255, 77, 109, 0.2);
+        }
+
+        /* ── Main content ────────────────────────────────────── */
+        .main {
+            padding: 32px 36px;
+            overflow-y: auto;
+        }
+
+        .page-header {
+            margin-bottom: 32px;
+        }
+
+        .page-header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .page-header p {
+            font-size: 13px;
+            color: #4A5568;
+            margin-top: 4px;
+        }
+
+        /* ── Sección ─────────────────────────────────────────── */
+        .section {
+            display: none;
+        }
+
+        .section.visible {
+            display: block;
+        }
+
+        /* ── Cards stats ─────────────────────────────────────── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .stat-card {
+            background: #0D1117;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .stat-card .label {
+            font-size: 11px;
+            color: #4A5568;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+
+        .stat-card .value {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 28px;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 6px;
+        }
+
+        .stat-card .delta {
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        .stat-card .delta.up {
+            color: #2ECDA7;
+        }
+
+        .stat-card .delta.down {
+            color: #FF4D6D;
+        }
+
+        /* ── Panel de algoritmos ─────────────────────────────── */
+        .algo-panel {
+            background: #0D1117;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .algo-panel-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .algo-panel-header h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .algo-panel-header p {
+            font-size: 12px;
+            color: #4A5568;
+            margin-top: 2px;
+        }
+
+        .algo-panel-body {
+            padding: 24px;
+        }
+
+        /* ── Controles ───────────────────────────────────────── */
+        .controls-row {
+            display: flex;
+            gap: 16px;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .ctrl-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4A5568;
+            text-transform: uppercase;
+            letter-spacing: .07em;
+            margin-bottom: 6px;
+        }
+
+        .ctrl-group input,
+        .ctrl-group select {
+            background: #161B27;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #E2E8F0;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            outline: none;
+            transition: border-color .15s;
+        }
+
+        .ctrl-group input:focus,
+        .ctrl-group select:focus {
+            border-color: #FF6B2C;
+        }
+
+        .ctrl-group input[type=number] {
+            width: 110px;
+        }
+
+        .btn-run {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            background: #FF6B2C;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Syne', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .15s, transform .1s;
+        }
+
+        .btn-run:hover {
+            background: #FF8C5A;
+        }
+
+        .btn-run:active {
+            transform: scale(.97);
+        }
+
+        .btn-run:disabled {
+            background: #2D3748;
+            color: #4A5568;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ── Estado de carga ─────────────────────────────────── */
+        #run-status {
+            font-size: 12px;
+            color: #4A5568;
+            font-family: 'IBM Plex Mono', monospace;
+            padding: 8px 0;
+            min-height: 20px;
+        }
+
+        #run-status.running {
+            color: #FFD166;
+        }
+
+        #run-status.error {
+            color: #FF4D6D;
+        }
+
+        #run-status.ok {
+            color: #2ECDA7;
+        }
+
+        /* ── Progress bar animado ────────────────────────────── */
+        .progress-wrap {
+            height: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #FF6B2C, #FFD166);
+            border-radius: 3px;
+            transition: width .4s ease;
+        }
+
+        .progress-wrap.running {
+            display: block;
+        }
+
+        .progress-bar.indeterminate {
+            width: 40% !important;
+            animation: slide 1.4s ease-in-out infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(300%);
+            }
+        }
+
+        /* ── Pedido info ─────────────────────────────────────── */
+        .pedido-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .pedido-card {
+            background: #161B27;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        .pedido-card .pc-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: #4A5568;
+            margin-bottom: 4px;
+        }
+
+        .pedido-card .pc-nombre {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .pedido-card .pc-dist {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 2px;
+        }
+
+        .pedido-card.origen {
+            border-left: 3px solid #E74C3C;
+        }
+
+        .pedido-card.destino {
+            border-left: 3px solid #2ECC71;
+        }
+
+        /* ── Tabla de resultados ─────────────────────────────── */
+        .results-table-wrap {
+            overflow-x: auto;
+        }
+
+        table.results {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        table.results th {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: #4A5568;
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            white-space: nowrap;
+        }
+
+        table.results td {
+            padding: 13px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-family: 'IBM Plex Mono', monospace;
+            white-space: nowrap;
+        }
+
+        table.results tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.results tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .algo-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .tag-astar {
+            background: rgba(231, 76, 60, 0.15);
+            color: #E74C3C;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+        }
+
+        .tag-dijkstra {
+            background: rgba(52, 152, 219, 0.15);
+            color: #3498DB;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .tag-bfs {
+            background: rgba(241, 196, 15, 0.15);
+            color: #F1C40F;
+            border: 1px solid rgba(241, 196, 15, 0.3);
+        }
+
+        .tag-dfs {
+            background: rgba(26, 188, 156, 0.15);
+            color: #1ABC9C;
+            border: 1px solid rgba(26, 188, 156, 0.3);
+        }
+
+        .winner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 107, 44, 0.15);
+            color: #FF6B2C;
+            border: 1px solid rgba(255, 107, 44, 0.3);
+            border-radius: 20px;
+            padding: 2px 8px;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            margin-left: 6px;
+        }
+
+        /* ── Gráfica de barras inline ────────────────────────── */
+        .bar-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bar-bg {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+            min-width: 80px;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width .6s ease;
+        }
+
+        /* ── Ahorro badge ────────────────────────────────────── */
+        .ahorro-box {
+            background: rgba(46, 205, 167, 0.08);
+            border: 1px solid rgba(46, 205, 167, 0.2);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ahorro-box .icon {
+            font-size: 24px;
+        }
+
+        .ahorro-box .text {
+            font-size: 13px;
+            color: #2ECDA7;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .ahorro-box .pct {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 22px;
+            font-weight: 700;
+            color: #2ECDA7;
+        }
+
+        /* ── Empty state ─────────────────────────────────────── */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #2D3748;
+        }
+
+        .empty-state .empty-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .empty-state p {
+            font-size: 14px;
+        }
+
+        /* ── Responsive ──────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .pedido-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- ══════════ SIDEBAR ══════════ -->
-    <nav class="sidebar" id="sidebar">
-        <div class="logo-area">
-            <div class="logo-icon">🛵</div>
-            <div class="logo-text"><span>Rappi</span>Admin</div>
-        </div>
-        <div class="nav-section">
-            <div class="nav-group-label">Principal</div>
-            <div class="nav-item active" onclick="showPage('dashboard',this)">
-                <span class="nav-icon">📊</span><span class="nav-label">Dashboard</span>
-            </div>
-            <div class="nav-item" onclick="showPage('pedidos',this)">
-                <span class="nav-icon">📦</span><span class="nav-label">Pedidos</span>
-                <span class="badge" id="badge-pedidos">12</span>
-            </div>
-            <div class="nav-item" onclick="showPage('rutas',this)">
-                <span class="nav-icon">🗺️</span><span class="nav-label">Rutas</span>
-            </div>
-            <div class="nav-group-label">Sistema</div>
-            <div class="nav-item" onclick="showPage('algoritmos',this)">
-                <span class="nav-icon">⚙️</span><span class="nav-label">Algoritmos</span>
-            </div>
-            <div class="nav-item" onclick="showPage('restaurantes',this)">
-                <span class="nav-icon">🍔</span><span class="nav-label">Restaurantes</span>
-            </div>
-            <div class="nav-item" onclick="showPage('repartidores',this)">
-                <span class="nav-icon">🛵</span><span class="nav-label">Repartidores</span>
-            </div>
-            <div class="nav-group-label">Config</div>
-            <div class="nav-item" onclick="showPage('zonas',this)">
-                <span class="nav-icon">📍</span><span class="nav-label">Zonas Lima</span>
-            </div>
-            <div class="nav-item" onclick="window.location.href='usuarios.html'">
-                <span class="nav-icon">👥</span><span class="nav-label">Usuarios</span>
-            </div>
-            <div class="nav-item" onclick="showPage('logs',this)">
-                <span class="nav-icon">📋</span><span class="nav-label">Logs del Sistema</span>
-            </div>
-        </div>
-        <div class="sidebar-footer">
-            <div class="avatar" id="sidebar-avatar">AD</div>
-            <div>
-                <p id="sidebar-user-name">Admin</p>
-                <span id="sidebar-user-rol">Super Usuario</span>
-            </div>
-        </div>
-    </nav>
+    <div class="layout">
 
-    <!-- ══════════ MAIN ══════════ -->
-    <div class="main" id="main">
-
-        <!-- Topbar -->
-        <div class="topbar">
-            <div class="topbar-left">
-                <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-                <div class="breadcrumb">Panel / <strong id="breadcrumb-text">Dashboard</strong></div>
+        <!-- ── SIDEBAR ─────────────────────────────────────── -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="brand">🛵 Rappi Lima</div>
+                <div class="sub">Panel Administrador</div>
             </div>
-            <div class="topbar-right">
-                <button class="top-btn" onclick="simularPedido()">🔄 Simular pedido</button>
-                <button class="top-btn primary" onclick="openModal('addNodo')">+ Nuevo nodo</button>
-                <div class="notif-btn">🔔<div class="notif-dot"></div>
-                </div>
-                <button class="top-btn" onclick="logout()" style="color:var(--red)">Salir</button>
+
+            <nav>
+                <a class="nav-item active" onclick="showSection('algoritmos')">
+                    <span class="nav-icon">⚙</span> Algoritmos
+                </a>
+                <a class="nav-item" onclick="showSection('usuarios')">
+                    <span class="nav-icon">👥</span> Usuarios
+                </a>
+                <a class="nav-item" href="new-admin.html">
+                    <span class="nav-icon">🔐</span> Administradores
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div style="font-size:11px; color:#2D3748; margin-bottom:10px; font-family:'IBM Plex Mono',monospace;"
+                    id="sidebar-user"></div>
+                <button class="btn-logout" onclick="Session.logout()">Cerrar sesión</button>
             </div>
-        </div>
+        </aside>
 
-        <div class="content">
+        <!-- ── MAIN ────────────────────────────────────────── -->
+        <main class="main">
 
-            <!-- ─── DASHBOARD ─── -->
-            <div id="page-dashboard">
+            <!-- ════ SECCIÓN: ALGORITMOS ════ -->
+            <section class="section visible" id="sec-algoritmos">
+
                 <div class="page-header">
-                    <h1>Panel de Control Rappi Lima</h1>
-                    <p>Monitoreo en tiempo real · 1500 nodos · Lima Metropolitana</p>
+                    <h1>Centro de Algoritmos</h1>
+                    <p>Ejecuta y compara A*, Dijkstra, BFS y DFS sobre el mapa de Lima en tiempo real</p>
                 </div>
 
-                <div class="stats-grid">
-                    <div class="stat-card c-orange" onclick="showPage('pedidos')">
-                        <div class="stat-label">Pedidos activos</div>
-                        <div class="stat-value" id="stat-pedidos">247</div>
-                        <div class="stat-delta delta-up">▲ 12% vs ayer</div>
-                        <div class="stat-icon">📦</div>
+                <!-- Stats rápidas del último resultado -->
+                <div class="stats-grid" id="stats-grid">
+                    <div class="stat-card">
+                        <div class="label">Nodos del grafo</div>
+                        <div class="value" id="stat-nodos">—</div>
+                        <div class="delta">intersecciones + restaurantes</div>
                     </div>
-                    <div class="stat-card c-green">
-                        <div class="stat-label">Entregados hoy</div>
-                        <div class="stat-value" id="stat-entregados">1,839</div>
-                        <div class="stat-delta delta-up">▲ 8% vs ayer</div>
-                        <div class="stat-icon">✅</div>
+                    <div class="stat-card">
+                        <div class="label">Aristas (calles)</div>
+                        <div class="value" id="stat-aristas">—</div>
+                        <div class="delta">conexiones bidireccionales</div>
                     </div>
-                    <div class="stat-card c-blue">
-                        <div class="stat-label">Tiempo promedio</div>
-                        <div class="stat-value" id="stat-tiempo">23<small style="font-size:16px">min</small></div>
-                        <div class="stat-delta delta-down">▼ 2 min vs ayer</div>
-                        <div class="stat-icon">⏱️</div>
+                    <div class="stat-card">
+                        <div class="label">Mejor tiempo (A*)</div>
+                        <div class="value" id="stat-tiempo">—</div>
+                        <div class="delta up" id="stat-tiempo-delta">minutos estimados</div>
                     </div>
-                    <div class="stat-card c-red">
-                        <div class="stat-label">Cancelados</div>
-                        <div class="stat-value" id="stat-cancelados">34</div>
-                        <div class="stat-delta delta-down">▲ 3 cancels</div>
-                        <div class="stat-icon">❌</div>
+                    <div class="stat-card">
+                        <div class="label">Ahorro vs Dijkstra</div>
+                        <div class="value" id="stat-ahorro">—</div>
+                        <div class="delta up">menos nodos explorados</div>
                     </div>
                 </div>
 
-                <div class="grid-3-1">
-                    <div class="panel">
-                        <div class="panel-header">
-                            <div>
-                                <div class="panel-title">Mapa de calor — Lima Metropolitana</div>
-                                <div class="panel-subtitle">Rutas activas y nodos del sistema</div>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="map-box" id="map-box">
-                                <div class="map-grid"></div>
-                            </div>
-                            <div style="display:flex; gap:16px; margin-top:12px; flex-wrap:wrap;">
-                                <div class="legend-row">
-                                    <div class="legend-dot" style="background:var(--orange)"></div> Restaurante
-                                </div>
-                                <div class="legend-row">
-                                    <div class="legend-dot" style="background:var(--yellow)"></div> Hub Rappi
-                                </div>
-                                <div class="legend-row">
-                                    <div class="legend-dot" style="background:var(--blue)"></div> Intersección
-                                </div>
-                                <div class="legend-row">
-                                    <div class="legend-dot" style="background:var(--green)"></div> Cliente
-                                </div>
-                            </div>
+                <!-- Panel principal -->
+                <div class="algo-panel">
+                    <div class="algo-panel-header">
+                        <div>
+                            <h2>⚡ Ejecutar análisis de rutas</h2>
+                            <p>Node.js lanza Python como proceso hijo · Los 4 algoritmos corren en paralelo</p>
                         </div>
                     </div>
-                    <div style="display:flex; flex-direction:column; gap:16px;">
-                        <div class="panel">
-                            <div class="panel-header">
-                                <div class="panel-title">Algoritmo en uso</div>
+
+                    <div class="algo-panel-body">
+
+                        <!-- Controles -->
+                        <div class="controls-row">
+                            <div class="ctrl-group">
+                                <label>Nodos del mapa</label>
+                                <input type="number" id="inp-nodos" value="1500" min="100" max="3000" step="100">
                             </div>
-                            <div class="panel-body">
-                                <div style="text-align:center; padding:8px 0;">
-                                    <div
-                                        style="font-size:28px; font-weight:700; color:var(--orange); font-family:var(--mono)">
-                                        Dijkstra</div>
-                                    <div style="font-size:12px; color:var(--text3); margin-top:4px;">Ruta mínima
-                                        garantizada</div>
-                                    <div
-                                        style="font-size:11px; color:var(--text2); margin-top:8px; font-family:var(--mono)">
-                                        O((V+E) log V)</div>
+                            <div class="ctrl-group">
+                                <label>Semilla aleatoria</label>
+                                <input type="number" id="inp-semilla" value="" placeholder="Auto" min="1" max="9999">
+                            </div>
+                            <div class="ctrl-group">
+                                <label>&nbsp;</label>
+                                <button class="btn-run" id="btn-run" onclick="ejecutarAlgoritmos()">
+                                    <span>▶</span> Ejecutar algoritmos
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Estado -->
+                        <div id="run-status">Listo para ejecutar.</div>
+
+                        <!-- Progress bar -->
+                        <div class="progress-wrap" id="progress-wrap">
+                            <div class="progress-bar indeterminate" id="progress-bar"></div>
+                        </div>
+
+                        <!-- Resultado: pedido -->
+                        <div id="pedido-info-wrap" style="display:none">
+                            <div
+                                style="font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:#4A5568; margin-bottom:10px;">
+                                📦 Pedido analizado</div>
+                            <div class="pedido-info">
+                                <div class="pedido-card origen">
+                                    <div class="pc-label">🍔 Restaurante (origen)</div>
+                                    <div class="pc-nombre" id="pc-origen-nombre">—</div>
+                                    <div class="pc-dist" id="pc-origen-dist">—</div>
                                 </div>
-                                <div style="margin-top:12px; border-top:1px solid var(--border); padding-top:12px;">
-                                    <div class="algo-metric">Nodos grafo <span id="nodos-count">1,500</span></div>
-                                    <div class="algo-metric">Aristas <span>~8,400</span></div>
-                                    <div class="algo-metric">Última ejecución <span>34ms</span></div>
+                                <div class="pedido-card destino">
+                                    <div class="pc-label">📍 Cliente (destino)</div>
+                                    <div class="pc-nombre" id="pc-destino-nombre">—</div>
+                                    <div class="pc-dist" id="pc-destino-dist">—</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel">
-                            <div class="panel-header">
-                                <div class="panel-title">Tráfico por zona</div>
+
+                        <!-- Tabla de resultados -->
+                        <div id="results-wrap" style="display:none">
+                            <div
+                                style="font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:#4A5568; margin-bottom:10px;">
+                                📊 Comparativa de algoritmos</div>
+                            <div class="results-table-wrap">
+                                <table class="results">
+                                    <thead>
+                                        <tr>
+                                            <th>Algoritmo</th>
+                                            <th>Tiempo entrega</th>
+                                            <th>Distancia</th>
+                                            <th>Costo S/</th>
+                                            <th>Paradas</th>
+                                            <th>Nodos explorados</th>
+                                            <th>Exec. ms</th>
+                                            <th>Nodos explorados (barra)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="results-tbody"></tbody>
+                                </table>
                             </div>
-                            <div class="panel-body">
-                                <div class="progress-row">
-                                    <div class="progress-label">Miraflores</div>
-                                    <div class="progress-track">
-                                        <div class="progress-fill" style="width:82%;background:var(--red)"></div>
-                                    </div>
-                                    <div class="progress-val">82%</div>
-                                </div>
-                                <div class="progress-row">
-                                    <div class="progress-label">San Isidro</div>
-                                    <div class="progress-track">
-                                        <div class="progress-fill" style="width:75%;background:var(--orange)"></div>
-                                    </div>
-                                    <div class="progress-val">75%</div>
-                                </div>
-                                <div class="progress-row">
-                                    <div class="progress-label">Barranco</div>
-                                    <div class="progress-track">
-                                        <div class="progress-fill" style="width:60%;background:var(--yellow)"></div>
-                                    </div>
-                                    <div class="progress-val">60%</div>
-                                </div>
-                                <div class="progress-row">
-                                    <div class="progress-label">Surco</div>
-                                    <div class="progress-track">
-                                        <div class="progress-fill" style="width:45%;background:var(--green)"></div>
-                                    </div>
-                                    <div class="progress-val">45%</div>
+
+                            <!-- Ahorro A* -->
+                            <div class="ahorro-box" id="ahorro-box" style="display:none">
+                                <div class="icon">🚀</div>
+                                <div>
+                                    <div class="pct" id="ahorro-pct">—</div>
+                                    <div class="text" id="ahorro-text">—</div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Empty state -->
+                        <div class="empty-state" id="empty-state">
+                            <div class="empty-icon">🗺</div>
+                            <p>Presiona <strong>Ejecutar algoritmos</strong> para analizar rutas de Lima.<br>
+                                Python generará el grafo y comparará los 4 algoritmos.</p>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="grid-2">
-                    <div class="panel">
-                        <div class="panel-header">
-                            <div>
-                                <div class="panel-title">Pedidos recientes</div>
-                                <div class="panel-subtitle">Últimos 5 procesados</div>
-                            </div>
-                            <button class="panel-action" onclick="showPage('pedidos')">Ver todos →</button>
-                        </div>
-                        <div style="overflow-x:auto;">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>#ID</th>
-                                        <th>Restaurante</th>
-                                        <th>Algoritmo</th>
-                                        <th>Tiempo</th>
-                                        <th>Estado</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tbody-recientes"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="panel">
-                        <div class="panel-header">
-                            <div class="panel-title">Log de actividad</div>
-                        </div>
-                        <div class="panel-body" id="log-container"></div>
-                    </div>
-                </div>
-            </div>
+            </section>
 
-            <!-- ─── PEDIDOS ─── -->
-            <div id="page-pedidos" style="display:none">
+            <!-- ════ SECCIÓN: USUARIOS ════ -->
+            <section class="section" id="sec-usuarios">
                 <div class="page-header">
-                    <h1>Gestión de Pedidos</h1>
-                    <p>Todos los pedidos del sistema</p>
+                    <h1>Gestión de Usuarios</h1>
+                    <p>Usuarios registrados en la plataforma</p>
                 </div>
-                <div class="panel">
-                    <div class="panel-header">
-                        <div class="panel-title">Pedidos activos e historial</div>
-                    </div>
-                    <div class="panel-body">
-                        <div class="search-box"><span>🔍</span><input type="text"
-                                placeholder="Buscar por ID, restaurante..." oninput="filtrarPedidos(this.value)"></div>
-                        <div class="tabs">
-                            <div class="tab active" onclick="filterTab('todos',this)">Todos</div>
-                            <div class="tab" onclick="filterTab('en_camino',this)">En camino</div>
-                            <div class="tab" onclick="filterTab('entregado',this)">Entregados</div>
-                            <div class="tab" onclick="filterTab('cancelado',this)">Cancelados</div>
+                <div class="algo-panel">
+                    <div class="algo-panel-header">
+                        <div>
+                            <h2>👥 Lista de usuarios</h2>
+                            <p>Usuarios en usuarios_db.json</p>
                         </div>
+                        <button class="btn-run" style="font-size:12px;padding:8px 16px" onclick="cargarUsuarios()">↻
+                            Actualizar</button>
                     </div>
-                    <div style="overflow-x:auto;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>#ID</th>
-                                    <th>Restaurante</th>
-                                    <th>Cliente</th>
-                                    <th>Algoritmo</th>
-                                    <th>Distancia</th>
-                                    <th>Tiempo</th>
-                                    <th>Costo</th>
-                                    <th>Estado</th>
-                                    <th>Acción</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbody-pedidos-full"></tbody>
-                        </table>
+                    <div class="algo-panel-body">
+                        <div id="usuarios-lista">Cargando…</div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- ─── RUTAS ─── -->
-            <div id="page-rutas" style="display:none">
-                <div class="page-header">
-                    <h1>Rutas y Algoritmos</h1>
-                    <p>Comparativa de búsqueda para entregas</p>
-                </div>
-                <div class="algo-grid" style="margin-bottom:20px">
-                    <div class="algo-card">
-                        <div class="algo-name" style="color:var(--orange)">Dijkstra</div>
-                        <div class="algo-desc">Ruta más rápida garantizada</div>
-                        <div class="algo-metric">Complejidad <span>O((V+E)logV)</span></div>
-                    </div>
-                    <div class="algo-card">
-                        <div class="algo-name" style="color:var(--yellow)">BFS</div>
-                        <div class="algo-desc">Menos paradas</div>
-                        <div class="algo-metric">Complejidad <span>O(V+E)</span></div>
-                    </div>
-                    <div class="algo-card">
-                        <div class="algo-name" style="color:var(--green)">DFS</div>
-                        <div class="algo-desc">Exploración de conectividad</div>
-                        <div class="algo-metric">Complejidad <span>O(V+E)</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ─── ALGORITMOS ─── -->
-            <div id="page-algoritmos" style="display:none">
-                <div class="page-header">
-                    <h1>Configuración de Algoritmos</h1>
-                </div>
-                <div class="grid-2">
-                    <div class="panel">
-                        <div class="panel-header">
-                            <div class="panel-title">Parámetros del sistema</div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-row"><label>Algoritmo principal</label><select>
-                                    <option>Dijkstra (recomendado)</option>
-                                    <option>BFS</option>
-                                    <option>DFS</option>
-                                </select></div>
-                            <div class="form-row"><label>Peso de la arista</label><select>
-                                    <option>tiempo_min</option>
-                                    <option>distancia_km</option>
-                                    <option>costo_sol</option>
-                                </select></div>
-                            <div class="form-row"><label>Máxima distancia entre nodos (km)</label><input type="number"
-                                    value="3.0"></div>
-                            <button class="top-btn primary" style="width:100%;justify-content:center;margin-top:8px">💾
-                                Guardar configuración</button>
-                        </div>
-                    </div>
-                    <div class="panel">
-                        <div class="panel-header">
-                            <div class="panel-title">Complejidad algorítmica</div>
-                        </div>
-                        <div class="panel-body">
-                            <div style="margin-bottom:14px">
-                                <div style="font-size:14px;font-weight:600;color:var(--orange);font-family:var(--mono)">
-                                    Dijkstra</div>
-                                <div style="font-size:12px;color:var(--text2);margin:4px 0">O((V+E) log V) · Espacio:
-                                    O(V)</div>
-                                <div style="font-size:12px;color:var(--text3)">Garantiza la ruta de menor costo. Usa
-                                    min-heap. Óptimo para producción.</div>
-                            </div>
-                            <div style="margin-bottom:14px;padding-top:12px;border-top:1px solid var(--border)">
-                                <div style="font-size:14px;font-weight:600;color:var(--yellow);font-family:var(--mono)">
-                                    BFS</div>
-                                <div style="font-size:12px;color:var(--text2);margin:4px 0">O(V+E) · Espacio: O(V)</div>
-                                <div style="font-size:12px;color:var(--text3)">Menor número de paradas. Usa deque.</div>
-                            </div>
-                            <div style="padding-top:12px;border-top:1px solid var(--border)">
-                                <div style="font-size:14px;font-weight:600;color:var(--green);font-family:var(--mono)">
-                                    DFS</div>
-                                <div style="font-size:12px;color:var(--text2);margin:4px 0">O(V+E) · Espacio: O(V)</div>
-                                <div style="font-size:12px;color:var(--text3)">Exploración de conectividad entre zonas.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ─── RESTAURANTES ─── -->
-            <div id="page-restaurantes" style="display:none">
-                <div class="page-header">
-                    <h1>Restaurantes</h1>
-                    <p>Nodos de tipo restaurante en el grafo</p>
-                </div>
-                <div class="panel">
-                    <div class="panel-header">
-                        <div class="panel-title">Base de restaurantes</div>
-                    </div>
-                    <div class="panel-body">
-                        <div class="search-box"><span>🔍</span><input type="text" placeholder="Buscar restaurante...">
-                        </div>
-                    </div>
-                    <div style="overflow-x:auto;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Distrito</th>
-                                    <th>Demanda</th>
-                                    <th>Pedidos/h</th>
-                                    <th>Estado</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbody-rest"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ─── REPARTIDORES ─── -->
-            <div id="page-repartidores" style="display:none">
-                <div class="page-header">
-                    <h1>Repartidores</h1>
-                </div>
-                <div class="panel">
-                    <div class="panel-header">
-                        <div class="panel-title">Lista de repartidores</div>
-                    </div>
-                    <div style="overflow-x:auto;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Zona</th>
-                                    <th>Pedidos hoy</th>
-                                    <th>Rating</th>
-                                    <th>Estado</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbody-reps"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ─── ZONAS ─── -->
-            <div id="page-zonas" style="display:none">
-                <div class="page-header">
-                    <h1>Zonas de Lima</h1>
-                </div>
-                <div class="panel">
-                    <div class="panel-header">
-                        <div class="panel-title">Distritos activos</div>
-                    </div>
-                    <div style="overflow-x:auto;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Distrito</th>
-                                    <th>Latitud</th>
-                                    <th>Longitud</th>
-                                    <th>Demanda</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbody-zonas"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ─── LOGS ─── -->
-            <div id="page-logs" style="display:none">
-                <div class="page-header">
-                    <h1>Logs del Sistema</h1>
-                </div>
-                <div class="panel">
-                    <div class="panel-header">
-                        <div class="panel-title">Eventos recientes</div><button class="top-btn"
-                            onclick="LOGS_DATA.length=0;renderFullLogs()">🗑 Limpiar</button>
-                    </div>
-                    <div class="panel-body" id="full-logs"
-                        style="font-family:var(--mono);font-size:12px;line-height:1.8;color:var(--text2);max-height:500px;overflow-y:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </div><!-- /content -->
-    </div><!-- /main -->
-
-    <!-- ─── MODAL NUEVO NODO ─── -->
-    <div class="modal-overlay" id="modal-addNodo" onclick="closeOnOverlay(event,'addNodo')">
-        <div class="modal">
-            <h2>Agregar nodo al grafo</h2>
-            <p>Añade un nuevo punto a la red de Lima.</p>
-            <div class="form-row"><label>Tipo de nodo</label><select>
-                    <option>restaurante</option>
-                    <option>hub_rappi</option>
-                    <option>interseccion</option>
-                    <option>cliente</option>
-                </select></div>
-            <div class="form-row"><label>Nombre</label><input placeholder="Ej: Bembos (Miraflores)"></div>
-            <div class="form-row"><label>Distrito</label><select>
-                    <option>Miraflores</option>
-                    <option>San Isidro</option>
-                    <option>Barranco</option>
-                    <option>Surco</option>
-                </select></div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-                <div class="form-row"><label>Latitud</label><input type="number" placeholder="-12.1191" step="0.0001">
-                </div>
-                <div class="form-row"><label>Longitud</label><input type="number" placeholder="-77.0282" step="0.0001">
-                </div>
-            </div>
-            <div class="modal-btns">
-                <button class="top-btn" onclick="closeModal('addNodo')">Cancelar</button>
-                <button class="top-btn primary"
-                    onclick="closeModal('addNodo');toast('Nodo agregado ✓')">Agregar</button>
-            </div>
-        </div>
+        </main>
     </div>
 
-    <!-- Toast -->
-    <div id="toast"></div>
-
     <script src="../assets/js/auth/session.js"></script>
-    <script src="../assets/js/admin/dashboard.js"></script>
     <script>
-        function filtrarPedidos(q) {
-            document.querySelectorAll('#tbody-pedidos-full tr').forEach(r =>
-                r.style.display = r.textContent.toLowerCase().includes(q.toLowerCase()) ? '' : 'none');
+        /* ── Guard ─────────────────────────────────────────── */
+        Session.requireAuth('admin');
+        const user = Session.current();
+        if (user) document.getElementById('sidebar-user').textContent = user.nombre;
+
+        /* ── Navegación ────────────────────────────────────── */
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.getElementById('sec-' + id).classList.add('visible');
+            event.currentTarget.classList.add('active');
+            if (id === 'usuarios') cargarUsuarios();
         }
-        function filterTab(estado, el) {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            el.classList.add('active');
-            renderPedidosFull();
-            if (estado !== 'todos') {
-                document.querySelectorAll('#tbody-pedidos-full tr').forEach(r => {
-                    r.style.display = r.textContent.toLowerCase().includes(estado.replace('_', ' ')) ? '' : 'none';
+
+        /* ══════════════════════════════════════════════════════
+           EJECUTAR ALGORITMOS
+        ══════════════════════════════════════════════════════ */
+        async function ejecutarAlgoritmos() {
+            const btn = document.getElementById('btn-run');
+            const status = document.getElementById('run-status');
+            const progWrap = document.getElementById('progress-wrap');
+
+            // Limpiar estado previo
+            document.getElementById('results-wrap').style.display = 'none';
+            document.getElementById('pedido-info-wrap').style.display = 'none';
+            document.getElementById('empty-state').style.display = 'none';
+            document.getElementById('ahorro-box').style.display = 'none';
+
+            const nodos = parseInt(document.getElementById('inp-nodos').value) || 1500;
+            const semilla = parseInt(document.getElementById('inp-semilla').value) || null;
+
+            btn.disabled = true;
+            status.className = 'running';
+            progWrap.classList.add('running');
+
+            const pasos = [
+                'Iniciando Python…',
+                'Generando grafo de Lima (' + nodos + ' nodos)…',
+                'Construyendo aristas (calles)…',
+                'Buscando par restaurante → cliente…',
+                'Ejecutando A*, Dijkstra, BFS, DFS…',
+                'Calculando métricas y comparativa…',
+            ];
+            let paso = 0;
+            const intervalo = setInterval(() => {
+                if (paso < pasos.length) { status.textContent = pasos[paso++]; }
+            }, 1800);
+
+            try {
+                const body = { nodos };
+                if (semilla) body.semilla = semilla;
+
+                const resp = await fetch('/api/algoritmos/ejecutar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body),
                 });
+                const data = await resp.json();
+
+                clearInterval(intervalo);
+                progWrap.classList.remove('running');
+
+                if (!data.ok) {
+                    status.className = 'error';
+                    status.textContent = '❌ Error: ' + (data.error || 'Respuesta inválida de Python.');
+                    document.getElementById('empty-state').style.display = 'block';
+                    return;
+                }
+
+                status.className = 'ok';
+                status.textContent = `✅ Completado en ~${_tiempoTotal(data.resultados)} ms · ${data.n_nodos.toLocaleString()} nodos · ${data.n_aristas.toLocaleString()} aristas`;
+
+                renderResultados(data);
+
+            } catch (err) {
+                clearInterval(intervalo);
+                progWrap.classList.remove('running');
+                status.className = 'error';
+                status.textContent = '❌ Error de conexión: ' + err.message;
+                document.getElementById('empty-state').style.display = 'block';
+            } finally {
+                btn.disabled = false;
             }
+        }
+
+        function _tiempoTotal(resultados) {
+            return Object.values(resultados).reduce((s, r) => s + (r.exec_ms || 0), 0).toFixed(0);
+        }
+
+        /* ── Renderizar resultados ─────────────────────────── */
+        function renderResultados(data) {
+            // Stats superiores
+            document.getElementById('stat-nodos').textContent = data.n_nodos.toLocaleString();
+            document.getElementById('stat-aristas').textContent = data.n_aristas.toLocaleString();
+            const tiempoAstar = data.resultados['A*']?.tiempo_min ?? '—';
+            document.getElementById('stat-tiempo').textContent = tiempoAstar + ' min';
+            document.getElementById('stat-ahorro').textContent = data.ahorro_astar_vs_dijkstra_pct + '%';
+
+            // Pedido
+            document.getElementById('pc-origen-nombre').textContent = data.origen.nombre;
+            document.getElementById('pc-origen-dist').textContent = data.origen.distrito;
+            document.getElementById('pc-destino-nombre').textContent = data.destino.nombre;
+            document.getElementById('pc-destino-dist').textContent = data.destino.distrito;
+            document.getElementById('pedido-info-wrap').style.display = 'block';
+
+            // Tabla
+            const orden = ['A*', 'Dijkstra', 'BFS', 'DFS'];
+            const tags = { 'A*': 'tag-astar', 'Dijkstra': 'tag-dijkstra', 'BFS': 'tag-bfs', 'DFS': 'tag-dfs' };
+            const colores = { 'A*': '#E74C3C', 'Dijkstra': '#3498DB', 'BFS': '#F1C40F', 'DFS': '#1ABC9C' };
+
+            // Máximo de nodos visitados para escala de barra
+            const maxVisitados = Math.max(...orden.map(a => data.resultados[a]?.nodos_visitados || 0));
+
+            const tbody = document.getElementById('results-tbody');
+            tbody.innerHTML = '';
+
+            // El ganador en tiempo de entrega
+            const tiempos = orden.map(a => data.resultados[a]?.tiempo_min || Infinity);
+            const minTiempo = Math.min(...tiempos.filter(t => t > 0));
+
+            orden.forEach(algo => {
+                const r = data.resultados[algo];
+                if (!r) return;
+
+                const esPrincipal = algo === 'A*';
+                const esMinTiempo = r.tiempo_min === minTiempo && r.tiempo_min > 0;
+                const pct = maxVisitados > 0 ? (r.nodos_visitados / maxVisitados * 100).toFixed(1) : 0;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+            <td>
+                <span class="algo-tag ${tags[algo]}">${algo}</span>
+                ${esPrincipal ? '<span class="winner-badge">★ PRINCIPAL</span>' : ''}
+            </td>
+            <td style="color:${esMinTiempo ? '#2ECDA7' : 'inherit'}">
+                ${r.tiempo_min > 0 ? r.tiempo_min + ' min' : '—'}
+                ${esMinTiempo ? ' ✓' : ''}
+            </td>
+            <td>${r.distancia_km > 0 ? r.distancia_km + ' km' : '—'}</td>
+            <td>${r.costo_sol > 0 ? 'S/ ' + r.costo_sol : '—'}</td>
+            <td>${r.n_paradas > 0 ? r.n_paradas : '—'}</td>
+            <td>${r.nodos_visitados.toLocaleString()}</td>
+            <td style="color:#4A5568">${r.exec_ms} ms</td>
+            <td>
+                <div class="bar-cell">
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width:${pct}%; background:${colores[algo]}"></div>
+                    </div>
+                    <span style="font-size:11px; color:#4A5568">${pct}%</span>
+                </div>
+            </td>`;
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById('results-wrap').style.display = 'block';
+
+            // Ahorro A*
+            if (data.ahorro_astar_vs_dijkstra_pct > 0) {
+                const visAstar = data.resultados['A*']?.nodos_visitados || 0;
+                const visDijkstra = data.resultados['Dijkstra']?.nodos_visitados || 0;
+                document.getElementById('ahorro-pct').textContent = data.ahorro_astar_vs_dijkstra_pct + '% menos nodos';
+                document.getElementById('ahorro-text').textContent =
+                    `A* exploró ${visAstar.toLocaleString()} nodos vs ${visDijkstra.toLocaleString()} de Dijkstra — misma ruta óptima, mayor eficiencia.`;
+                document.getElementById('ahorro-box').style.display = 'flex';
+            }
+        }
+
+        /* ══════════════════════════════════════════════════════
+           USUARIOS
+        ══════════════════════════════════════════════════════ */
+        async function cargarUsuarios() {
+            const wrap = document.getElementById('usuarios-lista');
+            wrap.innerHTML = '<span style="color:#4A5568;font-size:13px">Cargando…</span>';
+            try {
+                const lista = await Session.getAllUsers();
+                if (!lista.length) {
+                    wrap.innerHTML = '<span style="color:#4A5568;font-size:13px">No hay usuarios registrados aún.</span>';
+                    return;
+                }
+                wrap.innerHTML = `
+            <table class="results" style="width:100%">
+                <thead><tr>
+                    <th>Nombre</th><th>Correo</th><th>Distrito</th>
+                    <th>Estado</th><th>Acciones</th>
+                </tr></thead>
+                <tbody>
+                ${lista.map(u => `
+                    <tr>
+                        <td style="font-family:'Inter',sans-serif">${u.nombre}</td>
+                        <td style="color:#4A5568">${u.email}</td>
+                        <td style="font-family:'Inter',sans-serif">${u.distrito || '—'}</td>
+                        <td><span class="chip ${u.activo ? 'chip-green' : 'chip-red'}">${u.activo ? '● Activo' : '● Inactivo'}</span></td>
+                        <td style="display:flex;gap:8px">
+                            <button onclick="toggleUser('${u.id}')" style="background:rgba(255,209,102,0.1);border:1px solid rgba(255,209,102,0.2);color:#FFD166;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer">${u.activo ? 'Desactivar' : 'Activar'}</button>
+                            <button onclick="deleteUser('${u.id}')" style="background:rgba(255,77,109,0.1);border:1px solid rgba(255,77,109,0.2);color:#FF4D6D;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer">Eliminar</button>
+                        </td>
+                    </tr>`).join('')}
+                </tbody>
+            </table>`;
+            } catch (e) {
+                wrap.innerHTML = '<span style="color:#FF4D6D;font-size:13px">Error al cargar usuarios.</span>';
+            }
+        }
+
+        async function toggleUser(id) {
+            await Session.toggleUserStatus(id);
+            cargarUsuarios();
+        }
+        async function deleteUser(id) {
+            if (!confirm('¿Eliminar este usuario?')) return;
+            await Session.deleteUser(id);
+            cargarUsuarios();
         }
     </script>
 </body>

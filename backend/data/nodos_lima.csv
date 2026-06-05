@@ -1,0 +1,1501 @@
+nodo_id,nombre,distrito,tipo,latitud,longitud,demanda_paquetes,ventana_inicio,ventana_fin,prioridad
+0,Cliente Final 0,Breña,cliente_final,-12.068173,-77.031064,2,8,18,2
+1,Punto Reparto 1,Villa María,punto_reparto,-12.158467,-76.958299,9,8,14,5
+2,Hub Distribución 2,Lurín,hub_distribución,-12.300096,-76.851691,34,8,14,2
+3,Cliente Final 3,Villa María,cliente_final,-12.152996,-76.965071,9,8,16,5
+4,Punto Reparto 4,Lurín,punto_reparto,-12.261378,-76.884383,12,11,18,1
+5,Punto Reparto 5,Los Olivos,punto_reparto,-12.00583,-77.079788,30,9,20,3
+6,Hub Distribución 6,Ate,hub_distribución,-12.033403,-76.920439,49,9,18,1
+7,Punto Reparto 7,Barranco,punto_reparto,-12.163325,-77.032093,17,8,18,3
+8,Punto Reparto 8,Pueblo Libre,punto_reparto,-12.076897,-77.047441,13,8,20,5
+9,Punto Reparto 9,Surco,punto_reparto,-12.146288,-76.995079,17,8,18,5
+10,Punto Reparto 10,Puente Piedra,punto_reparto,-11.864623,-77.096474,16,9,14,1
+11,Cliente Final 11,Lima Cercado,cliente_final,-12.022856,-77.007818,4,10,14,2
+12,Cliente Final 12,Carabayllo,cliente_final,-11.889769,-77.050116,2,11,18,4
+13,Punto Reparto 13,Breña,punto_reparto,-12.064892,-77.072498,16,9,18,3
+14,Punto Reparto 14,Chorrillos,punto_reparto,-12.193281,-77.002034,26,10,14,5
+15,Punto Reparto 15,Breña,punto_reparto,-12.053774,-77.063014,10,9,16,4
+16,Cliente Final 16,Villa El Salvador,cliente_final,-12.207664,-76.955757,5,9,18,1
+17,Cliente Final 17,Villa María,cliente_final,-12.149643,-76.919125,1,10,20,3
+18,Punto Reparto 18,Barranco,punto_reparto,-12.140405,-77.000606,11,10,16,4
+19,Punto Reparto 19,Villa El Salvador,punto_reparto,-12.225201,-76.962739,25,11,16,3
+20,Cliente Final 20,La Molina,cliente_final,-12.089066,-76.956033,4,10,20,5
+21,Punto Reparto 21,Villa El Salvador,punto_reparto,-12.217162,-76.950953,16,9,16,5
+22,Punto Reparto 22,Lince,punto_reparto,-12.102954,-77.02159,7,8,14,2
+23,Punto Reparto 23,Breña,punto_reparto,-12.037556,-77.039988,10,11,14,4
+24,Cliente Final 24,Villa El Salvador,cliente_final,-12.234724,-76.924227,10,11,18,5
+25,Punto Reparto 25,Carabayllo,punto_reparto,-11.86855,-77.016436,5,8,18,3
+26,Cliente Final 26,Surco,cliente_final,-12.154077,-77.018907,5,11,16,4
+27,Punto Reparto 27,Miraflores,punto_reparto,-12.112935,-77.036655,28,10,16,5
+28,Cliente Final 28,Callao,cliente_final,-12.065451,-77.126741,2,10,16,2
+29,Punto Reparto 29,San Juan Lurig.,punto_reparto,-12.153122,-76.960639,29,9,14,5
+30,Cliente Final 30,El Agustino,cliente_final,-12.05902,-76.999338,8,8,14,3
+31,Punto Reparto 31,Puente Piedra,punto_reparto,-11.866936,-77.066452,30,10,16,1
+32,Almacén 32,Villa María,almacén,-12.162263,-76.944723,0,8,14,4
+33,Hub Distribución 33,Comas,hub_distribución,-11.959605,-77.073429,38,9,16,4
+34,Cliente Final 34,Magdalena,cliente_final,-12.098482,-77.067871,3,10,20,2
+35,Cliente Final 35,Callao,cliente_final,-12.068535,-77.122481,9,9,18,4
+36,Punto Reparto 36,Lima Cercado,punto_reparto,-12.05886,-77.052251,25,10,20,5
+37,Cliente Final 37,Pachacámac,cliente_final,-12.248939,-76.850515,2,9,16,1
+38,Cliente Final 38,El Agustino,cliente_final,-12.03333,-76.991427,1,9,16,1
+39,Punto Reparto 39,Barranco,punto_reparto,-12.160971,-77.002072,27,8,16,1
+40,Punto Reparto 40,Puente Piedra,punto_reparto,-11.854628,-77.060195,6,10,14,5
+41,Punto Reparto 41,Villa María,punto_reparto,-12.182897,-76.954703,13,11,16,5
+42,Almacén 42,La Molina,almacén,-12.067599,-76.926563,0,11,16,4
+43,Punto Reparto 43,Independencia,punto_reparto,-11.989463,-77.064129,18,9,14,1
+44,Cliente Final 44,Lima Cercado,cliente_final,-12.064307,-77.039219,7,10,20,4
+45,Cliente Final 45,Pachacámac,cliente_final,-12.24084,-76.87106,1,8,14,4
+46,Cliente Final 46,San Martín Porres,cliente_final,-12.026819,-77.046411,6,8,16,2
+47,Punto Reparto 47,Chorrillos,punto_reparto,-12.182411,-77.022638,22,11,16,4
+48,Hub Distribución 48,San Borja,hub_distribución,-12.119158,-77.023656,65,11,16,1
+49,Punto Reparto 49,Pachacámac,punto_reparto,-12.231866,-76.894426,30,8,14,5
+50,Punto Reparto 50,Comas,punto_reparto,-11.919587,-77.063022,5,8,16,2
+51,Punto Reparto 51,Lurín,punto_reparto,-12.278527,-76.845717,20,11,16,4
+52,Punto Reparto 52,Puente Piedra,punto_reparto,-11.861393,-77.066919,6,9,20,1
+53,Hub Distribución 53,Villa El Salvador,hub_distribución,-12.198589,-76.946611,63,11,18,4
+54,Punto Reparto 54,Rímac,punto_reparto,-12.021924,-77.029911,28,11,16,2
+55,Punto Reparto 55,Santa Anita,punto_reparto,-12.030135,-76.970861,11,8,14,3
+56,Cliente Final 56,San Isidro,cliente_final,-12.120461,-77.032255,1,11,16,1
+57,Punto Reparto 57,Jesús María,punto_reparto,-12.097471,-77.042695,7,9,14,5
+58,Cliente Final 58,Barranco,cliente_final,-12.138041,-77.037982,4,11,14,5
+59,Punto Reparto 59,Villa María,punto_reparto,-12.169063,-76.919264,23,8,14,4
+60,Cliente Final 60,Lima Cercado,cliente_final,-12.053247,-77.050426,10,10,18,2
+61,Cliente Final 61,Lima Cercado,cliente_final,-12.026433,-77.043203,6,9,18,4
+62,Punto Reparto 62,La Molina,punto_reparto,-12.067639,-76.94184,26,10,20,3
+63,Cliente Final 63,Callao,cliente_final,-12.068907,-77.138345,2,8,20,5
+64,Punto Reparto 64,San Miguel,punto_reparto,-12.056879,-77.080045,8,8,16,5
+65,Cliente Final 65,Ate,cliente_final,-12.03754,-76.898702,3,10,14,2
+66,Hub Distribución 66,San Juan Lurig.,hub_distribución,-12.140646,-76.966006,66,9,20,5
+67,Cliente Final 67,Rímac,cliente_final,-12.049393,-77.048619,5,8,18,1
+68,Punto Reparto 68,Puente Piedra,punto_reparto,-11.864679,-77.10454,9,10,14,1
+69,Punto Reparto 69,San Martín Porres,punto_reparto,-12.011825,-77.094747,22,9,18,3
+70,Cliente Final 70,Pueblo Libre,cliente_final,-12.072263,-77.052105,4,10,16,3
+71,Punto Reparto 71,Jesús María,punto_reparto,-12.087087,-77.032691,20,10,14,1
+72,Hub Distribución 72,Breña,hub_distribución,-12.07063,-77.041275,84,10,14,1
+73,Punto Reparto 73,El Agustino,punto_reparto,-12.022539,-77.002119,29,9,18,2
+74,Punto Reparto 74,San Martín Porres,punto_reparto,-12.040316,-77.076614,19,11,14,1
+75,Punto Reparto 75,Barranco,punto_reparto,-12.158101,-76.998049,27,9,14,3
+76,Cliente Final 76,San Miguel,cliente_final,-12.057298,-77.080143,9,9,20,2
+77,Punto Reparto 77,San Isidro,punto_reparto,-12.097368,-77.032955,14,10,14,3
+78,Punto Reparto 78,Chorrillos,punto_reparto,-12.185238,-77.011377,26,9,14,3
+79,Punto Reparto 79,Los Olivos,punto_reparto,-12.013784,-77.062726,22,11,16,2
+80,Cliente Final 80,Carabayllo,cliente_final,-11.857977,-77.007304,3,9,20,1
+81,Cliente Final 81,San Borja,cliente_final,-12.114892,-77.024727,6,11,16,3
+82,Cliente Final 82,San Borja,cliente_final,-12.111991,-76.977167,2,11,14,4
+83,Punto Reparto 83,Villa María,punto_reparto,-12.14575,-76.951378,11,11,18,3
+84,Punto Reparto 84,Comas,punto_reparto,-11.922443,-77.059154,30,9,16,1
+85,Cliente Final 85,Lima Cercado,cliente_final,-12.04246,-77.009292,4,11,18,3
+86,Hub Distribución 86,Carabayllo,hub_distribución,-11.876497,-77.050141,38,10,18,5
+87,Punto Reparto 87,Villa El Salvador,punto_reparto,-12.185497,-76.957996,26,10,14,1
+88,Cliente Final 88,Puente Piedra,cliente_final,-11.851131,-77.067962,5,9,18,1
+89,Punto Reparto 89,Surco,punto_reparto,-12.136876,-77.006725,24,11,18,3
+90,Cliente Final 90,Lurín,cliente_final,-12.262532,-76.854494,10,8,20,5
+91,Punto Reparto 91,Chorrillos,punto_reparto,-12.149338,-77.021933,13,8,20,1
+92,Cliente Final 92,Jesús María,cliente_final,-12.058385,-77.035802,9,9,18,4
+93,Punto Reparto 93,Barranco,punto_reparto,-12.13051,-77.0022,26,10,18,1
+94,Punto Reparto 94,San Martín Porres,punto_reparto,-12.026221,-77.090301,14,10,20,3
+95,Punto Reparto 95,Villa El Salvador,punto_reparto,-12.233203,-76.94172,27,10,16,2
+96,Punto Reparto 96,Lurín,punto_reparto,-12.288673,-76.865458,26,11,16,5
+97,Punto Reparto 97,San Miguel,punto_reparto,-12.100033,-77.07057,14,11,14,3
+98,Cliente Final 98,Santa Anita,cliente_final,-12.065547,-76.960788,4,11,18,4
+99,Punto Reparto 99,Pachacámac,punto_reparto,-12.246209,-76.865855,19,9,20,2
+100,Punto Reparto 100,Lima Cercado,punto_reparto,-12.067716,-77.029532,7,10,18,1
+101,Cliente Final 101,Comas,cliente_final,-11.933129,-77.038695,4,10,16,2
+102,Cliente Final 102,La Molina,cliente_final,-12.082685,-76.953452,1,8,16,4
+103,Punto Reparto 103,Pueblo Libre,punto_reparto,-12.086158,-77.064751,29,8,20,4
+104,Cliente Final 104,Puente Piedra,cliente_final,-11.893732,-77.056868,10,9,20,4
+105,Punto Reparto 105,Villa El Salvador,punto_reparto,-12.200201,-76.944552,12,9,14,1
+106,Punto Reparto 106,Los Olivos,punto_reparto,-12.007178,-77.082488,18,9,16,5
+107,Punto Reparto 107,Pachacámac,punto_reparto,-12.22127,-76.86399,6,9,14,4
+108,Punto Reparto 108,La Molina,punto_reparto,-12.060757,-76.932705,30,11,18,4
+109,Punto Reparto 109,Pueblo Libre,punto_reparto,-12.069114,-77.06572,28,11,20,2
+110,Almacén 110,San Martín Porres,almacén,-12.027201,-77.057108,0,11,20,3
+111,Punto Reparto 111,Los Olivos,punto_reparto,-12.009196,-77.0927,12,10,20,2
+112,Punto Reparto 112,Ate,punto_reparto,-12.012227,-76.899817,19,8,18,2
+113,Punto Reparto 113,Ate,punto_reparto,-12.050108,-76.910419,15,10,14,2
+114,Punto Reparto 114,La Molina,punto_reparto,-12.09984,-76.947907,12,11,16,2
+115,Punto Reparto 115,Barranco,punto_reparto,-12.139507,-77.014945,18,11,18,5
+116,Punto Reparto 116,Pachacámac,punto_reparto,-12.238269,-76.865707,18,8,16,4
+117,Punto Reparto 117,Villa El Salvador,punto_reparto,-12.192176,-76.932065,29,8,20,4
+118,Almacén 118,Miraflores,almacén,-12.140572,-77.021079,0,10,18,4
+119,Punto Reparto 119,Carabayllo,punto_reparto,-11.875711,-77.007988,18,9,20,2
+120,Punto Reparto 120,Ate,punto_reparto,-12.035592,-76.902836,18,11,14,4
+121,Punto Reparto 121,El Agustino,punto_reparto,-12.037719,-76.987927,26,11,16,4
+122,Punto Reparto 122,Callao,punto_reparto,-12.03294,-77.097732,9,8,20,5
+123,Almacén 123,San Miguel,almacén,-12.098432,-77.106661,0,8,14,4
+124,Punto Reparto 124,La Molina,punto_reparto,-12.103778,-76.93545,19,9,14,3
+125,Almacén 125,Villa El Salvador,almacén,-12.219051,-76.922756,0,10,16,4
+126,Punto Reparto 126,El Agustino,punto_reparto,-12.024277,-77.020907,15,11,18,4
+127,Cliente Final 127,Ate,cliente_final,-12.020163,-76.903553,2,11,14,5
+128,Punto Reparto 128,San Isidro,punto_reparto,-12.085746,-77.021626,16,9,14,1
+129,Cliente Final 129,Los Olivos,cliente_final,-12.006128,-77.057469,1,9,16,1
+130,Punto Reparto 130,Pueblo Libre,punto_reparto,-12.050175,-77.066069,9,9,16,4
+131,Cliente Final 131,Lima Cercado,cliente_final,-12.031479,-77.03906,2,9,20,3
+132,Cliente Final 132,Los Olivos,cliente_final,-11.972079,-77.07355,6,9,14,2
+133,Cliente Final 133,Santa Anita,cliente_final,-12.034173,-76.981744,2,8,18,5
+134,Punto Reparto 134,Lima Cercado,punto_reparto,-12.045037,-77.014777,17,11,16,1
+135,Almacén 135,San Miguel,almacén,-12.057124,-77.09224,0,9,14,3
+136,Punto Reparto 136,Carabayllo,punto_reparto,-11.859731,-77.050436,26,8,14,3
+137,Punto Reparto 137,Magdalena,punto_reparto,-12.066697,-77.04577,18,10,14,5
+138,Punto Reparto 138,Breña,punto_reparto,-12.055308,-77.056178,15,8,20,4
+139,Cliente Final 139,Surco,cliente_final,-12.155567,-76.991074,7,10,20,2
+140,Punto Reparto 140,Lurín,punto_reparto,-12.263421,-76.855519,10,10,20,4
+141,Punto Reparto 141,Lurín,punto_reparto,-12.278279,-76.892122,28,10,18,2
+142,Punto Reparto 142,Comas,punto_reparto,-11.942923,-77.030615,7,10,20,2
+143,Cliente Final 143,Los Olivos,cliente_final,-12.009147,-77.08785,8,11,18,1
+144,Punto Reparto 144,Lince,punto_reparto,-12.079089,-77.056644,15,9,20,2
+145,Cliente Final 145,San Juan Lurig.,cliente_final,-12.149952,-77.001362,5,10,18,5
+146,Punto Reparto 146,Rímac,punto_reparto,-12.018288,-77.052633,13,8,16,1
+147,Punto Reparto 147,Villa María,punto_reparto,-12.139068,-76.947386,28,11,20,5
+148,Cliente Final 148,Los Olivos,cliente_final,-11.97436,-77.047638,4,11,20,4
+149,Punto Reparto 149,Independencia,punto_reparto,-11.977331,-77.066187,5,8,18,2
+150,Punto Reparto 150,Villa El Salvador,punto_reparto,-12.196143,-76.93708,27,9,18,5
+151,Punto Reparto 151,San Juan Lurig.,punto_reparto,-12.139682,-76.99944,20,10,20,5
+152,Punto Reparto 152,El Agustino,punto_reparto,-12.064432,-77.011567,16,11,18,3
+153,Hub Distribución 153,Ate,hub_distribución,-12.049059,-76.929124,59,8,16,3
+154,Cliente Final 154,Surco,cliente_final,-12.134698,-76.995532,9,9,16,2
+155,Cliente Final 155,San Martín Porres,cliente_final,-12.026256,-77.080714,8,10,18,1
+156,Almacén 156,Comas,almacén,-11.95382,-77.026839,0,9,18,2
+157,Cliente Final 157,San Juan Lurig.,cliente_final,-12.136506,-77.002842,3,10,14,5
+158,Punto Reparto 158,La Molina,punto_reparto,-12.082115,-76.919952,13,8,14,5
+159,Punto Reparto 159,Santa Anita,punto_reparto,-12.044207,-76.938435,27,9,20,1
+160,Punto Reparto 160,Carabayllo,punto_reparto,-11.87353,-77.020213,5,10,20,4
+161,Cliente Final 161,Pachacámac,cliente_final,-12.225622,-76.867784,6,9,14,3
+162,Cliente Final 162,Carabayllo,cliente_final,-11.902728,-77.040952,8,8,14,4
+163,Hub Distribución 163,Lince,hub_distribución,-12.065487,-77.038917,39,8,16,2
+164,Punto Reparto 164,Independencia,punto_reparto,-12.001131,-77.075594,23,10,14,2
+165,Punto Reparto 165,Surco,punto_reparto,-12.154332,-76.995517,22,11,16,5
+166,Cliente Final 166,Villa El Salvador,cliente_final,-12.18628,-76.915689,8,11,18,5
+167,Cliente Final 167,Lurín,cliente_final,-12.276195,-76.879524,5,8,14,2
+168,Cliente Final 168,Breña,cliente_final,-12.052663,-77.070469,4,10,14,2
+169,Cliente Final 169,Villa María,cliente_final,-12.147273,-76.91861,3,8,16,1
+170,Cliente Final 170,Lurín,cliente_final,-12.272329,-76.874088,8,11,18,1
+171,Almacén 171,Villa María,almacén,-12.145097,-76.963839,0,10,18,4
+172,Cliente Final 172,Barranco,cliente_final,-12.151477,-77.006172,4,10,16,4
+173,Punto Reparto 173,Surco,punto_reparto,-12.164479,-76.994993,22,9,16,3
+174,Cliente Final 174,Comas,cliente_final,-11.916504,-77.032894,3,8,14,2
+175,Punto Reparto 175,Independencia,punto_reparto,-11.991565,-77.064259,14,10,20,1
+176,Cliente Final 176,Pachacámac,cliente_final,-12.254181,-76.853764,5,11,18,5
+177,Punto Reparto 177,Magdalena,punto_reparto,-12.064214,-77.043468,20,11,14,5
+178,Cliente Final 178,San Isidro,cliente_final,-12.084051,-77.014562,7,10,18,1
+179,Punto Reparto 179,Barranco,punto_reparto,-12.157933,-77.024173,12,8,18,5
+180,Punto Reparto 180,San Isidro,punto_reparto,-12.074797,-77.031491,29,9,20,5
+181,Punto Reparto 181,Breña,punto_reparto,-12.053315,-77.047694,19,10,16,5
+182,Punto Reparto 182,Lurín,punto_reparto,-12.297322,-76.861421,25,11,14,4
+183,Cliente Final 183,San Juan Lurig.,cliente_final,-12.146384,-76.978992,7,10,18,1
+184,Cliente Final 184,Carabayllo,cliente_final,-11.877405,-77.026953,3,10,20,4
+185,Almacén 185,Santa Anita,almacén,-12.051726,-76.980199,0,11,14,4
+186,Cliente Final 186,Barranco,cliente_final,-12.132543,-77.015685,6,10,18,1
+187,Almacén 187,Los Olivos,almacén,-12.004352,-77.088181,0,11,14,5
+188,Punto Reparto 188,Pachacámac,punto_reparto,-12.239471,-76.867504,18,8,16,5
+189,Punto Reparto 189,San Juan Lurig.,punto_reparto,-12.163126,-76.959792,24,11,20,1
+190,Punto Reparto 190,Chorrillos,punto_reparto,-12.169301,-77.008317,13,9,18,4
+191,Cliente Final 191,Puente Piedra,cliente_final,-11.863896,-77.061882,8,8,14,5
+192,Punto Reparto 192,Independencia,punto_reparto,-12.007646,-77.038671,12,9,18,5
+193,Cliente Final 193,Miraflores,cliente_final,-12.131188,-77.030243,9,11,14,2
+194,Hub Distribución 194,Comas,hub_distribución,-11.940369,-77.058562,44,11,14,2
+195,Punto Reparto 195,Lince,punto_reparto,-12.097993,-77.057907,27,10,18,4
+196,Punto Reparto 196,Comas,punto_reparto,-11.958598,-77.067405,20,11,16,4
+197,Punto Reparto 197,Magdalena,punto_reparto,-12.082156,-77.084206,9,11,16,5
+198,Cliente Final 198,Jesús María,cliente_final,-12.053461,-77.044602,3,8,18,4
+199,Punto Reparto 199,El Agustino,punto_reparto,-12.056384,-77.025386,30,10,14,3
+200,Punto Reparto 200,San Martín Porres,punto_reparto,-12.036553,-77.08107,14,11,16,4
+201,Punto Reparto 201,Magdalena,punto_reparto,-12.109765,-77.087268,20,10,18,5
+202,Punto Reparto 202,Los Olivos,punto_reparto,-12.004683,-77.076787,22,11,20,3
+203,Cliente Final 203,Carabayllo,cliente_final,-11.87048,-77.053034,4,9,20,2
+204,Cliente Final 204,Carabayllo,cliente_final,-11.873605,-77.050912,7,8,18,4
+205,Punto Reparto 205,Rímac,punto_reparto,-12.007556,-77.053646,30,11,20,2
+206,Punto Reparto 206,Lince,punto_reparto,-12.06969,-77.024287,6,9,18,1
+207,Punto Reparto 207,Carabayllo,punto_reparto,-11.894533,-77.036476,19,8,20,1
+208,Punto Reparto 208,San Martín Porres,punto_reparto,-12.014087,-77.076554,9,11,16,1
+209,Punto Reparto 209,Lince,punto_reparto,-12.072626,-77.059866,30,10,18,5
+210,Punto Reparto 210,Rímac,punto_reparto,-12.017933,-77.01194,17,8,18,5
+211,Punto Reparto 211,Villa El Salvador,punto_reparto,-12.208394,-76.959641,15,11,14,5
+212,Punto Reparto 212,Barranco,punto_reparto,-12.143669,-77.034576,12,10,16,1
+213,Punto Reparto 213,Lurín,punto_reparto,-12.284136,-76.893996,8,8,20,2
+214,Punto Reparto 214,Rímac,punto_reparto,-12.043028,-77.040325,14,8,14,3
+215,Cliente Final 215,Independencia,cliente_final,-11.970474,-77.05532,1,10,18,3
+216,Punto Reparto 216,Lurín,punto_reparto,-12.263541,-76.870078,9,9,20,5
+217,Cliente Final 217,Lima Cercado,cliente_final,-12.043445,-77.026758,3,9,16,1
+218,Punto Reparto 218,Pueblo Libre,punto_reparto,-12.078117,-77.080321,17,9,20,5
+219,Punto Reparto 219,La Molina,punto_reparto,-12.090346,-76.937304,12,11,18,4
+220,Hub Distribución 220,Ate,hub_distribución,-12.037195,-76.885674,31,11,18,5
+221,Punto Reparto 221,San Borja,punto_reparto,-12.121539,-77.020411,7,11,18,5
+222,Punto Reparto 222,Santa Anita,punto_reparto,-12.059602,-76.978866,25,11,18,4
+223,Cliente Final 223,Carabayllo,cliente_final,-11.890745,-77.046331,5,9,20,4
+224,Punto Reparto 224,Surco,punto_reparto,-12.167988,-76.998474,12,11,18,5
+225,Punto Reparto 225,Santa Anita,punto_reparto,-12.022781,-76.981298,27,10,14,4
+226,Cliente Final 226,Ate,cliente_final,-12.006526,-76.891725,1,8,20,3
+227,Cliente Final 227,Los Olivos,cliente_final,-12.002105,-77.086456,4,10,16,2
+228,Punto Reparto 228,Pueblo Libre,punto_reparto,-12.053231,-77.058862,13,9,14,1
+229,Punto Reparto 229,Santa Anita,punto_reparto,-12.057901,-76.948425,30,11,14,5
+230,Punto Reparto 230,San Juan Lurig.,punto_reparto,-12.168816,-76.983728,28,9,14,3
+231,Hub Distribución 231,El Agustino,hub_distribución,-12.05288,-77.029258,83,9,16,2
+232,Punto Reparto 232,Independencia,punto_reparto,-12.000568,-77.055938,22,10,18,2
+233,Punto Reparto 233,Ate,punto_reparto,-12.030943,-76.908371,20,10,18,1
+234,Punto Reparto 234,Pachacámac,punto_reparto,-12.24017,-76.890279,7,9,16,4
+235,Cliente Final 235,Carabayllo,cliente_final,-11.855502,-77.038882,9,10,14,4
+236,Cliente Final 236,Miraflores,cliente_final,-12.131368,-77.019125,5,8,20,3
+237,Punto Reparto 237,Lima Cercado,punto_reparto,-12.040518,-77.032521,28,10,20,3
+238,Cliente Final 238,Surco,cliente_final,-12.154557,-76.978224,4,11,14,5
+239,Cliente Final 239,Puente Piedra,cliente_final,-11.846749,-77.098785,9,10,16,1
+240,Punto Reparto 240,Breña,punto_reparto,-12.039983,-77.069538,19,10,20,1
+241,Cliente Final 241,La Molina,cliente_final,-12.071444,-76.940876,1,8,18,4
+242,Punto Reparto 242,Surco,punto_reparto,-12.165011,-76.984937,8,9,16,4
+243,Cliente Final 243,Pachacámac,cliente_final,-12.248817,-76.888787,6,11,16,4
+244,Punto Reparto 244,Breña,punto_reparto,-12.05364,-77.052447,8,11,20,3
+245,Cliente Final 245,San Isidro,cliente_final,-12.07864,-77.042178,6,9,20,4
+246,Punto Reparto 246,Villa María,punto_reparto,-12.166443,-76.947253,16,8,18,5
+247,Punto Reparto 247,Puente Piedra,punto_reparto,-11.879931,-77.06762,25,10,14,4
+248,Punto Reparto 248,Ate,punto_reparto,-12.043389,-76.890021,11,8,20,1
+249,Hub Distribución 249,Lima Cercado,hub_distribución,-12.043122,-77.010776,57,8,14,3
+250,Hub Distribución 250,Villa María,hub_distribución,-12.182555,-76.919108,46,9,14,5
+251,Cliente Final 251,Chorrillos,cliente_final,-12.178255,-77.040536,10,9,16,3
+252,Cliente Final 252,Los Olivos,cliente_final,-11.983996,-77.068327,3,8,18,2
+253,Punto Reparto 253,La Molina,punto_reparto,-12.06907,-76.962016,22,10,16,1
+254,Punto Reparto 254,Lima Cercado,punto_reparto,-12.057876,-77.018903,5,9,14,3
+255,Cliente Final 255,Independencia,cliente_final,-11.986506,-77.046877,4,10,14,2
+256,Punto Reparto 256,Ate,punto_reparto,-12.037896,-76.893937,6,9,20,5
+257,Punto Reparto 257,Surco,punto_reparto,-12.129677,-77.018326,28,8,20,4
+258,Punto Reparto 258,Los Olivos,punto_reparto,-11.975135,-77.087504,16,8,20,5
+259,Hub Distribución 259,Villa María,hub_distribución,-12.152287,-76.930098,35,10,20,1
+260,Punto Reparto 260,San Isidro,punto_reparto,-12.087803,-77.034664,20,11,20,1
+261,Cliente Final 261,Lince,cliente_final,-12.092715,-77.05262,8,8,14,3
+262,Punto Reparto 262,Pueblo Libre,punto_reparto,-12.07053,-77.066657,9,8,16,3
+263,Hub Distribución 263,Pueblo Libre,hub_distribución,-12.052336,-77.079032,100,10,20,5
+264,Almacén 264,Jesús María,almacén,-12.073006,-77.037727,0,10,20,5
+265,Punto Reparto 265,Pueblo Libre,punto_reparto,-12.056094,-77.040094,18,8,14,5
+266,Cliente Final 266,San Martín Porres,cliente_final,-12.010167,-77.048875,4,11,20,2
+267,Hub Distribución 267,Lurín,hub_distribución,-12.295373,-76.866186,73,11,20,4
+268,Cliente Final 268,San Martín Porres,cliente_final,-12.023793,-77.058178,2,10,20,3
+269,Punto Reparto 269,Lima Cercado,punto_reparto,-12.024022,-77.033558,13,10,16,4
+270,Punto Reparto 270,Barranco,punto_reparto,-12.121058,-77.004755,7,8,14,4
+271,Punto Reparto 271,Surco,punto_reparto,-12.125958,-76.981205,28,10,16,5
+272,Punto Reparto 272,San Isidro,punto_reparto,-12.092936,-77.04185,23,10,14,4
+273,Almacén 273,San Juan Lurig.,almacén,-12.16824,-76.964857,0,11,14,3
+274,Punto Reparto 274,Pueblo Libre,punto_reparto,-12.083025,-77.066792,14,10,14,5
+275,Punto Reparto 275,Jesús María,punto_reparto,-12.052307,-77.050983,11,9,20,2
+276,Punto Reparto 276,Carabayllo,punto_reparto,-11.868125,-77.032389,8,10,18,1
+277,Punto Reparto 277,Los Olivos,punto_reparto,-11.992378,-77.087957,13,9,20,5
+278,Cliente Final 278,Los Olivos,cliente_final,-11.990082,-77.074054,10,8,18,1
+279,Hub Distribución 279,San Borja,hub_distribución,-12.11528,-76.996471,64,10,18,3
+280,Punto Reparto 280,Miraflores,punto_reparto,-12.143445,-77.020023,10,9,20,1
+281,Punto Reparto 281,La Molina,punto_reparto,-12.060446,-76.962167,28,8,14,5
+282,Punto Reparto 282,Chorrillos,punto_reparto,-12.190733,-76.997656,17,11,20,3
+283,Cliente Final 283,San Borja,cliente_final,-12.103631,-77.022146,6,10,18,5
+284,Punto Reparto 284,Pueblo Libre,punto_reparto,-12.089205,-77.041797,7,8,16,2
+285,Punto Reparto 285,Los Olivos,punto_reparto,-12.005466,-77.093173,24,8,14,3
+286,Cliente Final 286,Pachacámac,cliente_final,-12.228758,-76.893715,7,11,20,4
+287,Punto Reparto 287,Ate,punto_reparto,-12.032336,-76.90878,11,8,18,4
+288,Punto Reparto 288,Surco,punto_reparto,-12.151962,-76.996718,14,11,18,1
+289,Cliente Final 289,Villa María,cliente_final,-12.179304,-76.923011,7,8,14,2
+290,Hub Distribución 290,Santa Anita,hub_distribución,-12.053235,-76.973363,57,9,18,3
+291,Punto Reparto 291,El Agustino,punto_reparto,-12.044563,-77.033731,8,8,20,4
+292,Almacén 292,San Borja,almacén,-12.097601,-76.992554,0,9,20,5
+293,Cliente Final 293,Rímac,cliente_final,-12.042501,-77.045146,4,10,14,4
+294,Cliente Final 294,Carabayllo,cliente_final,-11.904014,-77.049795,1,11,14,4
+295,Punto Reparto 295,Callao,punto_reparto,-12.072073,-77.110363,7,10,20,5
+296,Cliente Final 296,Villa El Salvador,cliente_final,-12.230028,-76.952841,7,10,14,4
+297,Punto Reparto 297,Miraflores,punto_reparto,-12.101315,-77.011689,15,9,20,3
+298,Punto Reparto 298,Barranco,punto_reparto,-12.136896,-77.036451,18,8,16,4
+299,Punto Reparto 299,San Miguel,punto_reparto,-12.057083,-77.11105,17,8,20,3
+300,Punto Reparto 300,San Martín Porres,punto_reparto,-12.034606,-77.093673,15,9,18,2
+301,Cliente Final 301,Barranco,cliente_final,-12.141148,-77.025629,9,8,16,3
+302,Punto Reparto 302,San Juan Lurig.,punto_reparto,-12.144128,-76.987909,28,9,16,1
+303,Punto Reparto 303,La Molina,punto_reparto,-12.089515,-76.940085,13,9,16,5
+304,Punto Reparto 304,La Molina,punto_reparto,-12.077293,-76.949129,29,8,16,4
+305,Cliente Final 305,Pachacámac,cliente_final,-12.235194,-76.882277,10,11,18,3
+306,Cliente Final 306,La Molina,cliente_final,-12.07032,-76.962594,8,8,20,4
+307,Cliente Final 307,Breña,cliente_final,-12.062528,-77.033872,5,10,14,3
+308,Punto Reparto 308,Jesús María,punto_reparto,-12.077039,-77.067177,7,10,20,4
+309,Punto Reparto 309,San Isidro,punto_reparto,-12.095418,-77.030126,6,10,18,1
+310,Cliente Final 310,Breña,cliente_final,-12.079932,-77.036853,2,11,20,5
+311,Punto Reparto 311,Magdalena,punto_reparto,-12.087915,-77.084716,30,8,20,5
+312,Punto Reparto 312,Breña,punto_reparto,-12.08598,-77.032885,11,10,20,5
+313,Punto Reparto 313,La Molina,punto_reparto,-12.079674,-76.955897,6,11,14,3
+314,Punto Reparto 314,Rímac,punto_reparto,-12.021029,-77.015213,7,9,14,2
+315,Cliente Final 315,Rímac,cliente_final,-12.05305,-77.049856,8,11,16,3
+316,Hub Distribución 316,San Juan Lurig.,hub_distribución,-12.141305,-76.975129,66,11,20,3
+317,Cliente Final 317,Lima Cercado,cliente_final,-12.037048,-77.047331,10,8,18,1
+318,Punto Reparto 318,El Agustino,punto_reparto,-12.044061,-77.015843,8,11,18,3
+319,Cliente Final 319,San Martín Porres,cliente_final,-12.042652,-77.086686,10,9,18,1
+320,Punto Reparto 320,San Miguel,punto_reparto,-12.09776,-77.081542,26,9,18,3
+321,Punto Reparto 321,Breña,punto_reparto,-12.067435,-77.064165,27,11,16,5
+322,Punto Reparto 322,Rímac,punto_reparto,-12.017648,-77.041844,7,10,20,3
+323,Cliente Final 323,Comas,cliente_final,-11.941197,-77.041816,3,8,20,5
+324,Punto Reparto 324,San Juan Lurig.,punto_reparto,-12.148371,-76.994253,5,10,18,2
+325,Punto Reparto 325,Chorrillos,punto_reparto,-12.181887,-77.017746,15,11,16,2
+326,Punto Reparto 326,La Molina,punto_reparto,-12.083682,-76.939758,9,8,18,1
+327,Punto Reparto 327,Jesús María,punto_reparto,-12.059754,-77.06297,29,8,18,5
+328,Cliente Final 328,La Molina,cliente_final,-12.072091,-76.944825,10,11,16,2
+329,Cliente Final 329,San Borja,cliente_final,-12.111659,-77.01318,10,9,20,1
+330,Punto Reparto 330,Lurín,punto_reparto,-12.263029,-76.860265,16,9,20,5
+331,Punto Reparto 331,Santa Anita,punto_reparto,-12.042388,-76.968851,29,11,16,5
+332,Cliente Final 332,Villa María,cliente_final,-12.142534,-76.959259,5,11,16,3
+333,Punto Reparto 333,Lima Cercado,punto_reparto,-12.048,-77.046843,23,11,20,3
+334,Cliente Final 334,Los Olivos,cliente_final,-11.971353,-77.058389,7,11,16,2
+335,Cliente Final 335,Independencia,cliente_final,-11.982061,-77.050386,10,9,18,1
+336,Punto Reparto 336,Breña,punto_reparto,-12.074417,-77.054129,20,10,14,5
+337,Punto Reparto 337,Carabayllo,punto_reparto,-11.855617,-77.007797,8,10,14,2
+338,Punto Reparto 338,Ate,punto_reparto,-12.019721,-76.888738,19,9,20,1
+339,Punto Reparto 339,Callao,punto_reparto,-12.052603,-77.097226,12,11,18,1
+340,Cliente Final 340,Lurín,cliente_final,-12.268129,-76.880133,1,11,18,2
+341,Punto Reparto 341,Villa El Salvador,punto_reparto,-12.186447,-76.917787,7,10,16,1
+342,Punto Reparto 342,El Agustino,punto_reparto,-12.021898,-76.992773,8,10,16,2
+343,Hub Distribución 343,San Isidro,hub_distribución,-12.081054,-77.05995,66,11,16,4
+344,Punto Reparto 344,Pachacámac,punto_reparto,-12.2455,-76.890972,24,8,14,1
+345,Cliente Final 345,Ate,cliente_final,-12.020186,-76.918006,4,9,20,1
+346,Punto Reparto 346,Los Olivos,punto_reparto,-12.011732,-77.079235,14,9,18,1
+347,Hub Distribución 347,San Isidro,hub_distribución,-12.082964,-77.045862,60,11,20,1
+348,Punto Reparto 348,Surco,punto_reparto,-12.127701,-76.993907,20,8,16,2
+349,Almacén 349,Santa Anita,almacén,-12.07068,-76.943395,0,11,14,5
+350,Cliente Final 350,San Juan Lurig.,cliente_final,-12.141265,-76.978553,4,11,16,1
+351,Punto Reparto 351,Jesús María,punto_reparto,-12.058361,-77.018403,16,8,14,4
+352,Punto Reparto 352,Carabayllo,punto_reparto,-11.866641,-77.034903,20,8,20,3
+353,Cliente Final 353,Ate,cliente_final,-12.023625,-76.891316,1,10,14,3
+354,Punto Reparto 354,Villa María,punto_reparto,-12.149986,-76.945212,28,8,18,2
+355,Punto Reparto 355,San Isidro,punto_reparto,-12.085621,-77.049861,16,10,16,4
+356,Punto Reparto 356,Rímac,punto_reparto,-12.035869,-77.042338,20,9,16,1
+357,Almacén 357,Rímac,almacén,-12.04192,-77.054595,0,11,14,3
+358,Punto Reparto 358,Chorrillos,punto_reparto,-12.145614,-77.026111,6,9,14,3
+359,Cliente Final 359,Callao,cliente_final,-12.047018,-77.132087,5,11,20,3
+360,Punto Reparto 360,San Isidro,punto_reparto,-12.083183,-77.057329,29,9,18,3
+361,Punto Reparto 361,Carabayllo,punto_reparto,-11.861044,-77.007763,29,8,18,3
+362,Cliente Final 362,Surco,cliente_final,-12.141329,-77.016348,6,11,20,4
+363,Hub Distribución 363,Puente Piedra,hub_distribución,-11.883416,-77.057863,79,10,16,4
+364,Punto Reparto 364,Rímac,punto_reparto,-12.023213,-77.031066,20,10,18,1
+365,Punto Reparto 365,San Martín Porres,punto_reparto,-12.036174,-77.083976,18,8,20,5
+366,Punto Reparto 366,Comas,punto_reparto,-11.926021,-77.057494,10,10,18,1
+367,Cliente Final 367,Barranco,cliente_final,-12.121845,-77.002511,6,10,18,4
+368,Punto Reparto 368,Pueblo Libre,punto_reparto,-12.049955,-77.078005,27,11,16,4
+369,Punto Reparto 369,San Juan Lurig.,punto_reparto,-12.147088,-76.970199,19,8,18,5
+370,Punto Reparto 370,Lurín,punto_reparto,-12.262208,-76.883778,13,8,14,4
+371,Hub Distribución 371,San Juan Lurig.,hub_distribución,-12.158151,-76.975353,95,9,14,2
+372,Punto Reparto 372,Carabayllo,punto_reparto,-11.900426,-77.011127,24,11,14,2
+373,Cliente Final 373,Barranco,cliente_final,-12.163824,-77.002263,4,10,18,4
+374,Cliente Final 374,San Miguel,cliente_final,-12.058794,-77.071224,1,9,20,3
+375,Punto Reparto 375,San Juan Lurig.,punto_reparto,-12.157457,-77.000651,19,8,16,5
+376,Cliente Final 376,San Juan Lurig.,cliente_final,-12.166366,-76.992012,7,10,18,2
+377,Punto Reparto 377,Surco,punto_reparto,-12.147206,-77.020648,5,9,20,5
+378,Cliente Final 378,Villa El Salvador,cliente_final,-12.200837,-76.961193,9,8,18,3
+379,Hub Distribución 379,Rímac,hub_distribución,-12.028843,-77.032671,87,9,18,4
+380,Cliente Final 380,Chorrillos,cliente_final,-12.153766,-77.03011,2,9,14,4
+381,Cliente Final 381,San Borja,cliente_final,-12.105113,-77.012149,8,8,18,3
+382,Cliente Final 382,Rímac,cliente_final,-12.013729,-77.023777,2,10,18,2
+383,Cliente Final 383,Rímac,cliente_final,-12.010235,-77.021282,3,10,16,1
+384,Hub Distribución 384,Chorrillos,hub_distribución,-12.160126,-77.013493,47,9,20,1
+385,Cliente Final 385,San Juan Lurig.,cliente_final,-12.147364,-76.99707,9,10,20,5
+386,Cliente Final 386,La Molina,cliente_final,-12.064908,-76.968138,10,8,14,3
+387,Cliente Final 387,Villa El Salvador,cliente_final,-12.228557,-76.948244,8,11,20,5
+388,Cliente Final 388,Barranco,cliente_final,-12.162262,-77.005802,3,10,14,4
+389,Punto Reparto 389,Pachacámac,punto_reparto,-12.231627,-76.896681,26,10,16,5
+390,Hub Distribución 390,Breña,hub_distribución,-12.056054,-77.029541,53,9,20,5
+391,Punto Reparto 391,Callao,punto_reparto,-12.06801,-77.1113,6,8,16,3
+392,Cliente Final 392,San Borja,cliente_final,-12.094408,-77.020151,3,10,16,3
+393,Punto Reparto 393,Jesús María,punto_reparto,-12.071237,-77.02015,14,8,18,2
+394,Punto Reparto 394,Breña,punto_reparto,-12.055269,-77.031999,22,10,16,3
+395,Punto Reparto 395,Pueblo Libre,punto_reparto,-12.052839,-77.052306,22,8,16,5
+396,Punto Reparto 396,San Miguel,punto_reparto,-12.086852,-77.076291,9,9,18,5
+397,Hub Distribución 397,San Isidro,hub_distribución,-12.093391,-77.044506,33,8,14,5
+398,Cliente Final 398,Ate,cliente_final,-12.052713,-76.891423,4,11,14,4
+399,Punto Reparto 399,Puente Piedra,punto_reparto,-11.846556,-77.067517,25,10,18,4
+400,Almacén 400,Villa María,almacén,-12.150487,-76.964871,0,11,18,4
+401,Cliente Final 401,Barranco,cliente_final,-12.154119,-77.022268,1,9,20,4
+402,Punto Reparto 402,Lince,punto_reparto,-12.075835,-77.039405,19,9,18,5
+403,Punto Reparto 403,La Molina,punto_reparto,-12.058644,-76.948291,15,10,18,4
+404,Cliente Final 404,La Molina,cliente_final,-12.100319,-76.92986,6,8,18,2
+405,Cliente Final 405,Pachacámac,cliente_final,-12.245962,-76.892881,2,10,20,2
+406,Cliente Final 406,La Molina,cliente_final,-12.075774,-76.955937,2,8,18,4
+407,Cliente Final 407,Carabayllo,cliente_final,-11.897447,-77.033383,10,11,16,2
+408,Punto Reparto 408,Comas,punto_reparto,-11.944014,-77.043074,15,10,16,2
+409,Punto Reparto 409,Lince,punto_reparto,-12.096289,-77.012501,21,11,20,3
+410,Punto Reparto 410,Lince,punto_reparto,-12.065295,-77.050202,5,8,20,5
+411,Punto Reparto 411,Pachacámac,punto_reparto,-12.255443,-76.864417,12,9,18,1
+412,Cliente Final 412,San Isidro,cliente_final,-12.079282,-77.03814,5,11,20,3
+413,Cliente Final 413,Magdalena,cliente_final,-12.104924,-77.049869,1,8,20,2
+414,Cliente Final 414,Puente Piedra,cliente_final,-11.856454,-77.062761,5,10,20,3
+415,Punto Reparto 415,San Isidro,punto_reparto,-12.091189,-77.055238,17,8,16,3
+416,Cliente Final 416,Magdalena,cliente_final,-12.068158,-77.062467,5,8,20,5
+417,Punto Reparto 417,Pachacámac,punto_reparto,-12.232924,-76.891135,29,10,14,2
+418,Punto Reparto 418,Surco,punto_reparto,-12.137722,-77.003185,17,10,18,5
+419,Hub Distribución 419,San Juan Lurig.,hub_distribución,-12.16042,-77.00179,48,9,20,5
+420,Punto Reparto 420,San Isidro,punto_reparto,-12.10905,-77.021922,6,8,16,3
+421,Punto Reparto 421,Independencia,punto_reparto,-11.992239,-77.084419,20,11,16,5
+422,Hub Distribución 422,Puente Piedra,hub_distribución,-11.875375,-77.081003,95,9,18,5
+423,Cliente Final 423,El Agustino,cliente_final,-12.050417,-77.000251,3,11,18,5
+424,Punto Reparto 424,El Agustino,punto_reparto,-12.026007,-77.033019,21,11,18,4
+425,Cliente Final 425,Comas,cliente_final,-11.959753,-77.062898,1,10,18,1
+426,Hub Distribución 426,Lurín,hub_distribución,-12.295875,-76.870056,69,8,20,3
+427,Almacén 427,Breña,almacén,-12.051777,-77.050618,0,9,14,5
+428,Punto Reparto 428,Lince,punto_reparto,-12.093677,-77.035814,10,11,16,2
+429,Punto Reparto 429,San Isidro,punto_reparto,-12.104969,-77.06014,23,8,16,1
+430,Punto Reparto 430,Pachacámac,punto_reparto,-12.237154,-76.890364,15,11,16,4
+431,Punto Reparto 431,Rímac,punto_reparto,-12.019127,-77.016671,11,11,20,1
+432,Hub Distribución 432,Rímac,hub_distribución,-12.045226,-77.051472,47,9,18,4
+433,Cliente Final 433,Jesús María,cliente_final,-12.062976,-77.066721,7,10,16,4
+434,Cliente Final 434,Callao,cliente_final,-12.078401,-77.115935,9,10,18,3
+435,Cliente Final 435,Pueblo Libre,cliente_final,-12.056152,-77.050996,8,9,16,3
+436,Punto Reparto 436,Magdalena,punto_reparto,-12.097227,-77.052559,14,9,18,3
+437,Cliente Final 437,Rímac,cliente_final,-12.008859,-77.02932,4,11,18,4
+438,Punto Reparto 438,San Juan Lurig.,punto_reparto,-12.162384,-76.972821,22,10,18,1
+439,Punto Reparto 439,San Miguel,punto_reparto,-12.065321,-77.107619,26,11,20,3
+440,Cliente Final 440,Los Olivos,cliente_final,-12.002645,-77.087023,3,10,14,3
+441,Punto Reparto 441,Rímac,punto_reparto,-12.042639,-77.007907,7,10,20,3
+442,Cliente Final 442,San Martín Porres,cliente_final,-12.035894,-77.055515,8,9,16,5
+443,Cliente Final 443,Ate,cliente_final,-12.03009,-76.907232,9,10,16,1
+444,Cliente Final 444,Pueblo Libre,cliente_final,-12.088277,-77.036883,10,9,16,1
+445,Cliente Final 445,Lima Cercado,cliente_final,-12.037784,-77.046123,9,9,16,1
+446,Punto Reparto 446,Surco,punto_reparto,-12.16839,-77.023167,18,10,20,1
+447,Cliente Final 447,Lima Cercado,cliente_final,-12.047169,-77.012686,3,8,16,4
+448,Punto Reparto 448,Breña,punto_reparto,-12.049765,-77.057325,20,11,16,3
+449,Punto Reparto 449,El Agustino,punto_reparto,-12.046448,-76.985618,14,8,14,5
+450,Punto Reparto 450,Villa María,punto_reparto,-12.145048,-76.937166,22,8,16,4
+451,Cliente Final 451,Puente Piedra,cliente_final,-11.858737,-77.080667,3,8,20,4
+452,Punto Reparto 452,San Borja,punto_reparto,-12.088365,-77.004414,28,10,14,1
+453,Punto Reparto 453,Santa Anita,punto_reparto,-12.042282,-76.941282,23,8,18,3
+454,Cliente Final 454,Pachacámac,cliente_final,-12.225852,-76.865422,9,11,16,5
+455,Cliente Final 455,Pachacámac,cliente_final,-12.250422,-76.861209,5,9,14,3
+456,Cliente Final 456,San Borja,cliente_final,-12.124416,-77.013623,8,10,16,1
+457,Punto Reparto 457,San Martín Porres,punto_reparto,-12.035951,-77.052281,15,10,16,2
+458,Punto Reparto 458,Pueblo Libre,punto_reparto,-12.087338,-77.043163,25,11,20,5
+459,Hub Distribución 459,El Agustino,hub_distribución,-12.039259,-77.017038,41,11,14,2
+460,Cliente Final 460,La Molina,cliente_final,-12.100324,-76.950046,8,10,16,1
+461,Punto Reparto 461,Ate,punto_reparto,-12.042093,-76.902163,17,9,20,3
+462,Cliente Final 462,El Agustino,cliente_final,-12.026326,-77.028456,5,8,18,3
+463,Punto Reparto 463,Rímac,punto_reparto,-12.030911,-77.044897,12,8,14,4
+464,Punto Reparto 464,Santa Anita,punto_reparto,-12.063412,-76.960911,10,11,18,1
+465,Punto Reparto 465,Breña,punto_reparto,-12.045456,-77.057056,14,10,16,2
+466,Punto Reparto 466,La Molina,punto_reparto,-12.077643,-76.934261,20,9,20,5
+467,Cliente Final 467,San Juan Lurig.,cliente_final,-12.176619,-77.003166,7,11,16,2
+468,Cliente Final 468,Lima Cercado,cliente_final,-12.03711,-77.032368,10,8,20,5
+469,Cliente Final 469,Rímac,cliente_final,-12.013316,-77.027432,6,8,14,1
+470,Punto Reparto 470,Comas,punto_reparto,-11.954708,-77.069404,22,9,16,2
+471,Cliente Final 471,El Agustino,cliente_final,-12.062146,-77.008442,9,11,14,2
+472,Punto Reparto 472,Rímac,punto_reparto,-12.051633,-77.050595,23,11,14,5
+473,Punto Reparto 473,Pachacámac,punto_reparto,-12.210306,-76.881192,30,8,20,2
+474,Cliente Final 474,Jesús María,cliente_final,-12.096221,-77.060883,7,11,14,5
+475,Cliente Final 475,Pachacámac,cliente_final,-12.208744,-76.896753,5,8,20,3
+476,Punto Reparto 476,Comas,punto_reparto,-11.933044,-77.031604,5,9,14,1
+477,Cliente Final 477,Lurín,cliente_final,-12.27722,-76.870558,6,8,14,1
+478,Punto Reparto 478,Callao,punto_reparto,-12.074017,-77.141501,20,8,18,4
+479,Cliente Final 479,San Borja,cliente_final,-12.098166,-77.015407,3,11,18,4
+480,Cliente Final 480,Pachacámac,cliente_final,-12.208504,-76.892305,7,11,14,5
+481,Punto Reparto 481,La Molina,punto_reparto,-12.086312,-76.926193,25,10,14,2
+482,Cliente Final 482,Magdalena,cliente_final,-12.079569,-77.051394,7,9,16,1
+483,Hub Distribución 483,Los Olivos,hub_distribución,-11.980838,-77.070141,32,10,20,5
+484,Punto Reparto 484,Lurín,punto_reparto,-12.259555,-76.86647,22,11,16,2
+485,Cliente Final 485,Pachacámac,cliente_final,-12.210453,-76.862524,6,9,18,2
+486,Punto Reparto 486,Callao,punto_reparto,-12.070216,-77.110056,28,8,14,4
+487,Cliente Final 487,Pueblo Libre,cliente_final,-12.067138,-77.08137,1,9,16,1
+488,Cliente Final 488,Surco,cliente_final,-12.122029,-77.022289,10,8,20,5
+489,Cliente Final 489,Lima Cercado,cliente_final,-12.049955,-77.012562,1,9,14,4
+490,Cliente Final 490,Pachacámac,cliente_final,-12.228649,-76.860078,4,9,14,2
+491,Cliente Final 491,Jesús María,cliente_final,-12.078093,-77.051948,5,9,18,5
+492,Cliente Final 492,Pueblo Libre,cliente_final,-12.059308,-77.048586,6,9,18,2
+493,Punto Reparto 493,Lima Cercado,punto_reparto,-12.048521,-77.015208,21,9,20,3
+494,Punto Reparto 494,Ate,punto_reparto,-12.027776,-76.934712,6,9,20,5
+495,Cliente Final 495,Lince,cliente_final,-12.091677,-77.041891,1,10,20,5
+496,Punto Reparto 496,El Agustino,punto_reparto,-12.045572,-77.012565,27,11,20,2
+497,Punto Reparto 497,Santa Anita,punto_reparto,-12.053237,-76.975537,17,9,20,2
+498,Hub Distribución 498,Carabayllo,hub_distribución,-11.874828,-77.021589,58,10,16,4
+499,Cliente Final 499,Callao,cliente_final,-12.057825,-77.124011,1,11,20,5
+500,Almacén 500,Jesús María,almacén,-12.072346,-77.044341,0,9,20,2
+501,Punto Reparto 501,Ate,punto_reparto,-12.037938,-76.91599,11,10,14,4
+502,Hub Distribución 502,Carabayllo,hub_distribución,-11.875991,-77.02832,77,8,16,1
+503,Cliente Final 503,Ate,cliente_final,-12.016756,-76.894351,7,8,14,2
+504,Punto Reparto 504,Independencia,punto_reparto,-11.967224,-77.084088,29,9,20,2
+505,Cliente Final 505,Carabayllo,cliente_final,-11.904622,-77.022626,6,10,14,2
+506,Punto Reparto 506,Callao,punto_reparto,-12.068826,-77.096648,11,8,20,2
+507,Punto Reparto 507,Rímac,punto_reparto,-12.006878,-77.039119,24,9,20,2
+508,Punto Reparto 508,Magdalena,punto_reparto,-12.089906,-77.080461,15,10,20,4
+509,Punto Reparto 509,Magdalena,punto_reparto,-12.098836,-77.053149,25,10,18,3
+510,Cliente Final 510,San Juan Lurig.,cliente_final,-12.169435,-76.974483,9,11,20,1
+511,Punto Reparto 511,Independencia,punto_reparto,-12.001369,-77.064323,28,11,18,2
+512,Punto Reparto 512,San Juan Lurig.,punto_reparto,-12.175943,-76.970944,15,11,14,5
+513,Punto Reparto 513,Carabayllo,punto_reparto,-11.878742,-77.019548,12,9,14,3
+514,Cliente Final 514,Magdalena,cliente_final,-12.085834,-77.080472,10,11,18,2
+515,Punto Reparto 515,Chorrillos,punto_reparto,-12.170823,-77.0072,15,9,20,5
+516,Cliente Final 516,Comas,cliente_final,-11.962829,-77.043342,4,11,18,3
+517,Cliente Final 517,Los Olivos,cliente_final,-11.984919,-77.054041,8,11,20,2
+518,Hub Distribución 518,San Martín Porres,hub_distribución,-12.033596,-77.084398,75,9,16,5
+519,Cliente Final 519,Lince,cliente_final,-12.089449,-77.019707,3,8,14,1
+520,Cliente Final 520,Comas,cliente_final,-11.947329,-77.063156,1,8,20,2
+521,Punto Reparto 521,Comas,punto_reparto,-11.95126,-77.033869,25,9,14,2
+522,Hub Distribución 522,Miraflores,hub_distribución,-12.110723,-77.048423,57,11,18,1
+523,Punto Reparto 523,Pueblo Libre,punto_reparto,-12.077112,-77.05737,25,11,20,1
+524,Punto Reparto 524,Miraflores,punto_reparto,-12.107256,-77.01006,22,11,14,1
+525,Hub Distribución 525,Jesús María,hub_distribución,-12.093514,-77.067118,65,10,14,5
+526,Punto Reparto 526,Comas,punto_reparto,-11.934645,-77.047665,27,11,16,1
+527,Punto Reparto 527,Callao,punto_reparto,-12.061455,-77.113276,8,9,16,2
+528,Cliente Final 528,Pueblo Libre,cliente_final,-12.050311,-77.079878,9,10,18,3
+529,Cliente Final 529,Independencia,cliente_final,-11.994784,-77.06359,7,8,18,4
+530,Punto Reparto 530,Pachacámac,punto_reparto,-12.222378,-76.847437,23,9,16,3
+531,Punto Reparto 531,Lima Cercado,punto_reparto,-12.065095,-77.019883,7,8,14,4
+532,Punto Reparto 532,Villa El Salvador,punto_reparto,-12.221292,-76.961029,17,11,14,1
+533,Punto Reparto 533,Rímac,punto_reparto,-12.00889,-77.047107,10,8,20,4
+534,Punto Reparto 534,Breña,punto_reparto,-12.075567,-77.06085,30,10,14,5
+535,Cliente Final 535,Callao,cliente_final,-12.055047,-77.139619,1,9,16,5
+536,Cliente Final 536,Lince,cliente_final,-12.098314,-77.034699,5,8,14,3
+537,Punto Reparto 537,Puente Piedra,punto_reparto,-11.862456,-77.078352,22,8,16,3
+538,Cliente Final 538,Miraflores,cliente_final,-12.12745,-77.019726,4,9,20,1
+539,Cliente Final 539,Santa Anita,cliente_final,-12.038808,-76.959011,3,9,20,5
+540,Punto Reparto 540,El Agustino,punto_reparto,-12.04174,-77.031993,17,9,14,5
+541,Cliente Final 541,San Martín Porres,cliente_final,-11.997119,-77.086235,6,8,14,4
+542,Punto Reparto 542,Villa María,punto_reparto,-12.178353,-76.939309,7,10,20,3
+543,Punto Reparto 543,Miraflores,punto_reparto,-12.121581,-77.015392,25,10,20,4
+544,Cliente Final 544,Villa María,cliente_final,-12.155154,-76.926328,6,11,20,2
+545,Punto Reparto 545,Lima Cercado,punto_reparto,-12.058568,-77.036134,23,11,14,5
+546,Punto Reparto 546,Santa Anita,punto_reparto,-12.022276,-76.94055,30,9,14,1
+547,Hub Distribución 547,Ate,hub_distribución,-12.012898,-76.908952,49,11,16,4
+548,Punto Reparto 548,El Agustino,punto_reparto,-12.060544,-76.997236,16,8,14,1
+549,Cliente Final 549,Santa Anita,cliente_final,-12.030597,-76.947799,8,10,18,1
+550,Punto Reparto 550,La Molina,punto_reparto,-12.106692,-76.954444,7,9,20,4
+551,Cliente Final 551,Magdalena,cliente_final,-12.096193,-77.088918,9,11,14,1
+552,Punto Reparto 552,Barranco,punto_reparto,-12.14261,-77.031424,16,8,18,4
+553,Punto Reparto 553,Miraflores,punto_reparto,-12.12174,-77.02317,14,11,20,1
+554,Cliente Final 554,San Martín Porres,cliente_final,-11.99903,-77.070152,9,9,16,4
+555,Cliente Final 555,San Borja,cliente_final,-12.090829,-77.015074,3,10,18,3
+556,Punto Reparto 556,Lince,punto_reparto,-12.104182,-77.020828,9,8,16,4
+557,Cliente Final 557,Ate,cliente_final,-12.011101,-76.891597,7,10,20,1
+558,Punto Reparto 558,San Juan Lurig.,punto_reparto,-12.145498,-76.989766,13,9,20,5
+559,Cliente Final 559,Pueblo Libre,cliente_final,-12.079551,-77.078024,4,11,14,2
+560,Hub Distribución 560,Santa Anita,hub_distribución,-12.054595,-76.938119,30,11,18,5
+561,Cliente Final 561,Villa El Salvador,cliente_final,-12.193876,-76.958374,6,11,18,4
+562,Hub Distribución 562,Comas,hub_distribución,-11.918862,-77.050647,47,10,18,5
+563,Punto Reparto 563,Rímac,punto_reparto,-12.01536,-77.047958,11,11,18,2
+564,Punto Reparto 564,Villa El Salvador,punto_reparto,-12.215067,-76.957681,15,10,20,5
+565,Punto Reparto 565,Independencia,punto_reparto,-12.011591,-77.083709,12,10,20,3
+566,Cliente Final 566,Comas,cliente_final,-11.916844,-77.047524,7,10,14,5
+567,Punto Reparto 567,Chorrillos,punto_reparto,-12.173375,-77.031909,23,9,14,4
+568,Hub Distribución 568,Rímac,hub_distribución,-12.031624,-77.051417,56,11,18,1
+569,Cliente Final 569,Comas,cliente_final,-11.954198,-77.044021,7,11,16,3
+570,Cliente Final 570,Villa María,cliente_final,-12.180799,-76.963033,5,9,20,4
+571,Cliente Final 571,Barranco,cliente_final,-12.14731,-77.043792,8,11,20,5
+572,Cliente Final 572,Jesús María,cliente_final,-12.095411,-77.033548,7,8,18,5
+573,Punto Reparto 573,Pueblo Libre,punto_reparto,-12.087741,-77.079588,25,8,14,2
+574,Cliente Final 574,Lima Cercado,cliente_final,-12.055136,-77.051048,6,9,14,5
+575,Cliente Final 575,Breña,cliente_final,-12.083785,-77.053129,7,10,20,1
+576,Punto Reparto 576,Miraflores,punto_reparto,-12.103401,-77.022439,8,10,16,5
+577,Punto Reparto 577,San Martín Porres,punto_reparto,-12.013805,-77.068648,21,9,20,3
+578,Punto Reparto 578,Villa El Salvador,punto_reparto,-12.228464,-76.92067,19,9,18,1
+579,Punto Reparto 579,Lince,punto_reparto,-12.100269,-77.043312,8,10,20,1
+580,Cliente Final 580,Surco,cliente_final,-12.130623,-76.988019,3,10,18,3
+581,Punto Reparto 581,Pachacámac,punto_reparto,-12.256448,-76.876192,30,9,20,3
+582,Cliente Final 582,Lince,cliente_final,-12.10904,-77.048709,2,11,20,3
+583,Punto Reparto 583,Barranco,punto_reparto,-12.163445,-77.019934,14,8,14,1
+584,Cliente Final 584,Carabayllo,cliente_final,-11.904394,-77.04294,6,8,16,2
+585,Punto Reparto 585,Jesús María,punto_reparto,-12.058223,-77.020321,10,9,18,5
+586,Punto Reparto 586,Lurín,punto_reparto,-12.297513,-76.867602,19,9,20,2
+587,Punto Reparto 587,San Borja,punto_reparto,-12.091182,-77.020596,25,11,20,1
+588,Cliente Final 588,San Martín Porres,cliente_final,-12.037498,-77.078766,10,9,20,5
+589,Punto Reparto 589,Lurín,punto_reparto,-12.279199,-76.876206,17,8,16,2
+590,Cliente Final 590,Ate,cliente_final,-12.032028,-76.895749,2,8,16,3
+591,Punto Reparto 591,El Agustino,punto_reparto,-12.017233,-76.995655,11,11,14,3
+592,Punto Reparto 592,Lima Cercado,punto_reparto,-12.035893,-77.03422,20,10,20,5
+593,Cliente Final 593,Villa El Salvador,cliente_final,-12.192956,-76.963079,10,8,18,3
+594,Cliente Final 594,Carabayllo,cliente_final,-11.881926,-77.02314,8,9,18,5
+595,Hub Distribución 595,San Miguel,hub_distribución,-12.057144,-77.079867,40,9,18,1
+596,Punto Reparto 596,Villa María,punto_reparto,-12.185067,-76.94018,14,8,16,3
+597,Cliente Final 597,Rímac,cliente_final,-12.016728,-77.031089,3,11,20,5
+598,Cliente Final 598,La Molina,cliente_final,-12.106416,-76.96536,10,11,20,2
+599,Almacén 599,Lince,almacén,-12.106396,-77.058137,0,9,16,4
+600,Punto Reparto 600,Santa Anita,punto_reparto,-12.024075,-76.950025,9,9,18,4
+601,Cliente Final 601,Pueblo Libre,cliente_final,-12.084873,-77.069215,1,10,14,4
+602,Punto Reparto 602,La Molina,punto_reparto,-12.075431,-76.96034,11,11,20,4
+603,Cliente Final 603,Lima Cercado,cliente_final,-12.06538,-77.023085,8,11,20,4
+604,Punto Reparto 604,San Borja,punto_reparto,-12.120148,-77.024453,7,8,16,3
+605,Cliente Final 605,San Isidro,cliente_final,-12.074107,-77.047028,5,9,18,2
+606,Punto Reparto 606,Los Olivos,punto_reparto,-11.983767,-77.075903,19,11,14,5
+607,Cliente Final 607,Surco,cliente_final,-12.165931,-76.993949,5,10,14,4
+608,Punto Reparto 608,Magdalena,punto_reparto,-12.082005,-77.066785,11,11,14,2
+609,Punto Reparto 609,Santa Anita,punto_reparto,-12.023476,-76.946964,6,11,18,3
+610,Hub Distribución 610,Carabayllo,hub_distribución,-11.856001,-77.024906,41,11,14,2
+611,Cliente Final 611,Chorrillos,cliente_final,-12.157596,-77.006912,10,10,20,2
+612,Cliente Final 612,Pueblo Libre,cliente_final,-12.093295,-77.069787,3,9,16,1
+613,Punto Reparto 613,San Miguel,punto_reparto,-12.090669,-77.093092,16,10,16,3
+614,Cliente Final 614,Rímac,cliente_final,-12.03163,-77.026053,5,10,18,5
+615,Punto Reparto 615,Puente Piedra,punto_reparto,-11.882965,-77.098925,26,8,16,4
+616,Punto Reparto 616,Callao,punto_reparto,-12.036654,-77.110709,6,10,16,2
+617,Cliente Final 617,Villa María,cliente_final,-12.147603,-76.923032,3,10,16,4
+618,Cliente Final 618,Lince,cliente_final,-12.064054,-77.049088,3,10,20,4
+619,Cliente Final 619,Pachacámac,cliente_final,-12.233973,-76.8549,2,8,20,5
+620,Punto Reparto 620,San Martín Porres,punto_reparto,-12.006178,-77.062192,13,10,20,4
+621,Cliente Final 621,El Agustino,cliente_final,-12.037749,-76.985767,10,8,14,4
+622,Punto Reparto 622,Breña,punto_reparto,-12.084741,-77.070359,26,10,14,5
+623,Punto Reparto 623,Villa El Salvador,punto_reparto,-12.198701,-76.924111,11,11,16,4
+624,Cliente Final 624,Ate,cliente_final,-12.029707,-76.892965,6,10,18,5
+625,Punto Reparto 625,San Miguel,punto_reparto,-12.074788,-77.082183,9,11,18,1
+626,Cliente Final 626,San Isidro,cliente_final,-12.107623,-77.033549,2,11,14,1
+627,Cliente Final 627,Callao,cliente_final,-12.037334,-77.111185,3,11,20,1
+628,Almacén 628,Lurín,almacén,-12.294996,-76.871922,0,9,16,3
+629,Cliente Final 629,San Borja,cliente_final,-12.121066,-76.989177,5,8,18,3
+630,Cliente Final 630,Barranco,cliente_final,-12.165341,-77.026625,6,9,14,4
+631,Cliente Final 631,Breña,cliente_final,-12.076698,-77.050846,5,9,20,1
+632,Punto Reparto 632,Rímac,punto_reparto,-12.022801,-77.047299,8,8,16,4
+633,Almacén 633,Barranco,almacén,-12.13111,-77.018989,0,9,16,5
+634,Cliente Final 634,Lima Cercado,cliente_final,-12.03225,-77.054334,8,8,14,3
+635,Punto Reparto 635,Comas,punto_reparto,-11.954876,-77.027096,8,11,16,4
+636,Punto Reparto 636,Barranco,punto_reparto,-12.153953,-77.039256,12,11,14,1
+637,Punto Reparto 637,Surco,punto_reparto,-12.128167,-76.974883,15,10,18,2
+638,Cliente Final 638,Villa El Salvador,cliente_final,-12.212569,-76.928896,3,9,14,5
+639,Punto Reparto 639,San Miguel,punto_reparto,-12.072248,-77.092124,5,9,20,3
+640,Hub Distribución 640,San Martín Porres,hub_distribución,-12.010219,-77.094839,57,9,20,5
+641,Punto Reparto 641,Lima Cercado,punto_reparto,-12.052525,-77.01639,19,9,14,1
+642,Hub Distribución 642,La Molina,hub_distribución,-12.07909,-76.945551,45,11,18,4
+643,Punto Reparto 643,El Agustino,punto_reparto,-12.061757,-77.006001,30,9,16,3
+644,Cliente Final 644,Breña,cliente_final,-12.058867,-77.048426,2,9,18,1
+645,Cliente Final 645,Carabayllo,cliente_final,-11.864751,-77.041509,5,9,16,4
+646,Punto Reparto 646,Santa Anita,punto_reparto,-12.046987,-76.983047,25,8,16,4
+647,Cliente Final 647,Villa El Salvador,cliente_final,-12.218288,-76.925755,2,9,20,5
+648,Punto Reparto 648,Barranco,punto_reparto,-12.130869,-77.020837,21,8,18,3
+649,Punto Reparto 649,La Molina,punto_reparto,-12.101127,-76.95319,17,11,18,5
+650,Hub Distribución 650,Lima Cercado,hub_distribución,-12.06587,-77.045069,52,11,14,1
+651,Cliente Final 651,San Miguel,cliente_final,-12.065117,-77.061783,2,8,18,2
+652,Hub Distribución 652,San Isidro,hub_distribución,-12.090372,-77.040738,37,11,18,5
+653,Punto Reparto 653,Los Olivos,punto_reparto,-11.975717,-77.089083,18,11,20,1
+654,Punto Reparto 654,Breña,punto_reparto,-12.04491,-77.059408,22,9,18,1
+655,Punto Reparto 655,Santa Anita,punto_reparto,-12.042512,-76.977676,7,9,16,5
+656,Almacén 656,El Agustino,almacén,-12.048274,-77.03369,0,11,14,3
+657,Punto Reparto 657,Rímac,punto_reparto,-12.012015,-77.043046,18,9,14,2
+658,Punto Reparto 658,Barranco,punto_reparto,-12.155364,-76.999666,18,8,20,5
+659,Cliente Final 659,Pueblo Libre,cliente_final,-12.078217,-77.043063,1,10,16,1
+660,Punto Reparto 660,Miraflores,punto_reparto,-12.134795,-77.013068,27,9,14,2
+661,Punto Reparto 661,Lince,punto_reparto,-12.085852,-77.055026,16,10,16,3
+662,Punto Reparto 662,La Molina,punto_reparto,-12.072103,-76.944777,28,10,14,1
+663,Punto Reparto 663,El Agustino,punto_reparto,-12.028525,-76.996724,30,11,18,5
+664,Cliente Final 664,Barranco,cliente_final,-12.139789,-77.039932,5,8,20,4
+665,Punto Reparto 665,Jesús María,punto_reparto,-12.065452,-77.020469,16,8,20,5
+666,Punto Reparto 666,San Borja,punto_reparto,-12.130547,-77.011391,16,9,18,1
+667,Punto Reparto 667,Puente Piedra,punto_reparto,-11.882651,-77.059687,23,8,16,5
+668,Punto Reparto 668,Miraflores,punto_reparto,-12.130503,-77.01523,6,8,16,1
+669,Punto Reparto 669,Lince,punto_reparto,-12.071164,-77.058432,16,11,16,2
+670,Cliente Final 670,Callao,cliente_final,-12.079319,-77.139867,1,11,16,3
+671,Punto Reparto 671,Villa María,punto_reparto,-12.181438,-76.939479,18,10,18,1
+672,Almacén 672,San Miguel,almacén,-12.084533,-77.066708,0,10,14,5
+673,Punto Reparto 673,Lima Cercado,punto_reparto,-12.037111,-77.00793,6,9,16,5
+674,Punto Reparto 674,San Isidro,punto_reparto,-12.075659,-77.059187,17,8,20,3
+675,Cliente Final 675,Los Olivos,cliente_final,-12.001992,-77.058459,5,10,14,5
+676,Punto Reparto 676,Pachacámac,punto_reparto,-12.244173,-76.864291,5,10,16,3
+677,Cliente Final 677,San Miguel,cliente_final,-12.073633,-77.088503,5,9,20,3
+678,Punto Reparto 678,San Miguel,punto_reparto,-12.071474,-77.094225,20,9,16,2
+679,Punto Reparto 679,Miraflores,punto_reparto,-12.136538,-77.041934,18,8,16,5
+680,Punto Reparto 680,San Juan Lurig.,punto_reparto,-12.142469,-76.976939,25,8,18,1
+681,Cliente Final 681,Los Olivos,cliente_final,-12.009262,-77.051993,7,10,14,2
+682,Punto Reparto 682,Jesús María,punto_reparto,-12.094917,-77.032908,12,11,20,1
+683,Punto Reparto 683,La Molina,punto_reparto,-12.104414,-76.946685,27,10,14,1
+684,Cliente Final 684,Callao,cliente_final,-12.072711,-77.095715,4,11,18,4
+685,Punto Reparto 685,San Martín Porres,punto_reparto,-12.011549,-77.071885,7,8,16,4
+686,Punto Reparto 686,Barranco,punto_reparto,-12.137751,-77.019428,23,8,20,2
+687,Punto Reparto 687,Villa María,punto_reparto,-12.162775,-76.92578,14,10,18,4
+688,Punto Reparto 688,Rímac,punto_reparto,-12.051002,-77.017386,28,10,18,4
+689,Punto Reparto 689,Ate,punto_reparto,-12.042069,-76.926765,12,8,16,2
+690,Punto Reparto 690,Los Olivos,punto_reparto,-11.977162,-77.069031,29,8,16,1
+691,Cliente Final 691,San Borja,cliente_final,-12.089508,-76.981521,8,11,18,4
+692,Cliente Final 692,Surco,cliente_final,-12.16006,-77.002138,9,10,16,4
+693,Punto Reparto 693,Santa Anita,punto_reparto,-12.033299,-76.985542,19,10,14,1
+694,Punto Reparto 694,San Borja,punto_reparto,-12.110203,-76.980039,30,10,14,2
+695,Cliente Final 695,Comas,cliente_final,-11.940109,-77.069726,6,9,14,2
+696,Cliente Final 696,San Juan Lurig.,cliente_final,-12.143895,-76.985979,7,8,18,3
+697,Punto Reparto 697,Comas,punto_reparto,-11.916776,-77.064812,10,8,20,4
+698,Punto Reparto 698,Magdalena,punto_reparto,-12.099843,-77.053657,28,9,14,4
+699,Punto Reparto 699,Surco,punto_reparto,-12.140271,-76.984804,30,9,14,1
+700,Punto Reparto 700,San Isidro,punto_reparto,-12.076745,-77.035149,29,9,16,2
+701,Punto Reparto 701,Comas,punto_reparto,-11.930205,-77.035337,17,10,14,5
+702,Punto Reparto 702,San Miguel,punto_reparto,-12.059041,-77.066393,13,8,14,1
+703,Punto Reparto 703,Chorrillos,punto_reparto,-12.145824,-77.040464,25,11,16,1
+704,Cliente Final 704,Puente Piedra,cliente_final,-11.885789,-77.060301,6,8,14,4
+705,Hub Distribución 705,San Isidro,hub_distribución,-12.114895,-77.039784,51,11,20,4
+706,Cliente Final 706,Miraflores,cliente_final,-12.139927,-77.009079,7,11,16,3
+707,Punto Reparto 707,Chorrillos,punto_reparto,-12.16974,-76.999144,10,10,18,4
+708,Hub Distribución 708,Puente Piedra,hub_distribución,-11.845794,-77.071604,49,8,16,3
+709,Punto Reparto 709,Lince,punto_reparto,-12.101702,-77.017604,18,11,14,1
+710,Punto Reparto 710,Ate,punto_reparto,-12.046888,-76.93437,17,9,20,2
+711,Cliente Final 711,Breña,cliente_final,-12.06053,-77.042632,9,9,14,4
+712,Punto Reparto 712,Independencia,punto_reparto,-12.01103,-77.048425,27,10,20,5
+713,Punto Reparto 713,Independencia,punto_reparto,-11.972091,-77.044047,20,10,18,4
+714,Punto Reparto 714,Ate,punto_reparto,-12.019488,-76.919282,10,8,18,5
+715,Punto Reparto 715,Villa María,punto_reparto,-12.147318,-76.943137,5,10,14,4
+716,Punto Reparto 716,Jesús María,punto_reparto,-12.073589,-77.026888,16,9,16,1
+717,Cliente Final 717,Villa María,cliente_final,-12.179712,-76.930499,4,10,14,2
+718,Punto Reparto 718,San Miguel,punto_reparto,-12.096868,-77.099706,30,11,18,2
+719,Cliente Final 719,San Borja,cliente_final,-12.116003,-77.002982,4,10,18,5
+720,Punto Reparto 720,Miraflores,punto_reparto,-12.111543,-77.022154,27,10,16,5
+721,Cliente Final 721,Chorrillos,cliente_final,-12.152928,-77.023936,8,10,16,4
+722,Cliente Final 722,San Isidro,cliente_final,-12.090793,-77.055487,2,8,16,5
+723,Punto Reparto 723,Villa María,punto_reparto,-12.172145,-76.931784,5,11,14,3
+724,Punto Reparto 724,Callao,punto_reparto,-12.072256,-77.100213,24,9,16,3
+725,Hub Distribución 725,Rímac,hub_distribución,-12.011748,-77.042736,52,10,14,1
+726,Punto Reparto 726,La Molina,punto_reparto,-12.073792,-76.943967,23,9,14,5
+727,Punto Reparto 727,Carabayllo,punto_reparto,-11.894368,-77.053341,16,8,18,4
+728,Cliente Final 728,San Miguel,cliente_final,-12.069242,-77.064785,2,10,18,3
+729,Cliente Final 729,La Molina,cliente_final,-12.070197,-76.930178,3,11,20,3
+730,Cliente Final 730,San Borja,cliente_final,-12.120386,-76.98014,9,10,16,5
+731,Punto Reparto 731,Comas,punto_reparto,-11.936978,-77.069451,10,11,18,3
+732,Punto Reparto 732,La Molina,punto_reparto,-12.085482,-76.926372,10,8,20,5
+733,Punto Reparto 733,San Isidro,punto_reparto,-12.10348,-77.01296,10,10,16,5
+734,Cliente Final 734,Surco,cliente_final,-12.150873,-77.022599,8,9,18,1
+735,Cliente Final 735,Villa María,cliente_final,-12.142496,-76.952098,6,10,16,1
+736,Cliente Final 736,Comas,cliente_final,-11.950389,-77.029461,6,11,14,3
+737,Cliente Final 737,Chorrillos,cliente_final,-12.154755,-77.0466,4,8,18,3
+738,Cliente Final 738,Independencia,cliente_final,-11.978666,-77.069762,2,8,14,4
+739,Punto Reparto 739,Pachacámac,punto_reparto,-12.242924,-76.853362,28,11,16,4
+740,Punto Reparto 740,Lince,punto_reparto,-12.074816,-77.034665,17,10,20,1
+741,Punto Reparto 741,Comas,punto_reparto,-11.952905,-77.07438,20,9,16,4
+742,Punto Reparto 742,Barranco,punto_reparto,-12.155237,-77.016782,30,8,18,1
+743,Punto Reparto 743,El Agustino,punto_reparto,-12.050004,-76.99784,13,8,14,3
+744,Cliente Final 744,San Borja,cliente_final,-12.088255,-76.982887,7,9,14,5
+745,Punto Reparto 745,Puente Piedra,punto_reparto,-11.865339,-77.060385,7,10,20,1
+746,Cliente Final 746,Lurín,cliente_final,-12.299052,-76.883024,3,11,16,1
+747,Cliente Final 747,Surco,cliente_final,-12.170266,-76.99556,6,9,16,4
+748,Punto Reparto 748,Rímac,punto_reparto,-12.010815,-77.030628,22,10,18,3
+749,Punto Reparto 749,Villa María,punto_reparto,-12.146831,-76.936151,8,8,20,5
+750,Cliente Final 750,Magdalena,cliente_final,-12.109507,-77.047819,8,9,14,3
+751,Punto Reparto 751,Miraflores,punto_reparto,-12.102636,-77.009251,18,8,18,5
+752,Punto Reparto 752,Lince,punto_reparto,-12.084128,-77.040179,11,8,14,2
+753,Hub Distribución 753,San Borja,hub_distribución,-12.11167,-76.986806,67,8,20,1
+754,Hub Distribución 754,Santa Anita,hub_distribución,-12.027274,-76.964731,80,11,20,3
+755,Cliente Final 755,Barranco,cliente_final,-12.138735,-77.017115,9,11,16,3
+756,Punto Reparto 756,Puente Piedra,punto_reparto,-11.883128,-77.079382,17,10,16,4
+757,Cliente Final 757,San Isidro,cliente_final,-12.103274,-77.037417,5,11,20,3
+758,Cliente Final 758,Villa María,cliente_final,-12.140873,-76.936067,5,8,16,1
+759,Punto Reparto 759,Barranco,punto_reparto,-12.144987,-77.014995,26,10,20,5
+760,Punto Reparto 760,Villa María,punto_reparto,-12.17568,-76.948007,22,8,20,5
+761,Punto Reparto 761,Lurín,punto_reparto,-12.300718,-76.887999,22,11,16,4
+762,Punto Reparto 762,Santa Anita,punto_reparto,-12.023323,-76.970333,7,11,14,5
+763,Punto Reparto 763,San Miguel,punto_reparto,-12.092095,-77.081161,21,9,14,4
+764,Almacén 764,San Borja,almacén,-12.12305,-76.999671,0,9,16,2
+765,Punto Reparto 765,La Molina,punto_reparto,-12.108117,-76.958647,6,11,14,4
+766,Cliente Final 766,Chorrillos,cliente_final,-12.189599,-77.030557,3,10,18,1
+767,Punto Reparto 767,Barranco,punto_reparto,-12.141698,-77.021067,17,11,18,3
+768,Punto Reparto 768,Jesús María,punto_reparto,-12.051712,-77.048449,19,8,20,1
+769,Punto Reparto 769,Lurín,punto_reparto,-12.272147,-76.889308,9,9,14,1
+770,Punto Reparto 770,San Miguel,punto_reparto,-12.076529,-77.067989,29,8,18,5
+771,Punto Reparto 771,Puente Piedra,punto_reparto,-11.859887,-77.055359,16,11,18,4
+772,Punto Reparto 772,Breña,punto_reparto,-12.073163,-77.058871,20,11,14,2
+773,Cliente Final 773,Ate,cliente_final,-12.034449,-76.889619,7,9,20,1
+774,Cliente Final 774,Villa El Salvador,cliente_final,-12.204605,-76.949531,6,9,14,4
+775,Almacén 775,Callao,almacén,-12.033247,-77.10194,0,10,18,1
+776,Punto Reparto 776,El Agustino,punto_reparto,-12.03318,-77.032443,30,10,18,3
+777,Cliente Final 777,Comas,cliente_final,-11.962024,-77.04481,8,8,16,2
+778,Punto Reparto 778,Santa Anita,punto_reparto,-12.066176,-76.967708,28,11,18,3
+779,Punto Reparto 779,San Martín Porres,punto_reparto,-12.026547,-77.088949,18,8,16,4
+780,Punto Reparto 780,Chorrillos,punto_reparto,-12.157441,-77.04395,18,11,18,1
+781,Cliente Final 781,Jesús María,cliente_final,-12.080561,-77.021214,3,8,18,5
+782,Hub Distribución 782,Villa El Salvador,hub_distribución,-12.201067,-76.946904,47,8,16,2
+783,Cliente Final 783,Puente Piedra,cliente_final,-11.894493,-77.073195,4,8,16,1
+784,Cliente Final 784,Pachacámac,cliente_final,-12.226371,-76.853315,1,10,16,3
+785,Punto Reparto 785,San Juan Lurig.,punto_reparto,-12.178972,-76.959877,19,11,14,1
+786,Almacén 786,Villa María,almacén,-12.161702,-76.958993,0,10,20,5
+787,Punto Reparto 787,Pachacámac,punto_reparto,-12.235898,-76.882248,10,11,18,3
+788,Punto Reparto 788,San Borja,punto_reparto,-12.10454,-77.023313,13,8,18,1
+789,Cliente Final 789,Villa El Salvador,cliente_final,-12.207068,-76.947842,1,9,16,2
+790,Cliente Final 790,Breña,cliente_final,-12.054285,-77.03632,4,9,18,4
+791,Punto Reparto 791,Jesús María,punto_reparto,-12.076803,-77.034652,5,8,20,2
+792,Punto Reparto 792,Breña,punto_reparto,-12.071584,-77.039151,10,8,16,3
+793,Cliente Final 793,Pueblo Libre,cliente_final,-12.059781,-77.045579,5,10,20,4
+794,Punto Reparto 794,Carabayllo,punto_reparto,-11.859168,-77.033451,16,11,18,2
+795,Hub Distribución 795,Pachacámac,hub_distribución,-12.22789,-76.878441,68,11,14,1
+796,Punto Reparto 796,Jesús María,punto_reparto,-12.063021,-77.03388,26,10,18,3
+797,Punto Reparto 797,Lima Cercado,punto_reparto,-12.061957,-77.034574,8,11,14,3
+798,Punto Reparto 798,Ate,punto_reparto,-12.010495,-76.917706,25,10,18,3
+799,Hub Distribución 799,Breña,hub_distribución,-12.085628,-77.046309,68,9,16,5
+800,Punto Reparto 800,Los Olivos,punto_reparto,-11.99797,-77.091414,12,8,20,3
+801,Hub Distribución 801,Lima Cercado,hub_distribución,-12.054739,-77.022244,47,8,20,3
+802,Cliente Final 802,Ate,cliente_final,-12.03677,-76.924105,7,11,20,1
+803,Punto Reparto 803,San Miguel,punto_reparto,-12.0792,-77.077286,27,9,18,2
+804,Punto Reparto 804,Lima Cercado,punto_reparto,-12.046021,-77.054723,22,11,18,5
+805,Punto Reparto 805,Santa Anita,punto_reparto,-12.023699,-76.96769,10,9,18,1
+806,Punto Reparto 806,Lince,punto_reparto,-12.108452,-77.042301,9,10,16,3
+807,Punto Reparto 807,Breña,punto_reparto,-12.085732,-77.040789,7,9,18,2
+808,Punto Reparto 808,San Martín Porres,punto_reparto,-12.030538,-77.049996,14,11,18,3
+809,Cliente Final 809,Ate,cliente_final,-12.007204,-76.919302,10,10,20,1
+810,Cliente Final 810,Lince,cliente_final,-12.079853,-77.020365,1,8,20,2
+811,Punto Reparto 811,Jesús María,punto_reparto,-12.08388,-77.020243,8,11,18,4
+812,Punto Reparto 812,San Isidro,punto_reparto,-12.103224,-77.044781,9,9,16,3
+813,Punto Reparto 813,Lurín,punto_reparto,-12.295293,-76.867314,23,11,16,3
+814,Punto Reparto 814,Carabayllo,punto_reparto,-11.866905,-77.013318,27,9,14,4
+815,Punto Reparto 815,El Agustino,punto_reparto,-12.049883,-77.022033,25,9,18,1
+816,Punto Reparto 816,Miraflores,punto_reparto,-12.141218,-77.036078,19,10,16,2
+817,Punto Reparto 817,San Miguel,punto_reparto,-12.053579,-77.083815,29,9,20,1
+818,Punto Reparto 818,La Molina,punto_reparto,-12.079477,-76.96264,24,11,20,4
+819,Punto Reparto 819,Lurín,punto_reparto,-12.271688,-76.870555,20,11,14,1
+820,Hub Distribución 820,Magdalena,hub_distribución,-12.064508,-77.049284,55,10,14,3
+821,Punto Reparto 821,Los Olivos,punto_reparto,-11.986531,-77.063967,21,9,14,1
+822,Punto Reparto 822,Breña,punto_reparto,-12.067143,-77.076627,28,9,16,3
+823,Cliente Final 823,Santa Anita,cliente_final,-12.044749,-76.975513,3,8,20,5
+824,Punto Reparto 824,San Miguel,punto_reparto,-12.056427,-77.075593,14,9,14,1
+825,Cliente Final 825,Santa Anita,cliente_final,-12.028402,-76.980367,5,11,18,4
+826,Punto Reparto 826,Puente Piedra,punto_reparto,-11.888759,-77.065289,26,9,18,4
+827,Punto Reparto 827,San Juan Lurig.,punto_reparto,-12.141145,-76.957798,29,9,16,4
+828,Punto Reparto 828,Miraflores,punto_reparto,-12.120966,-77.004151,12,9,16,2
+829,Punto Reparto 829,San Martín Porres,punto_reparto,-12.001823,-77.065563,5,9,14,3
+830,Cliente Final 830,Rímac,cliente_final,-12.039311,-77.046539,1,11,18,5
+831,Punto Reparto 831,Pueblo Libre,punto_reparto,-12.080373,-77.061136,6,8,14,1
+832,Cliente Final 832,San Isidro,cliente_final,-12.093636,-77.018521,2,11,20,4
+833,Cliente Final 833,Surco,cliente_final,-12.151621,-76.983324,9,10,20,2
+834,Punto Reparto 834,Chorrillos,punto_reparto,-12.166324,-76.999698,27,8,18,4
+835,Punto Reparto 835,Lima Cercado,punto_reparto,-12.064837,-77.013402,8,10,16,4
+836,Punto Reparto 836,Comas,punto_reparto,-11.922652,-77.030345,8,8,18,1
+837,Punto Reparto 837,Independencia,punto_reparto,-11.970827,-77.062584,8,11,16,5
+838,Almacén 838,Chorrillos,almacén,-12.16367,-77.001181,0,10,16,3
+839,Cliente Final 839,Rímac,cliente_final,-12.029758,-77.022314,7,10,16,1
+840,Punto Reparto 840,Magdalena,punto_reparto,-12.079573,-77.086578,20,9,20,3
+841,Punto Reparto 841,Villa María,punto_reparto,-12.170464,-76.925878,5,8,14,1
+842,Almacén 842,Comas,almacén,-11.954465,-77.027128,0,11,16,1
+843,Cliente Final 843,Los Olivos,cliente_final,-11.965109,-77.061159,9,8,14,3
+844,Cliente Final 844,Breña,cliente_final,-12.072169,-77.077884,4,11,18,3
+845,Punto Reparto 845,Pachacámac,punto_reparto,-12.215293,-76.859976,6,8,16,1
+846,Cliente Final 846,Carabayllo,cliente_final,-11.867329,-77.016554,5,10,18,4
+847,Hub Distribución 847,San Martín Porres,hub_distribución,-12.006694,-77.052704,44,8,14,1
+848,Punto Reparto 848,Carabayllo,punto_reparto,-11.90057,-77.030619,9,9,18,3
+849,Punto Reparto 849,Puente Piedra,punto_reparto,-11.874623,-77.084645,19,10,14,3
+850,Cliente Final 850,Comas,cliente_final,-11.947559,-77.06945,6,9,14,4
+851,Cliente Final 851,Villa El Salvador,cliente_final,-12.187616,-76.961384,8,10,20,4
+852,Punto Reparto 852,Independencia,punto_reparto,-11.988871,-77.070022,18,9,14,2
+853,Cliente Final 853,Rímac,cliente_final,-12.028569,-77.016974,1,9,14,4
+854,Punto Reparto 854,Callao,punto_reparto,-12.078489,-77.139355,23,11,20,2
+855,Punto Reparto 855,Pueblo Libre,punto_reparto,-12.084935,-77.075081,17,10,14,2
+856,Punto Reparto 856,Lince,punto_reparto,-12.069826,-77.015239,20,8,20,4
+857,Punto Reparto 857,San Isidro,punto_reparto,-12.077194,-77.045725,7,10,18,1
+858,Cliente Final 858,Rímac,cliente_final,-12.042299,-77.024676,9,9,18,5
+859,Hub Distribución 859,Jesús María,hub_distribución,-12.068125,-77.050409,42,11,16,4
+860,Punto Reparto 860,San Juan Lurig.,punto_reparto,-12.178854,-76.960567,26,11,16,5
+861,Hub Distribución 861,Puente Piedra,hub_distribución,-11.872533,-77.075707,36,8,16,5
+862,Punto Reparto 862,Carabayllo,punto_reparto,-11.901411,-77.020869,20,11,16,1
+863,Cliente Final 863,Los Olivos,cliente_final,-11.979302,-77.053873,8,10,16,3
+864,Punto Reparto 864,Ate,punto_reparto,-12.027375,-76.908992,6,9,20,4
+865,Punto Reparto 865,Comas,punto_reparto,-11.926233,-77.06143,12,8,20,4
+866,Hub Distribución 866,Independencia,hub_distribución,-12.000786,-77.078309,87,8,20,4
+867,Punto Reparto 867,El Agustino,punto_reparto,-12.062283,-76.997568,8,11,14,1
+868,Punto Reparto 868,Villa El Salvador,punto_reparto,-12.234993,-76.939444,18,8,14,1
+869,Punto Reparto 869,Independencia,punto_reparto,-12.001192,-77.049651,24,10,16,4
+870,Punto Reparto 870,El Agustino,punto_reparto,-12.023033,-77.034809,16,8,16,4
+871,Punto Reparto 871,El Agustino,punto_reparto,-12.027955,-77.019186,22,11,18,4
+872,Cliente Final 872,Surco,cliente_final,-12.153988,-77.01118,2,9,14,3
+873,Cliente Final 873,San Juan Lurig.,cliente_final,-12.169333,-76.965553,5,10,14,1
+874,Punto Reparto 874,Puente Piedra,punto_reparto,-11.873309,-77.059503,10,11,16,4
+875,Cliente Final 875,Surco,cliente_final,-12.123796,-77.020236,5,9,16,1
+876,Hub Distribución 876,Callao,hub_distribución,-12.056309,-77.123618,80,9,20,2
+877,Punto Reparto 877,Rímac,punto_reparto,-12.018407,-77.056482,15,8,20,1
+878,Cliente Final 878,Callao,cliente_final,-12.045348,-77.109681,10,8,20,4
+879,Cliente Final 879,Lima Cercado,cliente_final,-12.032248,-77.008561,10,9,20,1
+880,Cliente Final 880,Jesús María,cliente_final,-12.083397,-77.063032,1,11,20,5
+881,Punto Reparto 881,Los Olivos,punto_reparto,-11.982793,-77.092591,10,9,16,1
+882,Punto Reparto 882,Villa El Salvador,punto_reparto,-12.18716,-76.93998,26,10,20,4
+883,Punto Reparto 883,Pueblo Libre,punto_reparto,-12.076815,-77.076256,27,9,18,4
+884,Cliente Final 884,El Agustino,cliente_final,-12.046509,-77.032382,5,11,16,2
+885,Cliente Final 885,Lurín,cliente_final,-12.282175,-76.853891,10,10,18,5
+886,Punto Reparto 886,Breña,punto_reparto,-12.0763,-77.045732,11,9,16,5
+887,Cliente Final 887,Rímac,cliente_final,-12.009592,-77.045913,5,10,16,2
+888,Punto Reparto 888,Jesús María,punto_reparto,-12.067912,-77.053535,22,10,14,3
+889,Punto Reparto 889,Magdalena,punto_reparto,-12.081618,-77.05637,20,11,18,4
+890,Cliente Final 890,Independencia,cliente_final,-11.982758,-77.065243,1,8,14,4
+891,Punto Reparto 891,La Molina,punto_reparto,-12.098539,-76.925089,6,8,16,3
+892,Punto Reparto 892,Los Olivos,punto_reparto,-11.996611,-77.092095,30,9,18,3
+893,Cliente Final 893,La Molina,cliente_final,-12.082707,-76.95622,1,10,16,5
+894,Punto Reparto 894,San Isidro,punto_reparto,-12.121765,-77.042845,16,11,14,5
+895,Punto Reparto 895,Carabayllo,punto_reparto,-11.904034,-77.048782,26,9,20,2
+896,Punto Reparto 896,Jesús María,punto_reparto,-12.073657,-77.048086,30,10,14,4
+897,Punto Reparto 897,Villa El Salvador,punto_reparto,-12.205243,-76.964504,18,10,14,1
+898,Cliente Final 898,San Martín Porres,cliente_final,-11.996825,-77.069048,5,9,20,2
+899,Cliente Final 899,Callao,cliente_final,-12.065407,-77.1043,6,9,16,3
+900,Punto Reparto 900,Pachacámac,punto_reparto,-12.230935,-76.848199,10,8,16,2
+901,Cliente Final 901,San Martín Porres,cliente_final,-12.044153,-77.056492,9,8,20,1
+902,Almacén 902,Lurín,almacén,-12.29699,-76.881721,0,10,18,2
+903,Punto Reparto 903,San Borja,punto_reparto,-12.118735,-76.986843,23,10,14,3
+904,Almacén 904,Pachacámac,almacén,-12.239595,-76.878413,0,9,14,2
+905,Cliente Final 905,Callao,cliente_final,-12.06601,-77.110677,6,8,18,4
+906,Cliente Final 906,Independencia,cliente_final,-11.972647,-77.08382,10,10,14,3
+907,Punto Reparto 907,Jesús María,punto_reparto,-12.05914,-77.029281,12,9,14,5
+908,Punto Reparto 908,San Borja,punto_reparto,-12.1135,-77.010354,18,11,14,3
+909,Punto Reparto 909,Villa María,punto_reparto,-12.176988,-76.95377,11,10,18,3
+910,Punto Reparto 910,Santa Anita,punto_reparto,-12.034528,-76.96321,11,11,14,1
+911,Cliente Final 911,Lima Cercado,cliente_final,-12.022411,-77.008964,6,11,16,5
+912,Cliente Final 912,Callao,cliente_final,-12.031434,-77.115776,10,9,14,3
+913,Punto Reparto 913,Villa El Salvador,punto_reparto,-12.23122,-76.946716,30,8,20,3
+914,Hub Distribución 914,Magdalena,hub_distribución,-12.104408,-77.08626,66,8,18,5
+915,Punto Reparto 915,Independencia,punto_reparto,-11.975934,-77.056085,21,11,20,1
+916,Punto Reparto 916,Santa Anita,punto_reparto,-12.031344,-76.955102,25,9,18,5
+917,Punto Reparto 917,Barranco,punto_reparto,-12.136593,-77.033705,8,9,14,1
+918,Punto Reparto 918,Chorrillos,punto_reparto,-12.149126,-77.032975,26,9,20,1
+919,Punto Reparto 919,Chorrillos,punto_reparto,-12.150493,-77.012114,22,11,14,2
+920,Hub Distribución 920,Miraflores,hub_distribución,-12.136735,-77.052808,88,10,14,1
+921,Cliente Final 921,Barranco,cliente_final,-12.147916,-77.039986,1,9,18,5
+922,Punto Reparto 922,Barranco,punto_reparto,-12.143817,-77.034605,23,9,18,4
+923,Punto Reparto 923,Villa El Salvador,punto_reparto,-12.201019,-76.961188,19,11,20,3
+924,Punto Reparto 924,Miraflores,punto_reparto,-12.103752,-77.030217,17,8,14,5
+925,Punto Reparto 925,Barranco,punto_reparto,-12.148659,-77.044505,29,8,14,3
+926,Punto Reparto 926,Callao,punto_reparto,-12.058723,-77.132541,21,8,18,3
+927,Cliente Final 927,Pueblo Libre,cliente_final,-12.057518,-77.03764,2,10,20,4
+928,Cliente Final 928,Villa El Salvador,cliente_final,-12.192311,-76.952901,1,11,16,5
+929,Cliente Final 929,Villa María,cliente_final,-12.178554,-76.918529,3,11,18,2
+930,Punto Reparto 930,Santa Anita,punto_reparto,-12.036314,-76.937843,26,10,14,5
+931,Hub Distribución 931,Carabayllo,hub_distribución,-11.892023,-77.03315,48,8,14,1
+932,Cliente Final 932,San Miguel,cliente_final,-12.098246,-77.080583,10,11,14,3
+933,Cliente Final 933,Chorrillos,cliente_final,-12.185495,-77.00787,6,9,20,5
+934,Punto Reparto 934,La Molina,punto_reparto,-12.061315,-76.921593,10,9,16,5
+935,Punto Reparto 935,Comas,punto_reparto,-11.916135,-77.037134,13,9,14,2
+936,Punto Reparto 936,Lima Cercado,punto_reparto,-12.046455,-77.020183,30,8,20,5
+937,Punto Reparto 937,Barranco,punto_reparto,-12.138269,-77.01337,14,8,18,1
+938,Punto Reparto 938,Chorrillos,punto_reparto,-12.166746,-77.008919,28,11,18,3
+939,Punto Reparto 939,La Molina,punto_reparto,-12.107895,-76.969148,26,9,14,3
+940,Hub Distribución 940,Pueblo Libre,hub_distribución,-12.05339,-77.075266,38,9,18,4
+941,Cliente Final 941,Pachacámac,cliente_final,-12.245896,-76.880917,6,10,16,5
+942,Punto Reparto 942,San Miguel,punto_reparto,-12.065457,-77.10693,16,10,20,2
+943,Cliente Final 943,Miraflores,cliente_final,-12.142642,-77.029155,6,9,16,4
+944,Punto Reparto 944,Ate,punto_reparto,-12.049075,-76.920556,16,9,18,4
+945,Punto Reparto 945,Pachacámac,punto_reparto,-12.211023,-76.847337,19,10,18,4
+946,Punto Reparto 946,Magdalena,punto_reparto,-12.07615,-77.074714,8,9,14,3
+947,Cliente Final 947,Carabayllo,cliente_final,-11.867287,-77.009079,3,9,18,1
+948,Cliente Final 948,San Martín Porres,cliente_final,-12.016144,-77.077144,2,8,14,5
+949,Punto Reparto 949,San Miguel,punto_reparto,-12.08935,-77.083496,17,9,14,5
+950,Punto Reparto 950,Ate,punto_reparto,-12.022168,-76.92298,22,11,16,3
+951,Punto Reparto 951,Villa El Salvador,punto_reparto,-12.189088,-76.95991,12,10,16,4
+952,Punto Reparto 952,Jesús María,punto_reparto,-12.087257,-77.066354,21,8,20,3
+953,Punto Reparto 953,Jesús María,punto_reparto,-12.089539,-77.024961,5,9,16,5
+954,Punto Reparto 954,La Molina,punto_reparto,-12.060977,-76.940519,19,9,16,5
+955,Cliente Final 955,San Miguel,cliente_final,-12.072896,-77.085865,3,11,18,1
+956,Cliente Final 956,Villa María,cliente_final,-12.174275,-76.948447,8,9,14,3
+957,Punto Reparto 957,San Juan Lurig.,punto_reparto,-12.137677,-76.960372,12,8,16,5
+958,Punto Reparto 958,Callao,punto_reparto,-12.041982,-77.119183,30,10,20,4
+959,Punto Reparto 959,Callao,punto_reparto,-12.070766,-77.113443,19,8,14,3
+960,Punto Reparto 960,Surco,punto_reparto,-12.155422,-76.981948,27,10,18,5
+961,Cliente Final 961,Magdalena,cliente_final,-12.110642,-77.08985,10,9,20,4
+962,Cliente Final 962,San Juan Lurig.,cliente_final,-12.159654,-76.984529,10,8,18,4
+963,Cliente Final 963,Callao,cliente_final,-12.039209,-77.12639,4,11,18,3
+964,Punto Reparto 964,Lince,punto_reparto,-12.071444,-77.028967,30,11,14,5
+965,Punto Reparto 965,Puente Piedra,punto_reparto,-11.851206,-77.078045,9,11,16,2
+966,Punto Reparto 966,Barranco,punto_reparto,-12.149039,-77.044821,21,10,16,2
+967,Punto Reparto 967,San Borja,punto_reparto,-12.095123,-77.025499,10,10,14,2
+968,Cliente Final 968,Lurín,cliente_final,-12.276874,-76.892268,6,8,20,4
+969,Punto Reparto 969,Lince,punto_reparto,-12.098694,-77.04649,11,9,20,1
+970,Cliente Final 970,Villa María,cliente_final,-12.176879,-76.966026,1,9,16,2
+971,Cliente Final 971,Breña,cliente_final,-12.038558,-77.067385,9,8,16,1
+972,Punto Reparto 972,San Borja,punto_reparto,-12.096305,-76.983079,13,9,20,5
+973,Cliente Final 973,San Miguel,cliente_final,-12.086753,-77.095435,1,10,14,2
+974,Punto Reparto 974,Pachacámac,punto_reparto,-12.216161,-76.887919,24,11,20,2
+975,Cliente Final 975,Villa María,cliente_final,-12.143303,-76.925765,7,9,16,5
+976,Hub Distribución 976,Lima Cercado,hub_distribución,-12.032588,-77.03644,95,10,16,3
+977,Punto Reparto 977,Callao,punto_reparto,-12.047949,-77.139077,19,8,16,4
+978,Cliente Final 978,Villa El Salvador,cliente_final,-12.199534,-76.956634,3,8,14,2
+979,Punto Reparto 979,Jesús María,punto_reparto,-12.069111,-77.020689,21,11,16,5
+980,Punto Reparto 980,Surco,punto_reparto,-12.158734,-76.994622,10,11,14,5
+981,Punto Reparto 981,Jesús María,punto_reparto,-12.062579,-77.03035,29,8,14,4
+982,Punto Reparto 982,Lima Cercado,punto_reparto,-12.044607,-77.030655,9,8,20,5
+983,Cliente Final 983,Lurín,cliente_final,-12.256354,-76.853625,6,8,20,2
+984,Cliente Final 984,Independencia,cliente_final,-11.979284,-77.061914,8,11,18,5
+985,Cliente Final 985,Independencia,cliente_final,-11.98027,-77.048551,10,8,20,2
+986,Punto Reparto 986,Ate,punto_reparto,-12.041296,-76.894646,20,9,14,3
+987,Cliente Final 987,Pueblo Libre,cliente_final,-12.082433,-77.069919,9,11,18,2
+988,Cliente Final 988,Miraflores,cliente_final,-12.101273,-77.018142,1,8,14,4
+989,Punto Reparto 989,Breña,punto_reparto,-12.058796,-77.031245,11,10,20,3
+990,Cliente Final 990,Surco,cliente_final,-12.152974,-77.016548,3,11,18,3
+991,Almacén 991,Carabayllo,almacén,-11.868278,-77.035782,0,11,18,5
+992,Cliente Final 992,Ate,cliente_final,-12.01305,-76.934429,7,9,20,5
+993,Punto Reparto 993,Independencia,punto_reparto,-11.966487,-77.063117,22,11,16,3
+994,Punto Reparto 994,Magdalena,punto_reparto,-12.078956,-77.052444,22,11,18,3
+995,Punto Reparto 995,San Miguel,punto_reparto,-12.053548,-77.109117,16,11,16,1
+996,Punto Reparto 996,San Martín Porres,punto_reparto,-12.009077,-77.051868,12,11,16,1
+997,Punto Reparto 997,Chorrillos,punto_reparto,-12.155,-77.019865,21,11,18,5
+998,Punto Reparto 998,Pueblo Libre,punto_reparto,-12.093114,-77.043435,27,8,16,4
+999,Cliente Final 999,Breña,cliente_final,-12.071411,-77.064098,1,8,16,4
+1000,Punto Reparto 1000,Callao,punto_reparto,-12.047365,-77.103166,24,11,14,1
+1001,Cliente Final 1001,Ate,cliente_final,-12.023756,-76.906413,4,10,14,5
+1002,Cliente Final 1002,San Isidro,cliente_final,-12.077196,-77.061192,7,11,18,5
+1003,Punto Reparto 1003,San Isidro,punto_reparto,-12.119908,-77.034357,29,9,20,4
+1004,Hub Distribución 1004,Miraflores,hub_distribución,-12.128761,-77.035552,55,10,16,1
+1005,Punto Reparto 1005,Independencia,punto_reparto,-11.998298,-77.048365,24,9,16,1
+1006,Punto Reparto 1006,San Juan Lurig.,punto_reparto,-12.181582,-76.965812,12,8,16,1
+1007,Punto Reparto 1007,Ate,punto_reparto,-12.033362,-76.900728,29,11,18,4
+1008,Cliente Final 1008,Villa El Salvador,cliente_final,-12.232171,-76.946304,10,9,14,1
+1009,Hub Distribución 1009,Callao,hub_distribución,-12.048913,-77.109426,41,10,18,3
+1010,Cliente Final 1010,Comas,cliente_final,-11.95505,-77.054083,5,9,16,4
+1011,Punto Reparto 1011,Callao,punto_reparto,-12.075931,-77.129107,17,8,18,2
+1012,Punto Reparto 1012,Lurín,punto_reparto,-12.281399,-76.845982,21,8,14,5
+1013,Cliente Final 1013,Santa Anita,cliente_final,-12.045965,-76.977932,6,8,18,5
+1014,Cliente Final 1014,Comas,cliente_final,-11.959335,-77.05482,10,10,20,4
+1015,Punto Reparto 1015,San Miguel,punto_reparto,-12.066672,-77.090564,20,9,18,4
+1016,Punto Reparto 1016,Lima Cercado,punto_reparto,-12.050419,-77.042886,19,8,20,1
+1017,Punto Reparto 1017,Ate,punto_reparto,-12.030848,-76.921573,7,11,16,2
+1018,Hub Distribución 1018,Independencia,hub_distribución,-11.982162,-77.036573,70,11,18,5
+1019,Cliente Final 1019,Magdalena,cliente_final,-12.110351,-77.089521,1,10,16,3
+1020,Hub Distribución 1020,Barranco,hub_distribución,-12.155435,-77.042097,81,10,14,5
+1021,Punto Reparto 1021,Callao,punto_reparto,-12.049818,-77.110575,10,11,18,3
+1022,Punto Reparto 1022,Chorrillos,punto_reparto,-12.194244,-76.999249,23,10,16,2
+1023,Hub Distribución 1023,Lince,hub_distribución,-12.076199,-77.026369,55,9,16,3
+1024,Hub Distribución 1024,Chorrillos,hub_distribución,-12.179355,-77.033945,59,9,16,5
+1025,Punto Reparto 1025,San Juan Lurig.,punto_reparto,-12.141695,-76.957663,9,8,14,1
+1026,Cliente Final 1026,Lima Cercado,cliente_final,-12.062559,-77.008863,8,8,14,4
+1027,Hub Distribución 1027,San Juan Lurig.,hub_distribución,-12.14085,-76.994868,70,11,18,4
+1028,Punto Reparto 1028,San Borja,punto_reparto,-12.098343,-76.991494,29,10,20,2
+1029,Punto Reparto 1029,Los Olivos,punto_reparto,-12.01423,-77.065854,23,9,14,5
+1030,Punto Reparto 1030,Independencia,punto_reparto,-11.992487,-77.037121,18,11,14,5
+1031,Cliente Final 1031,San Juan Lurig.,cliente_final,-12.14301,-76.995573,7,9,20,1
+1032,Almacén 1032,Rímac,almacén,-12.00475,-77.051605,0,11,18,1
+1033,Cliente Final 1033,Miraflores,cliente_final,-12.122421,-77.048569,4,11,14,3
+1034,Punto Reparto 1034,San Juan Lurig.,punto_reparto,-12.139273,-76.983299,24,10,16,5
+1035,Almacén 1035,Ate,almacén,-12.03328,-76.898828,0,9,18,4
+1036,Hub Distribución 1036,Pueblo Libre,hub_distribución,-12.070227,-77.056035,73,10,16,4
+1037,Punto Reparto 1037,Lurín,punto_reparto,-12.290899,-76.859297,11,11,18,3
+1038,Cliente Final 1038,Carabayllo,cliente_final,-11.895036,-77.011126,7,10,20,2
+1039,Punto Reparto 1039,San Miguel,punto_reparto,-12.101213,-77.099281,9,9,14,3
+1040,Punto Reparto 1040,Independencia,punto_reparto,-12.00146,-77.072622,12,11,20,2
+1041,Hub Distribución 1041,La Molina,hub_distribución,-12.085553,-76.932963,49,11,14,2
+1042,Cliente Final 1042,Lurín,cliente_final,-12.269356,-76.890943,8,9,18,4
+1043,Cliente Final 1043,Santa Anita,cliente_final,-12.029975,-76.946645,5,8,20,1
+1044,Punto Reparto 1044,Rímac,punto_reparto,-12.006964,-77.029487,10,8,16,3
+1045,Cliente Final 1045,Lince,cliente_final,-12.079161,-77.024556,2,11,18,3
+1046,Punto Reparto 1046,San Juan Lurig.,punto_reparto,-12.158928,-77.001577,16,10,18,1
+1047,Punto Reparto 1047,Lurín,punto_reparto,-12.256962,-76.865778,8,10,16,5
+1048,Cliente Final 1048,San Miguel,cliente_final,-12.088457,-77.093278,9,9,18,3
+1049,Punto Reparto 1049,El Agustino,punto_reparto,-12.031677,-76.995631,26,11,20,1
+1050,Cliente Final 1050,Villa El Salvador,cliente_final,-12.203488,-76.952581,10,10,20,2
+1051,Hub Distribución 1051,Carabayllo,hub_distribución,-11.88362,-77.032873,51,10,20,5
+1052,Cliente Final 1052,San Miguel,cliente_final,-12.055086,-77.1085,7,8,14,2
+1053,Almacén 1053,El Agustino,almacén,-12.050381,-77.012804,0,9,18,3
+1054,Punto Reparto 1054,Breña,punto_reparto,-12.071848,-77.053468,14,10,20,3
+1055,Punto Reparto 1055,Puente Piedra,punto_reparto,-11.870445,-77.058644,19,10,20,4
+1056,Cliente Final 1056,San Borja,cliente_final,-12.095178,-77.005016,3,8,16,2
+1057,Punto Reparto 1057,Lima Cercado,punto_reparto,-12.057288,-77.048125,13,8,16,2
+1058,Cliente Final 1058,Villa El Salvador,cliente_final,-12.231475,-76.955718,2,8,14,4
+1059,Cliente Final 1059,Magdalena,cliente_final,-12.070115,-77.052594,1,8,20,5
+1060,Punto Reparto 1060,Los Olivos,punto_reparto,-12.009478,-77.080541,7,8,18,5
+1061,Punto Reparto 1061,La Molina,punto_reparto,-12.096002,-76.94385,7,11,18,2
+1062,Cliente Final 1062,Villa María,cliente_final,-12.170556,-76.948411,5,11,16,2
+1063,Cliente Final 1063,Jesús María,cliente_final,-12.058835,-77.05291,3,8,14,3
+1064,Punto Reparto 1064,Carabayllo,punto_reparto,-11.857359,-77.038663,15,11,20,5
+1065,Cliente Final 1065,Callao,cliente_final,-12.055718,-77.095944,5,11,16,5
+1066,Punto Reparto 1066,San Borja,punto_reparto,-12.128272,-77.005863,23,11,20,5
+1067,Cliente Final 1067,Breña,cliente_final,-12.061743,-77.068907,9,10,18,4
+1068,Cliente Final 1068,Magdalena,cliente_final,-12.080353,-77.051405,4,8,20,3
+1069,Hub Distribución 1069,San Juan Lurig.,hub_distribución,-12.147582,-76.983039,82,10,16,3
+1070,Punto Reparto 1070,Miraflores,punto_reparto,-12.136082,-77.019518,5,9,18,3
+1071,Punto Reparto 1071,Lince,punto_reparto,-12.075303,-77.05022,22,8,20,4
+1072,Cliente Final 1072,Santa Anita,cliente_final,-12.063636,-76.9868,1,11,18,5
+1073,Punto Reparto 1073,Villa María,punto_reparto,-12.15178,-76.940353,30,8,18,2
+1074,Punto Reparto 1074,Lurín,punto_reparto,-12.298822,-76.894044,22,11,20,2
+1075,Punto Reparto 1075,San Borja,punto_reparto,-12.088857,-77.013423,27,11,20,2
+1076,Punto Reparto 1076,Ate,punto_reparto,-12.049733,-76.923882,7,11,16,5
+1077,Punto Reparto 1077,Los Olivos,punto_reparto,-11.984612,-77.082732,30,10,18,5
+1078,Punto Reparto 1078,Independencia,punto_reparto,-11.995448,-77.07329,13,11,16,1
+1079,Punto Reparto 1079,San Borja,punto_reparto,-12.085407,-76.994685,9,10,14,4
+1080,Punto Reparto 1080,Pueblo Libre,punto_reparto,-12.078911,-77.065253,19,10,20,2
+1081,Punto Reparto 1081,El Agustino,punto_reparto,-12.030179,-76.999893,5,9,14,5
+1082,Cliente Final 1082,Miraflores,cliente_final,-12.119094,-77.032602,3,8,18,3
+1083,Punto Reparto 1083,La Molina,punto_reparto,-12.076929,-76.942975,27,11,14,2
+1084,Punto Reparto 1084,Barranco,punto_reparto,-12.140018,-77.04084,9,8,20,2
+1085,Punto Reparto 1085,El Agustino,punto_reparto,-12.057858,-77.000396,18,10,20,3
+1086,Punto Reparto 1086,Pachacámac,punto_reparto,-12.237407,-76.852216,27,8,18,1
+1087,Almacén 1087,Comas,almacén,-11.93961,-77.054036,0,9,14,3
+1088,Punto Reparto 1088,Los Olivos,punto_reparto,-11.975362,-77.091548,17,8,20,2
+1089,Cliente Final 1089,Chorrillos,cliente_final,-12.166966,-77.016079,5,11,14,1
+1090,Cliente Final 1090,Los Olivos,cliente_final,-12.002336,-77.094501,4,11,20,2
+1091,Cliente Final 1091,San Martín Porres,cliente_final,-12.018217,-77.053194,1,9,20,1
+1092,Punto Reparto 1092,Jesús María,punto_reparto,-12.056134,-77.044045,26,9,20,4
+1093,Punto Reparto 1093,Lima Cercado,punto_reparto,-12.030722,-77.033535,14,10,16,1
+1094,Punto Reparto 1094,San Martín Porres,punto_reparto,-12.002251,-77.050872,22,8,18,4
+1095,Cliente Final 1095,Breña,cliente_final,-12.083115,-77.059209,5,9,18,1
+1096,Punto Reparto 1096,Carabayllo,punto_reparto,-11.859911,-77.044826,26,9,14,2
+1097,Punto Reparto 1097,Breña,punto_reparto,-12.043032,-77.05913,18,10,14,2
+1098,Hub Distribución 1098,Independencia,hub_distribución,-11.966597,-77.081672,65,8,20,2
+1099,Cliente Final 1099,Miraflores,cliente_final,-12.140395,-77.034427,1,11,16,3
+1100,Punto Reparto 1100,Los Olivos,punto_reparto,-11.993326,-77.045141,7,9,16,4
+1101,Punto Reparto 1101,Barranco,punto_reparto,-12.154242,-77.035694,26,10,14,1
+1102,Punto Reparto 1102,San Juan Lurig.,punto_reparto,-12.166373,-77.001564,25,9,14,2
+1103,Cliente Final 1103,Lince,cliente_final,-12.086788,-77.025563,4,10,18,4
+1104,Punto Reparto 1104,San Martín Porres,punto_reparto,-12.009562,-77.094582,11,8,20,3
+1105,Almacén 1105,San Martín Porres,almacén,-12.011916,-77.070801,0,9,18,1
+1106,Punto Reparto 1106,Lince,punto_reparto,-12.069775,-77.02306,27,11,18,5
+1107,Hub Distribución 1107,Rímac,hub_distribución,-12.050277,-77.018374,92,9,16,5
+1108,Cliente Final 1108,San Juan Lurig.,cliente_final,-12.145902,-76.967413,6,11,18,5
+1109,Cliente Final 1109,Callao,cliente_final,-12.0551,-77.135984,9,9,14,5
+1110,Punto Reparto 1110,La Molina,punto_reparto,-12.077476,-76.932487,19,10,18,5
+1111,Cliente Final 1111,San Juan Lurig.,cliente_final,-12.175251,-76.96048,8,8,20,2
+1112,Hub Distribución 1112,Puente Piedra,hub_distribución,-11.849589,-77.067064,32,10,16,3
+1113,Punto Reparto 1113,San Martín Porres,punto_reparto,-12.012293,-77.050544,7,11,16,5
+1114,Punto Reparto 1114,Lima Cercado,punto_reparto,-12.03868,-77.048276,20,9,18,3
+1115,Punto Reparto 1115,Lurín,punto_reparto,-12.26718,-76.881453,25,10,14,1
+1116,Punto Reparto 1116,Jesús María,punto_reparto,-12.082609,-77.056225,26,8,14,2
+1117,Punto Reparto 1117,San Borja,punto_reparto,-12.112157,-76.980108,6,9,14,4
+1118,Cliente Final 1118,Chorrillos,cliente_final,-12.185604,-77.043651,2,8,20,4
+1119,Cliente Final 1119,Jesús María,cliente_final,-12.07916,-77.027208,10,10,14,3
+1120,Cliente Final 1120,Villa María,cliente_final,-12.148588,-76.952503,10,8,14,2
+1121,Hub Distribución 1121,Breña,hub_distribución,-12.073697,-77.031647,92,8,20,1
+1122,Punto Reparto 1122,San Juan Lurig.,punto_reparto,-12.168774,-76.991524,22,11,18,1
+1123,Hub Distribución 1123,Comas,hub_distribución,-11.930268,-77.064064,64,8,14,3
+1124,Cliente Final 1124,Barranco,cliente_final,-12.157068,-77.013602,4,8,14,2
+1125,Punto Reparto 1125,Magdalena,punto_reparto,-12.075299,-77.055257,17,9,16,5
+1126,Punto Reparto 1126,Lima Cercado,punto_reparto,-12.065881,-77.021153,12,9,20,1
+1127,Punto Reparto 1127,Los Olivos,punto_reparto,-11.993383,-77.093443,25,10,20,4
+1128,Punto Reparto 1128,Puente Piedra,punto_reparto,-11.893316,-77.061041,8,9,16,5
+1129,Cliente Final 1129,Villa El Salvador,cliente_final,-12.207133,-76.963051,9,10,16,5
+1130,Cliente Final 1130,Pueblo Libre,cliente_final,-12.083549,-77.041804,8,10,18,5
+1131,Cliente Final 1131,El Agustino,cliente_final,-12.048735,-76.989952,6,11,20,3
+1132,Punto Reparto 1132,Pueblo Libre,punto_reparto,-12.058429,-77.044456,12,9,20,5
+1133,Punto Reparto 1133,Callao,punto_reparto,-12.052165,-77.139637,28,10,18,4
+1134,Cliente Final 1134,Pachacámac,cliente_final,-12.207055,-76.880668,7,8,14,3
+1135,Cliente Final 1135,Pueblo Libre,cliente_final,-12.059367,-77.043799,1,9,18,1
+1136,Punto Reparto 1136,Santa Anita,punto_reparto,-12.059825,-76.984882,12,9,18,1
+1137,Punto Reparto 1137,Los Olivos,punto_reparto,-12.008496,-77.093879,27,10,16,1
+1138,Punto Reparto 1138,San Isidro,punto_reparto,-12.083313,-77.033491,19,10,16,2
+1139,Almacén 1139,Ate,almacén,-12.022283,-76.923399,0,10,16,2
+1140,Cliente Final 1140,Ate,cliente_final,-12.016782,-76.903813,5,8,20,5
+1141,Hub Distribución 1141,Callao,hub_distribución,-12.079053,-77.101144,57,8,18,4
+1142,Cliente Final 1142,San Borja,cliente_final,-12.10523,-76.994269,8,8,18,1
+1143,Cliente Final 1143,San Martín Porres,cliente_final,-12.015653,-77.065952,10,11,14,1
+1144,Cliente Final 1144,Callao,cliente_final,-12.043163,-77.120885,6,10,20,4
+1145,Hub Distribución 1145,Callao,hub_distribución,-12.061538,-77.131556,45,9,14,4
+1146,Punto Reparto 1146,San Isidro,punto_reparto,-12.076091,-77.015343,14,8,18,5
+1147,Cliente Final 1147,San Miguel,cliente_final,-12.075516,-77.101118,3,10,16,2
+1148,Cliente Final 1148,San Isidro,cliente_final,-12.073444,-77.029325,7,11,14,2
+1149,Punto Reparto 1149,Lurín,punto_reparto,-12.267245,-76.865342,14,11,16,2
+1150,Cliente Final 1150,El Agustino,cliente_final,-12.042262,-77.001261,2,11,14,5
+1151,Punto Reparto 1151,Villa El Salvador,punto_reparto,-12.216344,-76.917915,13,8,20,5
+1152,Cliente Final 1152,Lurín,cliente_final,-12.277982,-76.860456,3,9,20,5
+1153,Punto Reparto 1153,Chorrillos,punto_reparto,-12.162568,-77.033736,20,11,16,5
+1154,Punto Reparto 1154,Pueblo Libre,punto_reparto,-12.067903,-77.056735,28,9,16,1
+1155,Cliente Final 1155,Ate,cliente_final,-12.019743,-76.912241,7,10,14,1
+1156,Almacén 1156,Lima Cercado,almacén,-12.028432,-77.047614,0,11,20,3
+1157,Cliente Final 1157,San Juan Lurig.,cliente_final,-12.146045,-76.974515,4,10,18,5
+1158,Cliente Final 1158,Breña,cliente_final,-12.044992,-77.038459,1,10,16,3
+1159,Punto Reparto 1159,Pueblo Libre,punto_reparto,-12.072903,-77.062275,30,11,16,4
+1160,Punto Reparto 1160,San Isidro,punto_reparto,-12.114815,-77.03317,12,9,18,2
+1161,Hub Distribución 1161,Los Olivos,hub_distribución,-11.968935,-77.06584,40,8,14,2
+1162,Punto Reparto 1162,Pueblo Libre,punto_reparto,-12.081954,-77.084101,9,10,14,3
+1163,Hub Distribución 1163,Rímac,hub_distribución,-12.032433,-77.052472,44,10,20,4
+1164,Cliente Final 1164,Miraflores,cliente_final,-12.100051,-77.009054,6,9,16,2
+1165,Cliente Final 1165,Magdalena,cliente_final,-12.103638,-77.05015,9,10,20,5
+1166,Punto Reparto 1166,San Martín Porres,punto_reparto,-12.035167,-77.058129,9,8,20,5
+1167,Punto Reparto 1167,Puente Piedra,punto_reparto,-11.854868,-77.055138,26,8,18,2
+1168,Cliente Final 1168,San Isidro,cliente_final,-12.077632,-77.030668,5,9,18,1
+1169,Punto Reparto 1169,Pachacámac,punto_reparto,-12.23375,-76.854631,25,8,14,4
+1170,Cliente Final 1170,Lima Cercado,cliente_final,-12.053536,-77.052749,5,10,14,1
+1171,Cliente Final 1171,Santa Anita,cliente_final,-12.031051,-76.944273,7,9,20,5
+1172,Punto Reparto 1172,Rímac,punto_reparto,-12.049345,-77.03742,8,10,20,5
+1173,Punto Reparto 1173,Magdalena,punto_reparto,-12.10366,-77.081832,7,9,16,5
+1174,Punto Reparto 1174,Pachacámac,punto_reparto,-12.243572,-76.891951,22,8,14,2
+1175,Cliente Final 1175,Callao,cliente_final,-12.073636,-77.094346,9,10,18,4
+1176,Punto Reparto 1176,Villa El Salvador,punto_reparto,-12.186612,-76.943013,28,9,14,3
+1177,Punto Reparto 1177,Lima Cercado,punto_reparto,-12.030385,-77.039787,16,10,18,2
+1178,Punto Reparto 1178,Jesús María,punto_reparto,-12.086675,-77.061816,13,8,18,4
+1179,Punto Reparto 1179,Puente Piedra,punto_reparto,-11.877234,-77.0713,5,10,16,2
+1180,Punto Reparto 1180,El Agustino,punto_reparto,-12.054475,-76.994549,17,9,14,4
+1181,Punto Reparto 1181,Jesús María,punto_reparto,-12.081168,-77.025067,26,9,20,2
+1182,Punto Reparto 1182,San Miguel,punto_reparto,-12.097763,-77.087473,9,11,18,5
+1183,Punto Reparto 1183,El Agustino,punto_reparto,-12.03683,-76.99481,19,9,16,2
+1184,Punto Reparto 1184,San Miguel,punto_reparto,-12.072865,-77.086425,22,9,16,3
+1185,Punto Reparto 1185,Rímac,punto_reparto,-12.0224,-77.043018,27,9,20,2
+1186,Punto Reparto 1186,Breña,punto_reparto,-12.082786,-77.055621,23,9,18,1
+1187,Punto Reparto 1187,Magdalena,punto_reparto,-12.073081,-77.090451,22,8,16,3
+1188,Punto Reparto 1188,Comas,punto_reparto,-11.942078,-77.03875,9,8,18,4
+1189,Cliente Final 1189,Lurín,cliente_final,-12.269639,-76.856148,5,11,18,2
+1190,Cliente Final 1190,Los Olivos,cliente_final,-11.999306,-77.068099,4,8,16,2
+1191,Punto Reparto 1191,Miraflores,punto_reparto,-12.094627,-77.008724,29,10,16,5
+1192,Cliente Final 1192,Villa María,cliente_final,-12.178642,-76.94163,4,8,18,1
+1193,Cliente Final 1193,Rímac,cliente_final,-12.028972,-77.032541,8,9,20,3
+1194,Punto Reparto 1194,San Borja,punto_reparto,-12.11533,-76.98251,17,11,20,2
+1195,Cliente Final 1195,San Borja,cliente_final,-12.116988,-77.002801,4,9,14,4
+1196,Cliente Final 1196,Los Olivos,cliente_final,-12.0087,-77.085179,1,10,20,2
+1197,Punto Reparto 1197,San Martín Porres,punto_reparto,-12.036225,-77.066614,26,9,16,1
+1198,Punto Reparto 1198,San Borja,punto_reparto,-12.108919,-76.993263,19,11,18,4
+1199,Cliente Final 1199,Puente Piedra,cliente_final,-11.867367,-77.086391,4,11,20,1
+1200,Punto Reparto 1200,Pueblo Libre,punto_reparto,-12.092639,-77.058156,28,11,18,4
+1201,Punto Reparto 1201,Pueblo Libre,punto_reparto,-12.085768,-77.075765,28,8,14,4
+1202,Cliente Final 1202,Pachacámac,cliente_final,-12.215714,-76.882715,1,9,20,1
+1203,Punto Reparto 1203,Magdalena,punto_reparto,-12.065704,-77.064737,17,8,16,3
+1204,Punto Reparto 1204,Pachacámac,punto_reparto,-12.238273,-76.857113,17,10,18,4
+1205,Cliente Final 1205,San Borja,cliente_final,-12.129049,-76.997661,7,10,14,5
+1206,Cliente Final 1206,Puente Piedra,cliente_final,-11.855204,-77.096244,3,11,20,1
+1207,Cliente Final 1207,San Martín Porres,cliente_final,-12.033975,-77.08409,9,8,16,5
+1208,Almacén 1208,Puente Piedra,almacén,-11.882517,-77.091838,0,9,20,4
+1209,Hub Distribución 1209,El Agustino,hub_distribución,-12.021467,-76.99537,87,8,16,4
+1210,Punto Reparto 1210,San Miguel,punto_reparto,-12.064387,-77.104098,27,9,20,1
+1211,Punto Reparto 1211,Ate,punto_reparto,-12.037439,-76.930311,15,9,14,1
+1212,Punto Reparto 1212,Surco,punto_reparto,-12.125963,-77.022697,27,11,18,1
+1213,Cliente Final 1213,Jesús María,cliente_final,-12.087923,-77.056393,7,9,20,5
+1214,Cliente Final 1214,Villa El Salvador,cliente_final,-12.211597,-76.941685,1,9,18,5
+1215,Punto Reparto 1215,Carabayllo,punto_reparto,-11.897275,-77.030637,26,9,16,2
+1216,Cliente Final 1216,San Borja,cliente_final,-12.103554,-76.975522,1,11,18,3
+1217,Punto Reparto 1217,San Martín Porres,punto_reparto,-12.025107,-77.053622,29,11,18,2
+1218,Punto Reparto 1218,Surco,punto_reparto,-12.170477,-77.014478,9,9,14,5
+1219,Cliente Final 1219,Los Olivos,cliente_final,-11.989471,-77.064244,5,8,20,4
+1220,Punto Reparto 1220,Carabayllo,punto_reparto,-11.879507,-77.029936,20,8,20,2
+1221,Punto Reparto 1221,Chorrillos,punto_reparto,-12.193254,-77.019942,23,11,20,4
+1222,Almacén 1222,Pachacámac,almacén,-12.215041,-76.888966,0,8,14,2
+1223,Punto Reparto 1223,Puente Piedra,punto_reparto,-11.872548,-77.093126,22,10,16,1
+1224,Hub Distribución 1224,San Borja,hub_distribución,-12.09717,-77.01992,48,8,18,1
+1225,Punto Reparto 1225,La Molina,punto_reparto,-12.094448,-76.960925,6,10,18,1
+1226,Cliente Final 1226,San Isidro,cliente_final,-12.082428,-77.042195,2,11,16,2
+1227,Punto Reparto 1227,Lima Cercado,punto_reparto,-12.064026,-77.017461,14,9,20,5
+1228,Cliente Final 1228,San Juan Lurig.,cliente_final,-12.15113,-76.976711,1,8,18,3
+1229,Almacén 1229,San Juan Lurig.,almacén,-12.165634,-77.001692,0,11,14,4
+1230,Cliente Final 1230,Comas,cliente_final,-11.923657,-77.048763,9,8,18,4
+1231,Punto Reparto 1231,La Molina,punto_reparto,-12.096779,-76.952346,8,10,18,5
+1232,Cliente Final 1232,Lurín,cliente_final,-12.254925,-76.861607,9,9,16,5
+1233,Cliente Final 1233,San Isidro,cliente_final,-12.109225,-77.031227,2,8,20,5
+1234,Cliente Final 1234,Callao,cliente_final,-12.065123,-77.100595,5,11,18,3
+1235,Punto Reparto 1235,Jesús María,punto_reparto,-12.054057,-77.031347,23,10,16,5
+1236,Almacén 1236,San Miguel,almacén,-12.087819,-77.063532,0,11,20,4
+1237,Hub Distribución 1237,Independencia,hub_distribución,-11.979198,-77.049688,53,9,18,2
+1238,Punto Reparto 1238,Miraflores,punto_reparto,-12.094595,-77.037606,8,8,20,1
+1239,Punto Reparto 1239,San Martín Porres,punto_reparto,-12.041053,-77.07286,11,11,20,1
+1240,Cliente Final 1240,El Agustino,cliente_final,-12.047831,-76.993271,6,9,14,2
+1241,Cliente Final 1241,Rímac,cliente_final,-12.044313,-77.038075,5,10,14,3
+1242,Punto Reparto 1242,Santa Anita,punto_reparto,-12.06881,-76.982282,21,10,14,1
+1243,Cliente Final 1243,Lima Cercado,cliente_final,-12.040539,-77.048576,6,10,20,5
+1244,Punto Reparto 1244,Pueblo Libre,punto_reparto,-12.077364,-77.061624,5,9,16,3
+1245,Cliente Final 1245,Comas,cliente_final,-11.941452,-77.041904,6,11,20,1
+1246,Cliente Final 1246,Breña,cliente_final,-12.049207,-77.049705,3,11,16,4
+1247,Punto Reparto 1247,Puente Piedra,punto_reparto,-11.85413,-77.067148,22,10,20,4
+1248,Cliente Final 1248,Callao,cliente_final,-12.080656,-77.132378,1,10,18,5
+1249,Cliente Final 1249,Magdalena,cliente_final,-12.09364,-77.07318,1,9,18,3
+1250,Punto Reparto 1250,Barranco,punto_reparto,-12.125522,-77.001241,9,10,14,3
+1251,Punto Reparto 1251,Villa El Salvador,punto_reparto,-12.200447,-76.951418,25,9,20,2
+1252,Punto Reparto 1252,Pueblo Libre,punto_reparto,-12.090468,-77.069595,8,10,18,1
+1253,Cliente Final 1253,Ate,cliente_final,-12.013453,-76.929005,7,8,20,2
+1254,Punto Reparto 1254,San Juan Lurig.,punto_reparto,-12.158427,-76.990603,19,10,16,5
+1255,Punto Reparto 1255,Santa Anita,punto_reparto,-12.056903,-76.957096,10,8,18,1
+1256,Punto Reparto 1256,Los Olivos,punto_reparto,-12.00678,-77.089171,11,8,20,5
+1257,Cliente Final 1257,Miraflores,cliente_final,-12.098979,-77.036002,8,9,16,3
+1258,Cliente Final 1258,Callao,cliente_final,-12.048067,-77.096422,8,10,18,2
+1259,Cliente Final 1259,Los Olivos,cliente_final,-11.98667,-77.062148,2,9,16,1
+1260,Almacén 1260,Pachacámac,almacén,-12.237024,-76.88066,0,11,14,1
+1261,Punto Reparto 1261,Santa Anita,punto_reparto,-12.030572,-76.946851,6,8,18,4
+1262,Punto Reparto 1262,Puente Piedra,punto_reparto,-11.866157,-77.081801,6,8,18,1
+1263,Punto Reparto 1263,San Miguel,punto_reparto,-12.052872,-77.100965,29,10,16,3
+1264,Punto Reparto 1264,Chorrillos,punto_reparto,-12.165258,-77.010557,11,10,18,5
+1265,Punto Reparto 1265,El Agustino,punto_reparto,-12.032064,-77.008385,29,11,14,3
+1266,Punto Reparto 1266,La Molina,punto_reparto,-12.099874,-76.941201,10,10,14,1
+1267,Cliente Final 1267,Pueblo Libre,cliente_final,-12.052784,-77.045763,9,8,16,5
+1268,Punto Reparto 1268,San Juan Lurig.,punto_reparto,-12.172016,-76.956514,22,10,18,2
+1269,Punto Reparto 1269,Rímac,punto_reparto,-12.036224,-77.054183,30,10,16,2
+1270,Punto Reparto 1270,Barranco,punto_reparto,-12.135699,-77.023804,14,10,20,1
+1271,Punto Reparto 1271,La Molina,punto_reparto,-12.077801,-76.956957,5,11,14,1
+1272,Cliente Final 1272,Villa El Salvador,cliente_final,-12.21704,-76.923822,1,8,20,4
+1273,Punto Reparto 1273,San Borja,punto_reparto,-12.109532,-77.007959,27,11,18,3
+1274,Punto Reparto 1274,El Agustino,punto_reparto,-12.024714,-77.018591,11,8,20,5
+1275,Punto Reparto 1275,La Molina,punto_reparto,-12.104266,-76.946265,7,11,14,4
+1276,Punto Reparto 1276,Santa Anita,punto_reparto,-12.029855,-76.975838,26,11,20,2
+1277,Punto Reparto 1277,Villa María,punto_reparto,-12.14798,-76.924919,9,10,18,4
+1278,Cliente Final 1278,San Borja,cliente_final,-12.110444,-77.010336,6,10,20,4
+1279,Cliente Final 1279,Miraflores,cliente_final,-12.138168,-77.006513,2,11,14,3
+1280,Punto Reparto 1280,Lince,punto_reparto,-12.083421,-77.060067,19,9,18,3
+1281,Cliente Final 1281,Pueblo Libre,cliente_final,-12.079313,-77.078639,10,9,14,4
+1282,Cliente Final 1282,Comas,cliente_final,-11.916442,-77.046891,2,10,14,3
+1283,Punto Reparto 1283,Magdalena,punto_reparto,-12.110777,-77.072417,19,11,20,2
+1284,Cliente Final 1284,Pueblo Libre,cliente_final,-12.06906,-77.039776,4,9,20,4
+1285,Punto Reparto 1285,Barranco,punto_reparto,-12.16646,-77.028967,15,9,20,4
+1286,Cliente Final 1286,San Miguel,cliente_final,-12.08174,-77.070018,6,9,16,1
+1287,Punto Reparto 1287,San Martín Porres,punto_reparto,-12.014408,-77.076327,27,11,14,5
+1288,Punto Reparto 1288,Pueblo Libre,punto_reparto,-12.094406,-77.068955,19,10,14,4
+1289,Punto Reparto 1289,San Borja,punto_reparto,-12.099609,-76.992592,14,11,14,5
+1290,Punto Reparto 1290,Surco,punto_reparto,-12.152237,-77.015611,26,11,18,4
+1291,Punto Reparto 1291,Breña,punto_reparto,-12.045535,-77.076504,26,8,14,2
+1292,Punto Reparto 1292,Comas,punto_reparto,-11.95659,-77.031033,9,8,16,2
+1293,Cliente Final 1293,Pachacámac,cliente_final,-12.245431,-76.871879,9,10,20,5
+1294,Cliente Final 1294,San Miguel,cliente_final,-12.053994,-77.100678,8,9,16,3
+1295,Hub Distribución 1295,Santa Anita,hub_distribución,-12.025185,-76.941079,68,11,18,1
+1296,Cliente Final 1296,San Miguel,cliente_final,-12.070409,-77.091539,1,11,16,3
+1297,Punto Reparto 1297,San Isidro,punto_reparto,-12.095935,-77.027928,16,8,14,5
+1298,Punto Reparto 1298,Comas,punto_reparto,-11.928425,-77.033776,16,8,18,1
+1299,Cliente Final 1299,Villa María,cliente_final,-12.146754,-76.939085,7,11,18,4
+1300,Cliente Final 1300,Villa El Salvador,cliente_final,-12.213435,-76.946048,7,11,16,2
+1301,Punto Reparto 1301,Lince,punto_reparto,-12.097442,-77.019489,9,9,20,3
+1302,Punto Reparto 1302,Comas,punto_reparto,-11.939295,-77.059577,18,9,18,2
+1303,Punto Reparto 1303,La Molina,punto_reparto,-12.092239,-76.967637,5,8,14,2
+1304,Cliente Final 1304,San Martín Porres,cliente_final,-12.044681,-77.046082,8,11,16,1
+1305,Punto Reparto 1305,La Molina,punto_reparto,-12.088742,-76.933181,25,11,20,5
+1306,Cliente Final 1306,Callao,cliente_final,-12.047445,-77.102728,7,9,20,5
+1307,Punto Reparto 1307,Lurín,punto_reparto,-12.282989,-76.855835,22,11,20,3
+1308,Hub Distribución 1308,Villa María,hub_distribución,-12.138883,-76.964812,53,11,14,5
+1309,Punto Reparto 1309,Lince,punto_reparto,-12.077025,-77.027298,28,9,18,4
+1310,Hub Distribución 1310,Callao,hub_distribución,-12.034074,-77.133941,99,10,14,1
+1311,Punto Reparto 1311,San Miguel,punto_reparto,-12.090766,-77.096339,20,10,14,5
+1312,Punto Reparto 1312,Lince,punto_reparto,-12.08914,-77.053689,27,8,16,5
+1313,Cliente Final 1313,Carabayllo,cliente_final,-11.884093,-77.017136,5,11,14,5
+1314,Punto Reparto 1314,Puente Piedra,punto_reparto,-11.890794,-77.085345,24,8,16,4
+1315,Hub Distribución 1315,Breña,hub_distribución,-12.08607,-77.045514,39,10,14,3
+1316,Almacén 1316,Magdalena,almacén,-12.106049,-77.081609,0,8,20,4
+1317,Punto Reparto 1317,Jesús María,punto_reparto,-12.056553,-77.019565,20,10,20,3
+1318,Cliente Final 1318,Independencia,cliente_final,-12.003426,-77.04158,5,10,16,1
+1319,Punto Reparto 1319,Rímac,punto_reparto,-12.032619,-77.054169,24,10,18,1
+1320,Almacén 1320,Breña,almacén,-12.058203,-77.058955,0,11,16,5
+1321,Cliente Final 1321,San Isidro,cliente_final,-12.093337,-77.061235,5,8,18,4
+1322,Hub Distribución 1322,Barranco,hub_distribución,-12.154978,-77.044687,46,8,18,3
+1323,Punto Reparto 1323,La Molina,punto_reparto,-12.088616,-76.92091,24,10,18,3
+1324,Punto Reparto 1324,Miraflores,punto_reparto,-12.130338,-77.017728,28,8,16,5
+1325,Punto Reparto 1325,San Martín Porres,punto_reparto,-11.999788,-77.076264,9,11,18,2
+1326,Cliente Final 1326,Ate,cliente_final,-12.052471,-76.913694,4,11,16,5
+1327,Punto Reparto 1327,Carabayllo,punto_reparto,-11.864718,-77.043784,6,10,14,2
+1328,Punto Reparto 1328,Pueblo Libre,punto_reparto,-12.058835,-77.04018,9,11,20,4
+1329,Cliente Final 1329,Villa María,cliente_final,-12.165897,-76.949227,8,9,16,5
+1330,Cliente Final 1330,San Martín Porres,cliente_final,-12.040824,-77.084444,6,8,18,1
+1331,Punto Reparto 1331,San Isidro,punto_reparto,-12.119935,-77.037173,10,11,20,4
+1332,Punto Reparto 1332,Santa Anita,punto_reparto,-12.05518,-76.967171,20,9,20,4
+1333,Cliente Final 1333,Lince,cliente_final,-12.101932,-77.0331,5,9,20,1
+1334,Punto Reparto 1334,Santa Anita,punto_reparto,-12.033892,-76.979205,30,11,20,3
+1335,Punto Reparto 1335,Jesús María,punto_reparto,-12.084891,-77.050246,26,8,14,5
+1336,Punto Reparto 1336,Breña,punto_reparto,-12.052915,-77.075766,16,11,18,3
+1337,Punto Reparto 1337,Ate,punto_reparto,-12.035404,-76.900142,13,8,18,5
+1338,Cliente Final 1338,Villa El Salvador,cliente_final,-12.202925,-76.952009,8,9,16,5
+1339,Punto Reparto 1339,El Agustino,punto_reparto,-12.020216,-77.020136,26,9,18,5
+1340,Cliente Final 1340,Miraflores,cliente_final,-12.123535,-77.041173,1,8,14,4
+1341,Cliente Final 1341,Surco,cliente_final,-12.130697,-76.991045,9,8,20,3
+1342,Cliente Final 1342,Villa María,cliente_final,-12.16855,-76.958284,5,10,16,1
+1343,Punto Reparto 1343,Miraflores,punto_reparto,-12.126076,-77.019636,24,8,14,5
+1344,Punto Reparto 1344,Lima Cercado,punto_reparto,-12.066239,-77.006471,11,8,14,1
+1345,Cliente Final 1345,Carabayllo,cliente_final,-11.855579,-77.006136,10,9,20,5
+1346,Cliente Final 1346,Independencia,cliente_final,-11.982029,-77.05611,3,8,16,3
+1347,Hub Distribución 1347,Santa Anita,hub_distribución,-12.057428,-76.963516,89,8,20,3
+1348,Punto Reparto 1348,Los Olivos,punto_reparto,-11.99444,-77.073626,18,10,18,2
+1349,Punto Reparto 1349,Los Olivos,punto_reparto,-11.986788,-77.052471,7,10,14,4
+1350,Cliente Final 1350,Villa El Salvador,cliente_final,-12.188278,-76.930546,6,8,18,3
+1351,Almacén 1351,San Borja,almacén,-12.10559,-76.986524,0,11,14,4
+1352,Cliente Final 1352,Callao,cliente_final,-12.040081,-77.140993,4,11,16,4
+1353,Punto Reparto 1353,Surco,punto_reparto,-12.122402,-77.009997,9,11,16,5
+1354,Cliente Final 1354,Breña,cliente_final,-12.048632,-77.065949,2,11,18,1
+1355,Cliente Final 1355,San Isidro,cliente_final,-12.117358,-77.055502,2,8,18,4
+1356,Punto Reparto 1356,Miraflores,punto_reparto,-12.110408,-77.010856,20,9,14,1
+1357,Hub Distribución 1357,Lima Cercado,hub_distribución,-12.036476,-77.026388,79,10,16,3
+1358,Punto Reparto 1358,Puente Piedra,punto_reparto,-11.860873,-77.076232,17,8,20,4
+1359,Punto Reparto 1359,Lurín,punto_reparto,-12.289204,-76.856571,17,8,16,1
+1360,Hub Distribución 1360,Villa El Salvador,hub_distribución,-12.200382,-76.953333,91,8,18,3
+1361,Punto Reparto 1361,Lima Cercado,punto_reparto,-12.032946,-77.045164,14,11,14,1
+1362,Cliente Final 1362,San Juan Lurig.,cliente_final,-12.178451,-76.9747,9,10,14,4
+1363,Punto Reparto 1363,Los Olivos,punto_reparto,-12.01275,-77.058292,29,10,16,2
+1364,Punto Reparto 1364,Magdalena,punto_reparto,-12.090274,-77.046857,6,11,16,3
+1365,Punto Reparto 1365,Rímac,punto_reparto,-12.030333,-77.056016,17,8,18,4
+1366,Hub Distribución 1366,Barranco,hub_distribución,-12.15737,-77.045307,86,9,16,1
+1367,Punto Reparto 1367,Chorrillos,punto_reparto,-12.17368,-77.020093,5,9,20,4
+1368,Cliente Final 1368,Barranco,cliente_final,-12.155503,-77.013509,9,10,20,5
+1369,Punto Reparto 1369,Comas,punto_reparto,-11.962479,-77.030481,30,11,14,1
+1370,Punto Reparto 1370,El Agustino,punto_reparto,-12.036804,-77.009986,6,10,14,4
+1371,Punto Reparto 1371,Surco,punto_reparto,-12.167506,-76.994654,11,11,16,5
+1372,Punto Reparto 1372,Villa María,punto_reparto,-12.142537,-76.94577,7,8,16,4
+1373,Punto Reparto 1373,Breña,punto_reparto,-12.051164,-77.063932,5,11,14,2
+1374,Cliente Final 1374,Rímac,cliente_final,-12.018708,-77.011687,3,8,16,1
+1375,Cliente Final 1375,Puente Piedra,cliente_final,-11.861182,-77.071018,5,8,20,5
+1376,Punto Reparto 1376,San Borja,punto_reparto,-12.118609,-77.025444,23,8,14,1
+1377,Hub Distribución 1377,Lince,hub_distribución,-12.099105,-77.028608,58,8,16,4
+1378,Cliente Final 1378,El Agustino,cliente_final,-12.035327,-77.034188,7,10,14,5
+1379,Punto Reparto 1379,Magdalena,punto_reparto,-12.098023,-77.060047,9,10,16,1
+1380,Punto Reparto 1380,San Miguel,punto_reparto,-12.084763,-77.104971,10,10,14,1
+1381,Hub Distribución 1381,Ate,hub_distribución,-12.013424,-76.88908,48,11,16,3
+1382,Cliente Final 1382,Magdalena,cliente_final,-12.109028,-77.073199,3,11,16,5
+1383,Almacén 1383,San Isidro,almacén,-12.083509,-77.055889,0,9,14,5
+1384,Punto Reparto 1384,Villa El Salvador,punto_reparto,-12.199393,-76.94717,29,9,14,4
+1385,Cliente Final 1385,Barranco,cliente_final,-12.169655,-77.019685,1,8,16,1
+1386,Punto Reparto 1386,Rímac,punto_reparto,-12.005718,-77.028413,25,10,20,4
+1387,Punto Reparto 1387,Rímac,punto_reparto,-12.049347,-77.029256,9,9,16,3
+1388,Punto Reparto 1388,Jesús María,punto_reparto,-12.067943,-77.048864,19,11,16,2
+1389,Punto Reparto 1389,Pueblo Libre,punto_reparto,-12.094952,-77.070954,27,8,16,4
+1390,Punto Reparto 1390,Pueblo Libre,punto_reparto,-12.090855,-77.037333,7,10,18,4
+1391,Cliente Final 1391,Miraflores,cliente_final,-12.117506,-77.009519,9,9,16,1
+1392,Punto Reparto 1392,Jesús María,punto_reparto,-12.069164,-77.027676,8,10,16,4
+1393,Cliente Final 1393,Los Olivos,cliente_final,-11.999713,-77.074865,4,10,14,2
+1394,Punto Reparto 1394,Surco,punto_reparto,-12.13789,-77.008938,30,9,20,4
+1395,Punto Reparto 1395,San Borja,punto_reparto,-12.10178,-77.019084,10,8,14,3
+1396,Cliente Final 1396,Santa Anita,cliente_final,-12.037229,-76.951869,4,11,18,3
+1397,Cliente Final 1397,Pueblo Libre,cliente_final,-12.056057,-77.061702,8,8,14,1
+1398,Almacén 1398,Callao,almacén,-12.050041,-77.133668,0,9,16,1
+1399,Hub Distribución 1399,Lince,hub_distribución,-12.095773,-77.039548,95,8,14,2
+1400,Punto Reparto 1400,San Martín Porres,punto_reparto,-12.002502,-77.085188,19,10,20,2
+1401,Punto Reparto 1401,San Martín Porres,punto_reparto,-11.996826,-77.089598,26,10,16,1
+1402,Punto Reparto 1402,El Agustino,punto_reparto,-12.035722,-77.007931,12,8,16,4
+1403,Hub Distribución 1403,Carabayllo,hub_distribución,-11.902149,-77.049726,55,11,16,1
+1404,Hub Distribución 1404,Lince,hub_distribución,-12.082783,-77.050013,92,8,20,2
+1405,Punto Reparto 1405,Chorrillos,punto_reparto,-12.153997,-77.045421,24,11,16,4
+1406,Punto Reparto 1406,San Juan Lurig.,punto_reparto,-12.150534,-76.992384,9,11,16,3
+1407,Cliente Final 1407,Ate,cliente_final,-12.024318,-76.890103,4,10,16,1
+1408,Punto Reparto 1408,Rímac,punto_reparto,-12.024443,-77.020189,23,8,18,2
+1409,Punto Reparto 1409,Surco,punto_reparto,-12.139952,-77.001391,19,11,20,2
+1410,Punto Reparto 1410,Los Olivos,punto_reparto,-11.979913,-77.067177,15,9,18,5
+1411,Punto Reparto 1411,San Borja,punto_reparto,-12.087833,-77.024453,30,9,16,1
+1412,Cliente Final 1412,Lurín,cliente_final,-12.300156,-76.856674,9,11,16,5
+1413,Punto Reparto 1413,Lince,punto_reparto,-12.093432,-77.027917,19,10,14,4
+1414,Punto Reparto 1414,San Martín Porres,punto_reparto,-12.007187,-77.072291,12,9,18,4
+1415,Punto Reparto 1415,San Miguel,punto_reparto,-12.055164,-77.099156,12,9,14,4
+1416,Punto Reparto 1416,San Isidro,punto_reparto,-12.093273,-77.013334,6,11,14,4
+1417,Punto Reparto 1417,Jesús María,punto_reparto,-12.095198,-77.051335,17,11,14,4
+1418,Cliente Final 1418,Lince,cliente_final,-12.101904,-77.028795,4,8,14,4
+1419,Punto Reparto 1419,Chorrillos,punto_reparto,-12.172413,-77.029764,9,10,18,2
+1420,Punto Reparto 1420,Breña,punto_reparto,-12.081143,-77.034436,7,8,20,3
+1421,Punto Reparto 1421,San Borja,punto_reparto,-12.114036,-76.992515,27,11,14,4
+1422,Cliente Final 1422,Pachacámac,cliente_final,-12.224588,-76.893928,3,11,16,3
+1423,Cliente Final 1423,Breña,cliente_final,-12.039875,-77.046162,8,8,14,4
+1424,Hub Distribución 1424,Puente Piedra,hub_distribución,-11.887428,-77.081129,72,8,18,4
+1425,Punto Reparto 1425,Los Olivos,punto_reparto,-11.985913,-77.074927,13,9,14,5
+1426,Punto Reparto 1426,Puente Piedra,punto_reparto,-11.888659,-77.085413,15,8,18,1
+1427,Punto Reparto 1427,Surco,punto_reparto,-12.135282,-77.014258,17,10,20,5
+1428,Cliente Final 1428,San Isidro,cliente_final,-12.094882,-77.032039,6,10,16,5
+1429,Cliente Final 1429,Rímac,cliente_final,-12.024751,-77.039426,2,9,16,3
+1430,Punto Reparto 1430,Villa María,punto_reparto,-12.161386,-76.962136,22,8,20,5
+1431,Punto Reparto 1431,Carabayllo,punto_reparto,-11.859599,-77.035184,27,9,16,3
+1432,Punto Reparto 1432,San Juan Lurig.,punto_reparto,-12.177827,-76.997428,13,11,18,1
+1433,Cliente Final 1433,Barranco,cliente_final,-12.140516,-77.042669,6,10,20,4
+1434,Cliente Final 1434,Jesús María,cliente_final,-12.060543,-77.038969,9,8,20,5
+1435,Hub Distribución 1435,Lima Cercado,hub_distribución,-12.066291,-77.032258,98,10,20,5
+1436,Punto Reparto 1436,San Juan Lurig.,punto_reparto,-12.143567,-76.965827,30,8,16,4
+1437,Cliente Final 1437,Barranco,cliente_final,-12.123256,-77.040483,2,11,16,3
+1438,Cliente Final 1438,Barranco,cliente_final,-12.121753,-77.037842,2,9,18,1
+1439,Punto Reparto 1439,Rímac,punto_reparto,-12.051586,-77.036429,9,11,16,2
+1440,Cliente Final 1440,Jesús María,cliente_final,-12.069268,-77.021503,1,10,20,5
+1441,Cliente Final 1441,Callao,cliente_final,-12.056936,-77.102516,3,11,18,4
+1442,Punto Reparto 1442,Pachacámac,punto_reparto,-12.255897,-76.847874,28,8,18,2
+1443,Punto Reparto 1443,Barranco,punto_reparto,-12.129581,-77.032683,5,9,18,4
+1444,Punto Reparto 1444,San Miguel,punto_reparto,-12.079907,-77.079502,15,10,20,5
+1445,Cliente Final 1445,Lima Cercado,cliente_final,-12.067572,-77.026127,9,11,20,3
+1446,Punto Reparto 1446,San Miguel,punto_reparto,-12.082739,-77.100883,9,10,16,3
+1447,Cliente Final 1447,Villa María,cliente_final,-12.185982,-76.925076,8,10,18,1
+1448,Cliente Final 1448,La Molina,cliente_final,-12.0791,-76.951945,6,10,20,2
+1449,Hub Distribución 1449,Pueblo Libre,hub_distribución,-12.071966,-77.045403,50,10,16,2
+1450,Punto Reparto 1450,Comas,punto_reparto,-11.92578,-77.045072,27,9,16,2
+1451,Hub Distribución 1451,Surco,hub_distribución,-12.124103,-76.997644,35,10,16,4
+1452,Punto Reparto 1452,Ate,punto_reparto,-12.043976,-76.903717,16,9,16,5
+1453,Hub Distribución 1453,Rímac,hub_distribución,-12.044358,-77.053721,34,10,18,2
+1454,Punto Reparto 1454,San Juan Lurig.,punto_reparto,-12.146815,-76.97883,19,9,18,1
+1455,Punto Reparto 1455,Callao,punto_reparto,-12.047674,-77.138995,5,11,20,2
+1456,Punto Reparto 1456,Pachacámac,punto_reparto,-12.248832,-76.887777,15,9,14,5
+1457,Punto Reparto 1457,Jesús María,punto_reparto,-12.078965,-77.065742,15,10,20,3
+1458,Punto Reparto 1458,Los Olivos,punto_reparto,-11.989415,-77.070835,23,9,20,3
+1459,Punto Reparto 1459,Rímac,punto_reparto,-12.011643,-77.049434,8,11,14,2
+1460,Punto Reparto 1460,Lima Cercado,punto_reparto,-12.067198,-77.052542,22,8,18,1
+1461,Punto Reparto 1461,Villa El Salvador,punto_reparto,-12.206699,-76.921098,24,9,20,3
+1462,Punto Reparto 1462,Barranco,punto_reparto,-12.12231,-77.044265,15,8,16,5
+1463,Punto Reparto 1463,Jesús María,punto_reparto,-12.096097,-77.059036,12,10,16,1
+1464,Cliente Final 1464,Barranco,cliente_final,-12.138021,-77.044421,9,11,14,5
+1465,Punto Reparto 1465,Villa El Salvador,punto_reparto,-12.192892,-76.950169,11,11,18,5
+1466,Punto Reparto 1466,Pueblo Libre,punto_reparto,-12.091206,-77.080353,21,8,18,4
+1467,Punto Reparto 1467,La Molina,punto_reparto,-12.082572,-76.957308,27,11,18,4
+1468,Cliente Final 1468,San Juan Lurig.,cliente_final,-12.135525,-76.970784,1,10,18,3
+1469,Punto Reparto 1469,Santa Anita,punto_reparto,-12.064772,-76.967793,19,8,16,4
+1470,Cliente Final 1470,San Martín Porres,cliente_final,-12.041162,-77.094791,7,11,18,2
+1471,Punto Reparto 1471,Independencia,punto_reparto,-11.982909,-77.064461,28,11,20,2
+1472,Punto Reparto 1472,Comas,punto_reparto,-11.944228,-77.0738,23,8,16,2
+1473,Cliente Final 1473,Santa Anita,cliente_final,-12.063046,-76.981979,8,10,14,5
+1474,Punto Reparto 1474,Los Olivos,punto_reparto,-11.985032,-77.058567,17,8,14,4
+1475,Punto Reparto 1475,Breña,punto_reparto,-12.067243,-77.066754,13,11,16,5
+1476,Cliente Final 1476,Pachacámac,cliente_final,-12.248048,-76.857124,10,9,16,2
+1477,Cliente Final 1477,Comas,cliente_final,-11.937654,-77.051246,7,10,20,1
+1478,Punto Reparto 1478,Comas,punto_reparto,-11.961363,-77.06097,14,10,20,5
+1479,Punto Reparto 1479,San Martín Porres,punto_reparto,-12.005879,-77.045374,19,9,14,1
+1480,Punto Reparto 1480,La Molina,punto_reparto,-12.064785,-76.928069,13,10,20,1
+1481,Cliente Final 1481,Breña,cliente_final,-12.066933,-77.058116,5,11,16,4
+1482,Punto Reparto 1482,Callao,punto_reparto,-12.071955,-77.103042,27,9,14,1
+1483,Punto Reparto 1483,Los Olivos,punto_reparto,-11.978456,-77.073999,13,11,14,5
+1484,Cliente Final 1484,San Martín Porres,cliente_final,-12.003369,-77.054792,6,11,20,3
+1485,Punto Reparto 1485,Breña,punto_reparto,-12.083919,-77.043997,26,11,14,3
+1486,Punto Reparto 1486,Jesús María,punto_reparto,-12.077509,-77.040871,28,8,18,2
+1487,Punto Reparto 1487,San Miguel,punto_reparto,-12.075919,-77.061874,6,9,18,4
+1488,Punto Reparto 1488,Puente Piedra,punto_reparto,-11.861227,-77.0852,27,9,18,2
+1489,Cliente Final 1489,San Isidro,cliente_final,-12.114563,-77.014336,5,10,20,3
+1490,Punto Reparto 1490,San Isidro,punto_reparto,-12.077148,-77.012223,14,10,14,5
+1491,Punto Reparto 1491,Chorrillos,punto_reparto,-12.177228,-77.014039,29,9,14,5
+1492,Hub Distribución 1492,Los Olivos,hub_distribución,-11.994081,-77.077109,51,10,18,3
+1493,Punto Reparto 1493,Ate,punto_reparto,-12.02622,-76.926927,26,10,14,5
+1494,Punto Reparto 1494,San Miguel,punto_reparto,-12.074226,-77.083186,16,9,14,2
+1495,Punto Reparto 1495,Jesús María,punto_reparto,-12.061186,-77.06704,14,10,20,4
+1496,Punto Reparto 1496,El Agustino,punto_reparto,-12.025989,-77.006805,10,8,16,2
+1497,Cliente Final 1497,Jesús María,cliente_final,-12.063552,-77.03993,4,9,14,4
+1498,Punto Reparto 1498,Pachacámac,punto_reparto,-12.220249,-76.866495,7,8,16,1
+1499,Punto Reparto 1499,Lince,punto_reparto,-12.103341,-77.048633,16,10,18,2

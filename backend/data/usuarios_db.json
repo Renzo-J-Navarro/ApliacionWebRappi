@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "mpwwg9lgonn6o",
+    "nombre": "Renzo Navarro",
+    "email": "sistema@gmail.com",
+    "password": "58e188c2",
+    "rol": "usuario",
+    "distrito": "San Isidro",
+    "telefono": "+51 906 544 409",
+    "createdAt": "2026-06-02T17:16:32.788Z",
+    "activo": true
+  }
+]
