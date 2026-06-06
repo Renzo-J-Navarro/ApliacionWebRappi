@@ -10,16 +10,16 @@ app.use(express.static(path.join(__dirname, '../fronend')));
    rappi_bridge.py guarda los PNG en output_imagenes/
    Los servimos en /imagenes/ para que el dashboard los cargue.
 ────────────────────────────────────────────────────── */
-app.use('/output_imagenes', express.static(path.join(__dirname, '../output_imagenes')));
+app.use('/output_imagenes', express.static(path.join(__dirname, 'output_imagenes')));
 
 /* ── GET /api/imagenes — qué imágenes existen en disco ──
    El dashboard llama esto al cargar para mostrar resultados previos.
 ────────────────────────────────────────────────────── */
 app.get('/api/imagenes', (req, res) => {
-  const dir = path.join(__dirname, '../output_imagenes');
+  const dir = path.join(__dirname, 'output_imagenes');
   const mapa = {
     '01_red_rappi_lima.png': 'red_lima',
-    '02_a*_ruta.png': 'ruta_astar',
+    '02_a_estrella_ruta.png': 'ruta_astar',
     '02_dijkstra_ruta.png': 'ruta_dijkstra',
     '02_bfs_ruta.png': 'ruta_bfs',
     '02_dfs_ruta.png': 'ruta_dfs',

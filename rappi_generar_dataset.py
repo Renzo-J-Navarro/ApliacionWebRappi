@@ -1,15 +1,3 @@
-"""
-==============================================================
-  GENERADOR DE DATASET — SISTEMA RAPPI LIMA
-  Optimización de Rutas de Reparto de Comida
-
-  Tipos de nodo:
-    restaurante  → origen del pedido (Bembos, KFC, etc.)
-    hub_rappi    → zona de alta demanda / concentración
-    interseccion → esquinas y cruces de avenidas
-    cliente      → destino final del pedido
-==============================================================
-"""
 
 import pandas as pd
 import numpy as np

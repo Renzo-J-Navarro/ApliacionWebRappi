@@ -1,24 +1,3 @@
-"""
-==============================================================
-  BRIDGE PYTHON ↔ NODE.JS — SISTEMA RAPPI LIMA
-  Uso: python rappi_bridge.py [nodos] [semilla]
-
-  Genera algoritmos + imágenes PNG en output_imagenes/
-  Devuelve JSON por stdout con rutas de imágenes incluidas:
-  {
-    "ok": true,
-    "imagenes": {
-      "red_lima":      "/imagenes/01_red_rappi_lima.png",
-      "rutas":         { "A*": "/imagenes/02_a*_ruta.png", … },
-      "zona_demanda":  "/imagenes/03_zona_alta_demanda.png",
-      "dashboard":     "/imagenes/04_dashboard_rappi.png"
-    },
-    "origen": { … }, "destino": { … },
-    "resultados": { … },
-    "ahorro_astar_vs_dijkstra_pct": 42.5
-  }
-==============================================================
-"""
 
 from rappi_visualizacion_ruta import plot_recorrido_legible
 from rappi_visualizacion import (construir_grafo_nx, plot_red_rappi,
@@ -164,7 +143,7 @@ def main():
         # Node sirve output_imagenes/ en /imagenes/ (ver server.js)
         def url(fname):
             base = os.path.basename(fname)
-            return f"/imagenes/{base}"
+            return f"/output_imagenes/{base}"
 
         imagenes = {
             "red_lima":     url(path_red),

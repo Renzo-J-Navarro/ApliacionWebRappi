@@ -18,9 +18,9 @@ OUTPUT = "backend/output_imagenes"
 def cargar_datos():
     """Genera dataset nuevo en cada ejecucion (nodos y aristas aleatorios)."""
     print("Generando nuevo dataset Rappi Lima (1500 nodos aleatorios)...")
-    # Crea la carpeta data/ si no existe (necesario en Windows y Linux)
+    # Crea la carpeta data/ si no existe
     os.makedirs("backend/data", exist_ok=True)
-    # Crea tambien la carpeta de imagenes si no existe
+    # Crea la carpeta de imagenes si no existe
     os.makedirs("backend/output_imagenes", exist_ok=True)
     df_n = generar_nodos(1500)
     df_a = generar_aristas(df_n)

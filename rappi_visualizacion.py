@@ -1,10 +1,3 @@
-"""
-==============================================================
-  VISUALIZACIÓN — SISTEMA RAPPI LIMA
-  NetworkX + Matplotlib
-  Complejidad Algorítmica 1ACC0184 - 2026-10
-==============================================================
-"""
 
 import networkx as nx
 import matplotlib.pyplot as plt

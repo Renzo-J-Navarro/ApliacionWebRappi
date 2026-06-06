@@ -1,11 +1,4 @@
-"""
-Visualización de rutas Rappi:
-  - Imagen PNG: mapa con la ruta dibujada por algoritmo
-  - CSV:        desglose paso a paso con valores de aristas
 
-  ACTUALIZADO: A* agregado como algoritmo principal.
-  COLORES_ALGO ahora incluye A* con color rojo intenso.
-"""
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D

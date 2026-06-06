@@ -1,19 +1,3 @@
-"""
-==============================================================
-  ALGORITMOS DE BÚSQUEDA — SISTEMA RAPPI
-  A* (principal) · Dijkstra · BFS · DFS
-  Complejidad Algorítmica 1ACC0184 - 2026-10
-
-  CAMBIOS respecto a la versión original:
-    + a_estrella()          — algoritmo principal, reemplaza a Dijkstra
-    + haversine()           — distancia GPS entre dos coordenadas
-    + _reconstruir_camino() — helper compartido por A* y Dijkstra
-    ~ dijkstra()            — mantenido para comparación, sin cambios
-    ~ bfs()                 — sin cambios
-    ~ dfs()                 — sin cambios
-    ~ calcular_metricas_ruta() — sin cambios
-==============================================================
-"""
 
 import heapq
 import math

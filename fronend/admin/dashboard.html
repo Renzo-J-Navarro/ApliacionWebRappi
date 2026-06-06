@@ -1278,6 +1278,7 @@
                 const orden = ['A*', 'Dijkstra', 'BFS', 'DFS'];
                 orden.forEach(algo => {
                     const url = imagenes.rutas[algo];
+                    console.log(algo, '->', url); // temporal
                     if (!url) return;
                     const info = INFO_IMGS[algo];
                     const src = url + '?t=' + Date.now();
@@ -1329,24 +1330,26 @@
         /* ── Cargar imágenes existentes al abrir la sección ─── */
         async function cargarImagenesExistentes() {
             try {
-                const resp = await fetch('/backend/output_imagenes');
+                const resp = await fetch('/api/imagenes');
                 const data = await resp.json();
-                if (data.ok && Object.keys(data.disponibles).length > 0) {
-                    /* Adaptar formato disponibles → formato imagenes del bridge */
-                    const imagenes = {
-                        red_lima: data.disponibles.red_lima,
-                        zona_demanda: data.disponibles.zona_demanda,
-                        dashboard: data.disponibles.dashboard,
-                        rutas: {
-                            'A*': data.disponibles.ruta_astar,
-                            'Dijkstra': data.disponibles.ruta_dijkstra,
-                            'BFS': data.disponibles.ruta_bfs,
-                            'DFS': data.disponibles.ruta_dfs,
-                        },
-                    };
-                    renderImagenes(imagenes);
-                }
-            } catch (_) { /* silencioso si no hay imágenes previas */ }
+                if (!data.ok || !Object.keys(data.disponibles).length) return;
+
+                const d = data.disponibles;
+                const imagenes = {
+                    red_lima: d.red_lima || null,
+                    zona_demanda: d.zona_demanda || null,
+                    dashboard: d.dashboard || null,
+                    rutas: {
+                        'A*': d.ruta_astar || null,
+                        'Dijkstra': d.ruta_dijkstra || null,
+                        'BFS': d.ruta_bfs || null,
+                        'DFS': d.ruta_dfs || null,
+                    },
+                };
+                renderImagenes(imagenes);
+            } catch (e) {
+                console.error('Error cargando imágenes existentes:', e);
+            }
         }
 
         /* ══════════════════════════════════════════════════════
