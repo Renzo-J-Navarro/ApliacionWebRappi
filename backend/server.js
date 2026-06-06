@@ -6,6 +6,36 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../fronend')));
 
+/* ── Imágenes generadas por Python ──────────────────────
+   rappi_bridge.py guarda los PNG en output_imagenes/
+   Los servimos en /imagenes/ para que el dashboard los cargue.
+────────────────────────────────────────────────────── */
+app.use('/output_imagenes', express.static(path.join(__dirname, '../output_imagenes')));
+
+/* ── GET /api/imagenes — qué imágenes existen en disco ──
+   El dashboard llama esto al cargar para mostrar resultados previos.
+────────────────────────────────────────────────────── */
+app.get('/api/imagenes', (req, res) => {
+  const dir = path.join(__dirname, '../output_imagenes');
+  const mapa = {
+    '01_red_rappi_lima.png': 'red_lima',
+    '02_a*_ruta.png': 'ruta_astar',
+    '02_dijkstra_ruta.png': 'ruta_dijkstra',
+    '02_bfs_ruta.png': 'ruta_bfs',
+    '02_dfs_ruta.png': 'ruta_dfs',
+    '03_zona_alta_demanda.png': 'zona_demanda',
+    '04_dashboard_rappi.png': 'dashboard',
+  };
+  if (!fs.existsSync(dir)) return res.json({ ok: true, disponibles: {} });
+  const archivos = fs.readdirSync(dir);
+  const disponibles = {};
+  for (const [archivo, clave] of Object.entries(mapa)) {
+    if (archivos.includes(archivo)) disponibles[clave] = `/output_imagenes/${archivo}`;
+  }
+  res.json({ ok: true, disponibles });
+});
+
+
 /* ── Rutas de archivos JSON ─────────────────────────── */
 const DB_ADMINS = path.join(__dirname, 'data/usuarios_admin_db.json');
 const DB_USERS = path.join(__dirname, 'data/usuarios_db.json');
@@ -232,6 +262,7 @@ app.post('/api/algoritmos/ejecutar', (req, res) => {
 
   const proceso = spawn(PYTHON_CMD, [BRIDGE_PATH, String(nodos), String(semilla)], {
     cwd: path.join(__dirname, '..'),
+    env: { ...process.env, PYTHONIOENCODING: 'utf-8' }
   });
 
   const timeout = setTimeout(() => {

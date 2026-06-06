@@ -38,6 +38,33 @@ function addLog(msg, tipo = 'info') {
     renderFullLogs();
 }
 
+// Añade esta función en tu dashboard.js para conectar con el server.js
+async function ejecutarAlgoritmosEnServidor(nodosCant = 1500, semillaNum = 42) {
+    try {
+        addLog(`Iniciando ejecución de algoritmos en el servidor...`, 'info');
+
+        const respuesta = await fetch('/api/algoritmos/ejecutar', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nodos: nodosCant, semilla: semillaNum })
+        });
+
+        const datos = await respuesta.json();
+
+        if (!datos.ok) throw new Error(datos.error);
+
+        // Integrar los resultados reales recibidos de Python en la UI
+        addLog(`¡Algoritmos procesados! Ahorro A* vs Dijkstra: ${datos.ahorro_astar_vs_dijkstra_pct}%`, 'ok');
+
+        // Aquí puedes mapear "datos.resultados" para actualizar tus gráficos o mapas dinámicos
+        console.log("Datos reales del Grafo de Lima:", datos);
+
+    } catch (error) {
+        addLog(`Error en el Centro de Algoritmos: ${error.message}`, 'err');
+        toast(`Error: No se pudo conectar con el motor de Python.`);
+    }
+}
+
 /* ── Render pedidos (dashboard) ──────────────────────── */
 function renderPedidosDash() {
     const tb = document.getElementById('tbody-recientes');

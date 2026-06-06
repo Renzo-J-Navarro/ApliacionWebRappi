@@ -1,0 +1,16 @@
+paso,nodo_id,rol,nombre,tipo,distrito,via_hacia_siguiente,tiempo_min,distancia_km,costo_sol
+1,1395,ORIGEN (Restaurante),China Wok (San Juan Lurig),restaurante,San Juan Lurig,—,1.43,0.3067,0.96
+2,895,Parada intermedia,Cliente #895 (San Juan Lurig),cliente,San Juan Lurig,—,2.47,0.7085,1.75
+3,604,Parada intermedia,Intersec. Av. Larco (San Juan Lurig),interseccion,San Juan Lurig,—,2.25,0.4049,0.82
+4,1178,Parada intermedia,Intersec. Av. Angamos (San Juan Lurig),interseccion,San Juan Lurig,—,3.38,0.9355,2.61
+5,971,Parada intermedia,Cliente #971 (San Juan Lurig),cliente,San Juan Lurig,—,3.35,0.9672,2.54
+6,269,Parada intermedia,Cliente #269 (San Juan Lurig),cliente,San Juan Lurig,—,2.27,0.6994,1.49
+7,760,Parada intermedia,Cliente #760 (San Juan Lurig),cliente,San Juan Lurig,—,2.38,0.8679,1.43
+8,437,Parada intermedia,Cliente #437 (San Juan Lurig),cliente,San Juan Lurig,—,3.39,1.1337,2.29
+9,289,Parada intermedia,Intersec. Av. 28 de Julio (San Juan Lurig),interseccion,San Juan Lurig,—,2.9,0.593,1.29
+10,703,Parada intermedia,Intersec. Av. La Marina (San Juan Lurig),interseccion,San Juan Lurig,—,2.48,0.6052,1.7
+11,229,Parada intermedia,Intersec. Av. Javier Prado (San Juan Lurig),interseccion,San Juan Lurig,—,4.18,1.0994,2.45
+12,1108,Parada intermedia,Intersec. Av. Tomas Marsano (Villa Maria),interseccion,Villa Maria,—,3.7,1.0009,2.51
+13,793,Parada intermedia,Cliente #793 (Villa Maria),cliente,Villa Maria,—,3.03,0.86,1.81
+14,681,Parada intermedia,Rafael (Villa Maria),restaurante,Villa Maria,—,2.67,0.6718,1.39
+15,1282,DESTINO (Cliente),Cliente #1282 (Villa Maria),cliente,Villa Maria,—,—,—,—

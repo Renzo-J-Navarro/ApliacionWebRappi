@@ -1,7 +1,10 @@
 """
 Visualización de rutas Rappi:
-  - Imagen: solo el mapa con la ruta dibujada
-  - CSV:    desglose paso a paso con valores de aristas
+  - Imagen PNG: mapa con la ruta dibujada por algoritmo
+  - CSV:        desglose paso a paso con valores de aristas
+
+  ACTUALIZADO: A* agregado como algoritmo principal.
+  COLORES_ALGO ahora incluye A* con color rojo intenso.
 """
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
@@ -15,7 +18,10 @@ COLOR_ORIGEN = "#E74C3C"
 COLOR_DESTINO = "#2ECC71"
 COLOR_PASO = "#5DADE2"
 
+# ── A* agregado como primer algoritmo (principal) ──────────
 COLORES_ALGO = {
+    # naranja Rappi ← NUEVO
+    "A*":       {"ruta": "#FF6B2C", "header": "#B84E1E"},
     "Dijkstra": {"ruta": "#E74C3C", "header": "#922B21"},
     "BFS":      {"ruta": "#F1C40F", "header": "#9A7D0A"},
     "DFS":      {"ruta": "#1ABC9C", "header": "#0B5345"},
@@ -34,7 +40,7 @@ def _pos_geo(G):
 
 
 # ─────────────────────────────────────────────────────────────
-#  IMAGEN: solo el mapa con la ruta
+#  IMAGEN: mapa con la ruta del algoritmo
 # ─────────────────────────────────────────────────────────────
 def _guardar_imagen_mapa(G, camino, origen, destino, c, algo,
                          df_nodos, info_origen, info_destino,
@@ -46,7 +52,7 @@ def _guardar_imagen_mapa(G, camino, origen, destino, c, algo,
     pos = _pos_geo(G)
     nodos_G = set(G.nodes)
 
-    # Fondo: aristas y nodos grises casi invisibles
+    # Fondo: red completa casi invisible
     nx.draw_networkx_edges(G, pos, ax=ax,
                            edge_color="#FFFFFF", alpha=0.04,
                            arrows=False, width=0.3)
@@ -68,8 +74,7 @@ def _guardar_imagen_mapa(G, camino, origen, destino, c, algo,
                        if n not in (origen, destino) and n in nodos_G]
         if intermedios:
             nx.draw_networkx_nodes(G, pos, nodelist=intermedios, ax=ax,
-                                   node_color=COLOR_PASO,
-                                   node_size=55, alpha=1.0)
+                                   node_color=COLOR_PASO, node_size=55, alpha=1.0)
 
         # ORIGEN — cuadrado rojo grande
         if origen in nodos_G:
@@ -77,8 +82,8 @@ def _guardar_imagen_mapa(G, camino, origen, destino, c, algo,
                                    node_color=COLOR_ORIGEN,
                                    node_shape="s", node_size=600, alpha=1.0)
             x, y = pos[origen]
-            nombre_r = info_origen["nombre"][:25]
-            ax.text(x, y + 0.014, f"RESTAURANTE\n{nombre_r}",
+            ax.text(x, y + 0.014,
+                    f"RESTAURANTE\n{str(info_origen['nombre'])[:25]}",
                     ha="center", va="bottom", fontsize=8, fontweight="bold",
                     color="white",
                     bbox=dict(boxstyle="round,pad=0.3", facecolor=COLOR_ORIGEN,
@@ -90,8 +95,8 @@ def _guardar_imagen_mapa(G, camino, origen, destino, c, algo,
                                    node_color=COLOR_DESTINO,
                                    node_shape="*", node_size=800, alpha=1.0)
             x, y = pos[destino]
-            nombre_c = info_destino["nombre"][:25]
-            ax.text(x, y - 0.015, f"CLIENTE\n{nombre_c}",
+            ax.text(x, y - 0.015,
+                    f"CLIENTE\n{str(info_destino['nombre'])[:25]}",
                     ha="center", va="top", fontsize=8, fontweight="bold",
                     color="white",
                     bbox=dict(boxstyle="round,pad=0.3", facecolor=COLOR_DESTINO,
@@ -111,12 +116,16 @@ def _guardar_imagen_mapa(G, camino, origen, destino, c, algo,
                markersize=9,  label="Parada intermedia"),
         Line2D([0], [0], color=c["ruta"], lw=2.5, label=f"Ruta {algo}"),
     ]
+    # Badge "PRINCIPAL" para A*
+    if algo == "A*":
+        leyenda.append(Line2D([0], [0], color="none",
+                              label="★ Algoritmo principal"))
     ax.legend(handles=leyenda, loc="lower left",
               facecolor="#1A1F2E", edgecolor="#555",
               labelcolor="white", fontsize=9,
               title="Referencias", title_fontsize=10)
 
-    # Métricas resumidas en esquina superior derecha
+    # Métricas en esquina superior derecha
     m = metricas
     resumen = (f"Paradas: {m.get('n_paradas', '—')}   "
                f"Distancia: {m.get('distancia_km', '—')} km\n"
@@ -134,11 +143,13 @@ def _guardar_imagen_mapa(G, camino, origen, destino, c, algo,
     for spine in ax.spines.values():
         spine.set_edgecolor("#333")
 
-    nombre_r = info_origen["nombre"][:40]
-    nombre_c = info_destino["nombre"][:40]
+    nombre_r = str(info_origen["nombre"])[:40]
+    nombre_c = str(info_destino["nombre"])[:40]
+    titulo = f"Ruta {algo} — Sistema Rappi Lima"
+    if algo == "A*":
+        titulo += "  ★ Principal"
     fig.suptitle(
-        f"Ruta {algo} — Sistema Rappi Lima\n"
-        f"Desde: {nombre_r}   →   Hasta: {nombre_c}",
+        f"{titulo}\nDesde: {nombre_r}   →   Hasta: {nombre_c}",
         color="white", fontsize=13, fontweight="bold",
         y=1.01, linespacing=1.6)
 
@@ -154,13 +165,12 @@ def _guardar_imagen_mapa(G, camino, origen, destino, c, algo,
 # ─────────────────────────────────────────────────────────────
 def _guardar_csv_ruta(camino, grafo, df_nodos, algo, fname):
     if len(camino) < 2:
-        df = pd.DataFrame([{
+        pd.DataFrame([{
             "paso": 1, "nodo_id": "", "nombre": "Sin ruta encontrada",
             "tipo": "", "distrito": "",
             "via_hacia_siguiente": "", "tiempo_min": "",
             "distancia_km": "", "costo_sol": ""
-        }])
-        df.to_csv(fname, index=False)
+        }]).to_csv(fname, index=False)
         print(f"  ✓ CSV: {fname}")
         return
 
@@ -175,7 +185,6 @@ def _guardar_csv_ruta(camino, grafo, df_nodos, algo, fname):
             tipo = row["tipo"]
             distrito = row["distrito"]
 
-        # Rol en la ruta
         if idx == 0:
             rol = "ORIGEN (Restaurante)"
         elif idx == len(camino) - 1:
@@ -185,7 +194,6 @@ def _guardar_csv_ruta(camino, grafo, df_nodos, algo, fname):
         else:
             rol = "Parada intermedia"
 
-        # Atributos de la arista hacia el siguiente nodo
         if idx < len(camino) - 1:
             sig = camino[idx + 1]
             attrs = get_arista(grafo, nodo, sig)
@@ -197,16 +205,16 @@ def _guardar_csv_ruta(camino, grafo, df_nodos, algo, fname):
             via, t_min, d_km, costo = "—", "—", "—", "—"
 
         filas.append({
-            "paso":                  idx + 1,
-            "nodo_id":               nodo,
-            "rol":                   rol,
-            "nombre":                nombre,
-            "tipo":                  tipo,
-            "distrito":              distrito,
-            "via_hacia_siguiente":   via,
-            "tiempo_min":            t_min,
-            "distancia_km":          d_km,
-            "costo_sol":             costo,
+            "paso":                idx + 1,
+            "nodo_id":             nodo,
+            "rol":                 rol,
+            "nombre":              nombre,
+            "tipo":                tipo,
+            "distrito":            distrito,
+            "via_hacia_siguiente": via,
+            "tiempo_min":          t_min,
+            "distancia_km":        d_km,
+            "costo_sol":           costo,
         })
 
     pd.DataFrame(filas).to_csv(fname, index=False)
@@ -214,11 +222,21 @@ def _guardar_csv_ruta(camino, grafo, df_nodos, algo, fname):
 
 
 # ─────────────────────────────────────────────────────────────
-#  FUNCIÓN PRINCIPAL
+#  FUNCIÓN PRINCIPAL — genera imagen + CSV por cada algoritmo
 # ─────────────────────────────────────────────────────────────
 def plot_recorrido_legible(caminos, grafo, G, df_nodos, metricas,
                            info_origen, info_destino,
-                           output_dir="output_imagenes"):
+                           output_dir="backend/output_imagenes"):
+    """
+    Genera una imagen PNG y un CSV por cada algoritmo en `caminos`.
+
+    El nombre del archivo usa el algoritmo en minúsculas y sin
+    caracteres especiales:
+        A*       → 02_a_estrella_ruta.png   (antes fallaba con '*')
+        Dijkstra → 02_dijkstra_ruta.png
+        BFS      → 02_bfs_ruta.png
+        DFS      → 02_dfs_ruta.png
+    """
     os.makedirs(output_dir, exist_ok=True)
 
     origen = -1
@@ -230,15 +248,19 @@ def plot_recorrido_legible(caminos, grafo, G, df_nodos, metricas,
             break
 
     for algo, camino in caminos.items():
-        c = COLORES_ALGO[algo]
+        # ── Color del algoritmo ───────────────────────────
+        # Si el algoritmo no está en el dict usa un gris de fallback
+        c = COLORES_ALGO.get(algo, {"ruta": "#AAAAAA", "header": "#555555"})
         m = metricas.get(algo, {})
 
-        # Imagen del mapa
-        fname_img = f"{output_dir}/02_{algo.lower()}_ruta.png"
+        # ── Nombre de archivo seguro (sin '*' ni espacios) ─
+        nombre_safe = algo.lower().replace("*", "_estrella").replace(" ", "_")
+
+        fname_img = f"{output_dir}/02_{nombre_safe}_ruta.png"
+        fname_csv = f"{output_dir}/02_{nombre_safe}_pasos.csv"
+
         _guardar_imagen_mapa(G, camino, origen, destino, c, algo,
                              df_nodos, info_origen, info_destino,
                              m, fname_img)
 
-        # CSV con desglose paso a paso
-        fname_csv = f"{output_dir}/02_{algo.lower()}_pasos.csv"
         _guardar_csv_ruta(camino, grafo, df_nodos, algo, fname_csv)

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <style>
-        /* ── Layout ─────────────────────────────────────────── */
+        /* ── Base ───────────────────────────────────────────── */
         body {
             font-family: 'Inter', sans-serif;
             background: #080B12;
@@ -25,7 +25,7 @@
             min-height: 100vh;
         }
 
-        /* ── Sidebar ─────────────────────────────────────────── */
+        /* ── Sidebar ────────────────────────────────────────── */
         .sidebar {
             background: #0D1117;
             border-right: 1px solid rgba(255, 255, 255, 0.06);
@@ -112,14 +112,14 @@
             background: rgba(255, 77, 109, 0.2);
         }
 
-        /* ── Main content ────────────────────────────────────── */
+        /* ── Main ───────────────────────────────────────────── */
         .main {
             padding: 32px 36px;
             overflow-y: auto;
         }
 
         .page-header {
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .page-header h1 {
@@ -135,7 +135,6 @@
             margin-top: 4px;
         }
 
-        /* ── Sección ─────────────────────────────────────────── */
         .section {
             display: none;
         }
@@ -144,7 +143,7 @@
             display: block;
         }
 
-        /* ── Cards stats ─────────────────────────────────────── */
+        /* ── Cards stats ────────────────────────────────────── */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -177,18 +176,15 @@
         .stat-card .delta {
             font-size: 11px;
             margin-top: 4px;
+            color: #4A5568;
         }
 
         .stat-card .delta.up {
             color: #2ECDA7;
         }
 
-        .stat-card .delta.down {
-            color: #FF4D6D;
-        }
-
-        /* ── Panel de algoritmos ─────────────────────────────── */
-        .algo-panel {
+        /* ── Panel ──────────────────────────────────────────── */
+        .panel {
             background: #0D1117;
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 14px;
@@ -196,37 +192,39 @@
             margin-bottom: 24px;
         }
 
-        .algo-panel-header {
-            padding: 20px 24px;
+        .panel-header {
+            padding: 18px 24px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .algo-panel-header h2 {
+        .panel-header h2 {
             font-family: 'Syne', sans-serif;
             font-size: 16px;
             font-weight: 700;
             color: #fff;
         }
 
-        .algo-panel-header p {
+        .panel-header p {
             font-size: 12px;
             color: #4A5568;
             margin-top: 2px;
         }
 
-        .algo-panel-body {
+        .panel-body {
             padding: 24px;
         }
 
-        /* ── Controles ───────────────────────────────────────── */
+        /* ── Controles ejecución ────────────────────────────── */
         .controls-row {
             display: flex;
             gap: 16px;
             align-items: flex-end;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
         }
 
@@ -240,8 +238,7 @@
             margin-bottom: 6px;
         }
 
-        .ctrl-group input,
-        .ctrl-group select {
+        .ctrl-group input {
             background: #161B27;
             border: 1px solid rgba(255, 255, 255, 0.08);
             color: #E2E8F0;
@@ -253,8 +250,7 @@
             transition: border-color .15s;
         }
 
-        .ctrl-group input:focus,
-        .ctrl-group select:focus {
+        .ctrl-group input:focus {
             border-color: #FF6B2C;
         }
 
@@ -293,7 +289,7 @@
             transform: none;
         }
 
-        /* ── Estado de carga ─────────────────────────────────── */
+        /* ── Status y progress ──────────────────────────────── */
         #run-status {
             font-size: 12px;
             color: #4A5568;
@@ -314,7 +310,6 @@
             color: #2ECDA7;
         }
 
-        /* ── Progress bar animado ────────────────────────────── */
         .progress-wrap {
             height: 3px;
             background: rgba(255, 255, 255, 0.05);
@@ -324,34 +319,29 @@
             display: none;
         }
 
-        .progress-bar {
-            height: 100%;
-            width: 0;
-            background: linear-gradient(90deg, #FF6B2C, #FFD166);
-            border-radius: 3px;
-            transition: width .4s ease;
-        }
-
         .progress-wrap.running {
             display: block;
         }
 
-        .progress-bar.indeterminate {
-            width: 40% !important;
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #FF6B2C, #FFD166);
+            border-radius: 3px;
             animation: slide 1.4s ease-in-out infinite;
+            width: 40%;
         }
 
         @keyframes slide {
             0% {
-                transform: translateX(-100%);
+                transform: translateX(-150%)
             }
 
             100% {
-                transform: translateX(300%);
+                transform: translateX(380%)
             }
         }
 
-        /* ── Pedido info ─────────────────────────────────────── */
+        /* ── Pedido info ────────────────────────────────────── */
         .pedido-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -364,6 +354,14 @@
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 10px;
             padding: 14px 16px;
+        }
+
+        .pedido-card.origen {
+            border-left: 3px solid #E74C3C;
+        }
+
+        .pedido-card.destino {
+            border-left: 3px solid #2ECC71;
         }
 
         .pedido-card .pc-label {
@@ -386,15 +384,7 @@
             margin-top: 2px;
         }
 
-        .pedido-card.origen {
-            border-left: 3px solid #E74C3C;
-        }
-
-        .pedido-card.destino {
-            border-left: 3px solid #2ECC71;
-        }
-
-        /* ── Tabla de resultados ─────────────────────────────── */
+        /* ── Tabla resultados ───────────────────────────────── */
         .results-table-wrap {
             overflow-x: auto;
         }
@@ -418,7 +408,7 @@
         }
 
         table.results td {
-            padding: 13px 14px;
+            padding: 12px 14px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             font-family: 'IBM Plex Mono', monospace;
             white-space: nowrap;
@@ -482,7 +472,6 @@
             margin-left: 6px;
         }
 
-        /* ── Gráfica de barras inline ────────────────────────── */
         .bar-cell {
             display: flex;
             align-items: center;
@@ -503,7 +492,6 @@
             transition: width .6s ease;
         }
 
-        /* ── Ahorro badge ────────────────────────────────────── */
         .ahorro-box {
             background: rgba(46, 205, 167, 0.08);
             border: 1px solid rgba(46, 205, 167, 0.2);
@@ -515,8 +503,11 @@
             gap: 12px;
         }
 
-        .ahorro-box .icon {
-            font-size: 24px;
+        .ahorro-box .pct {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 22px;
+            font-weight: 700;
+            color: #2ECDA7;
         }
 
         .ahorro-box .text {
@@ -526,14 +517,201 @@
             line-height: 1.5;
         }
 
-        .ahorro-box .pct {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 22px;
-            font-weight: 700;
-            color: #2ECDA7;
+        /* ══════════════════════════════════════════════════════
+       GALERÍA DE IMÁGENES
+    ══════════════════════════════════════════════════════ */
+        .galeria-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
-        /* ── Empty state ─────────────────────────────────────── */
+        .gtab {
+            padding: 7px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #161B27;
+            color: #718096;
+            transition: all .15s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gtab:hover {
+            border-color: rgba(255, 107, 44, 0.4);
+            color: #E2E8F0;
+        }
+
+        .gtab.active {
+            background: rgba(255, 107, 44, 0.12);
+            border-color: #FF6B2C;
+            color: #FF6B2C;
+        }
+
+        .galeria-panel {
+            display: none;
+        }
+
+        .galeria-panel.visible {
+            display: block;
+        }
+
+        .img-frame {
+            background: #0A0D14;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-frame img {
+            width: 100%;
+            display: block;
+            transition: transform .3s ease;
+            cursor: zoom-in;
+        }
+
+        .img-frame img:hover {
+            transform: scale(1.01);
+        }
+
+        .img-caption {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0D1117;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .img-caption span {
+            font-size: 12px;
+            color: #4A5568;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            background: rgba(255, 107, 44, 0.1);
+            border: 1px solid rgba(255, 107, 44, 0.25);
+            border-radius: 6px;
+            color: #FF6B2C;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            transition: all .15s;
+        }
+
+        .btn-download:hover {
+            background: rgba(255, 107, 44, 0.2);
+        }
+
+        /* Grid de rutas por algoritmo */
+        .rutas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width:900px) {
+            .rutas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Etiqueta de algoritmo sobre imagen */
+        .algo-label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 2;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            font-family: 'IBM Plex Mono', monospace;
+            backdrop-filter: blur(4px);
+        }
+
+        .label-astar {
+            background: rgba(231, 76, 60, 0.85);
+            color: #fff;
+        }
+
+        .label-dijkstra {
+            background: rgba(52, 152, 219, 0.85);
+            color: #fff;
+        }
+
+        .label-bfs {
+            background: rgba(241, 196, 15, 0.85);
+            color: #000;
+        }
+
+        .label-dfs {
+            background: rgba(26, 188, 156, 0.85);
+            color: #fff;
+        }
+
+        .label-principal {
+            background: rgba(255, 107, 44, 0.95);
+            color: #fff;
+        }
+
+        /* ── Lightbox ───────────────────────────────────────── */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            cursor: zoom-out;
+        }
+
+        .lightbox.open {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95vw;
+            max-height: 92vh;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            font-size: 22px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .15s;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ── Empty state ────────────────────────────────────── */
         .empty-state {
             text-align: center;
             padding: 60px 20px;
@@ -549,8 +727,16 @@
             font-size: 14px;
         }
 
-        /* ── Responsive ──────────────────────────────────────── */
-        @media (max-width: 768px) {
+        /* ── Sección label ──────────────────────────────────── */
+        .sec-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: #4A5568;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width:768px) {
             .layout {
                 grid-template-columns: 1fr;
             }
@@ -572,47 +758,55 @@
 
 <body>
 
+    <!-- ── LIGHTBOX ─────────────────────────────────────── -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightbox-img" src="" alt="Visualización ampliada">
+    </div>
+
     <div class="layout">
 
-        <!-- ── SIDEBAR ─────────────────────────────────────── -->
+        <!-- ── SIDEBAR ──────────────────────────────────────── -->
         <aside class="sidebar">
             <div class="sidebar-logo">
                 <div class="brand">🛵 Rappi Lima</div>
                 <div class="sub">Panel Administrador</div>
             </div>
-
             <nav>
-                <a class="nav-item active" onclick="showSection('algoritmos')">
+                <a class="nav-item active" id="nav-algoritmos" onclick="showSection('algoritmos',this)">
                     <span class="nav-icon">⚙</span> Algoritmos
                 </a>
-                <a class="nav-item" onclick="showSection('usuarios')">
+                <a class="nav-item" id="nav-visualizacion" onclick="showSection('visualizacion',this)">
+                    <span class="nav-icon">🗺</span> Visualizaciones
+                </a>
+                <a class="nav-item" id="nav-usuarios" onclick="showSection('usuarios',this)">
                     <span class="nav-icon">👥</span> Usuarios
                 </a>
                 <a class="nav-item" href="new-admin.html">
                     <span class="nav-icon">🔐</span> Administradores
                 </a>
             </nav>
-
             <div class="sidebar-bottom">
-                <div style="font-size:11px; color:#2D3748; margin-bottom:10px; font-family:'IBM Plex Mono',monospace;"
+                <div style="font-size:11px;color:#2D3748;margin-bottom:10px;font-family:'IBM Plex Mono',monospace"
                     id="sidebar-user"></div>
                 <button class="btn-logout" onclick="Session.logout()">Cerrar sesión</button>
             </div>
         </aside>
 
-        <!-- ── MAIN ────────────────────────────────────────── -->
+        <!-- ── MAIN ─────────────────────────────────────────── -->
         <main class="main">
 
-            <!-- ════ SECCIÓN: ALGORITMOS ════ -->
+            <!-- ════════════════════════════════════════════════
+             SECCIÓN: ALGORITMOS
+        ════════════════════════════════════════════════ -->
             <section class="section visible" id="sec-algoritmos">
-
                 <div class="page-header">
                     <h1>Centro de Algoritmos</h1>
-                    <p>Ejecuta y compara A*, Dijkstra, BFS y DFS sobre el mapa de Lima en tiempo real</p>
+                    <p>Ejecuta y compara A*, Dijkstra, BFS y DFS · Las imágenes se generan automáticamente</p>
                 </div>
 
-                <!-- Stats rápidas del último resultado -->
-                <div class="stats-grid" id="stats-grid">
+                <!-- Stats -->
+                <div class="stats-grid">
                     <div class="stat-card">
                         <div class="label">Nodos del grafo</div>
                         <div class="value" id="stat-nodos">—</div>
@@ -621,12 +815,12 @@
                     <div class="stat-card">
                         <div class="label">Aristas (calles)</div>
                         <div class="value" id="stat-aristas">—</div>
-                        <div class="delta">conexiones bidireccionales</div>
+                        <div class="delta">conexiones del mapa</div>
                     </div>
                     <div class="stat-card">
                         <div class="label">Mejor tiempo (A*)</div>
                         <div class="value" id="stat-tiempo">—</div>
-                        <div class="delta up" id="stat-tiempo-delta">minutos estimados</div>
+                        <div class="delta up">minutos estimados</div>
                     </div>
                     <div class="stat-card">
                         <div class="label">Ahorro vs Dijkstra</div>
@@ -635,18 +829,16 @@
                     </div>
                 </div>
 
-                <!-- Panel principal -->
-                <div class="algo-panel">
-                    <div class="algo-panel-header">
+                <!-- Panel ejecución -->
+                <div class="panel">
+                    <div class="panel-header">
                         <div>
                             <h2>⚡ Ejecutar análisis de rutas</h2>
-                            <p>Node.js lanza Python como proceso hijo · Los 4 algoritmos corren en paralelo</p>
+                            <p>Node.js lanza Python · 4 algoritmos + 7 imágenes PNG generadas automáticamente</p>
                         </div>
                     </div>
+                    <div class="panel-body">
 
-                    <div class="algo-panel-body">
-
-                        <!-- Controles -->
                         <div class="controls-row">
                             <div class="ctrl-group">
                                 <label>Nodos del mapa</label>
@@ -659,24 +851,19 @@
                             <div class="ctrl-group">
                                 <label>&nbsp;</label>
                                 <button class="btn-run" id="btn-run" onclick="ejecutarAlgoritmos()">
-                                    <span>▶</span> Ejecutar algoritmos
+                                    ▶ Ejecutar algoritmos
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Estado -->
                         <div id="run-status">Listo para ejecutar.</div>
-
-                        <!-- Progress bar -->
                         <div class="progress-wrap" id="progress-wrap">
-                            <div class="progress-bar indeterminate" id="progress-bar"></div>
+                            <div class="progress-bar"></div>
                         </div>
 
-                        <!-- Resultado: pedido -->
+                        <!-- Pedido analizado -->
                         <div id="pedido-info-wrap" style="display:none">
-                            <div
-                                style="font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:#4A5568; margin-bottom:10px;">
-                                📦 Pedido analizado</div>
+                            <div class="sec-label">📦 Pedido analizado</div>
                             <div class="pedido-info">
                                 <div class="pedido-card origen">
                                     <div class="pc-label">🍔 Restaurante (origen)</div>
@@ -691,11 +878,9 @@
                             </div>
                         </div>
 
-                        <!-- Tabla de resultados -->
+                        <!-- Tabla comparativa -->
                         <div id="results-wrap" style="display:none">
-                            <div
-                                style="font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:#4A5568; margin-bottom:10px;">
-                                📊 Comparativa de algoritmos</div>
+                            <div class="sec-label">📊 Comparativa de algoritmos</div>
                             <div class="results-table-wrap">
                                 <table class="results">
                                     <thead>
@@ -706,17 +891,15 @@
                                             <th>Costo S/</th>
                                             <th>Paradas</th>
                                             <th>Nodos explorados</th>
-                                            <th>Exec. ms</th>
-                                            <th>Nodos explorados (barra)</th>
+                                            <th>Exec ms</th>
+                                            <th>Exploración (barra)</th>
                                         </tr>
                                     </thead>
                                     <tbody id="results-tbody"></tbody>
                                 </table>
                             </div>
-
-                            <!-- Ahorro A* -->
                             <div class="ahorro-box" id="ahorro-box" style="display:none">
-                                <div class="icon">🚀</div>
+                                <div style="font-size:24px">🚀</div>
                                 <div>
                                     <div class="pct" id="ahorro-pct">—</div>
                                     <div class="text" id="ahorro-text">—</div>
@@ -724,35 +907,146 @@
                             </div>
                         </div>
 
+                        <!-- Aviso imágenes generadas -->
+                        <div id="img-aviso" style="display:none; margin-top:20px; padding:12px 16px;
+                         background:rgba(46,205,167,0.08); border:1px solid rgba(46,205,167,0.2);
+                         border-radius:10px; font-size:13px; color:#2ECDA7; cursor:pointer;"
+                            onclick="showSection('visualizacion', document.getElementById('nav-visualizacion'))">
+                            🖼 Las imágenes fueron generadas exitosamente.
+                            <strong>Ver visualizaciones →</strong>
+                        </div>
+
                         <!-- Empty state -->
                         <div class="empty-state" id="empty-state">
                             <div class="empty-icon">🗺</div>
                             <p>Presiona <strong>Ejecutar algoritmos</strong> para analizar rutas de Lima.<br>
-                                Python generará el grafo y comparará los 4 algoritmos.</p>
+                                Python generará el grafo, comparará los 4 algoritmos y producirá las imágenes.</p>
                         </div>
 
+                    </div>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════════════════════
+             SECCIÓN: VISUALIZACIONES
+        ════════════════════════════════════════════════ -->
+            <section class="section" id="sec-visualizacion">
+                <div class="page-header">
+                    <h1>Visualizaciones</h1>
+                    <p>Imágenes generadas por Python · Matplotlib + NetworkX · Haz clic para ampliar</p>
+                </div>
+
+                <!-- Tabs de navegación -->
+                <div class="galeria-tabs">
+                    <div class="gtab active" onclick="showTab('red',this)">🗺 Red Lima</div>
+                    <div class="gtab" onclick="showTab('rutas',this)">🛵 Rutas por algoritmo</div>
+                    <div class="gtab" onclick="showTab('zona',this)">📍 Zona de demanda</div>
+                    <div class="gtab" onclick="showTab('dashboard',this)">📊 Dashboard métricas</div>
+                </div>
+
+                <!-- ── TAB: Red completa de Lima ── -->
+                <div class="galeria-panel visible" id="tab-red">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <h2>Red Logística — Lima Metropolitana</h2>
+                                <p>Restaurantes · Hubs · Intersecciones · Clientes · Tráfico por color</p>
+                            </div>
+                            <a id="dl-red" class="btn-download" download>⬇ Descargar</a>
+                        </div>
+                        <div class="panel-body">
+                            <div class="img-frame" id="frame-red">
+                                <div class="empty-state">
+                                    <div class="empty-icon">🗺</div>
+                                    <p>Ejecuta los algoritmos para generar esta imagen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB: Rutas por algoritmo ── -->
+                <div class="galeria-panel" id="tab-rutas">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <h2>Rutas del Repartidor por Algoritmo</h2>
+                                <p>Cada imagen muestra la ruta trazada sobre el mapa de Lima</p>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="rutas-grid" id="rutas-grid">
+                                <div class="empty-state" style="grid-column:1/-1">
+                                    <div class="empty-icon">🛵</div>
+                                    <p>Ejecuta los algoritmos para generar las rutas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB: Zona de alta demanda ── -->
+                <div class="galeria-panel" id="tab-zona">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <h2>Zona de Alta Demanda</h2>
+                                <p>Subgrafo del distrito del restaurante con la ruta A* superpuesta</p>
+                            </div>
+                            <a id="dl-zona" class="btn-download" download>⬇ Descargar</a>
+                        </div>
+                        <div class="panel-body">
+                            <div class="img-frame" id="frame-zona">
+                                <div class="empty-state">
+                                    <div class="empty-icon">📍</div>
+                                    <p>Ejecuta los algoritmos para generar esta imagen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── TAB: Dashboard métricas ── -->
+                <div class="galeria-panel" id="tab-dashboard">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <h2>Dashboard de Métricas</h2>
+                                <p>Comparativa de paradas · distancia · tiempo · costo entre los 4 algoritmos</p>
+                            </div>
+                            <a id="dl-dashboard" class="btn-download" download>⬇ Descargar</a>
+                        </div>
+                        <div class="panel-body">
+                            <div class="img-frame" id="frame-dashboard">
+                                <div class="empty-state">
+                                    <div class="empty-icon">📊</div>
+                                    <p>Ejecuta los algoritmos para generar esta imagen.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </section>
 
-            <!-- ════ SECCIÓN: USUARIOS ════ -->
+            <!-- ════════════════════════════════════════════════
+             SECCIÓN: USUARIOS
+        ════════════════════════════════════════════════ -->
             <section class="section" id="sec-usuarios">
                 <div class="page-header">
                     <h1>Gestión de Usuarios</h1>
-                    <p>Usuarios registrados en la plataforma</p>
+                    <p>Usuarios registrados en usuarios_db.json</p>
                 </div>
-                <div class="algo-panel">
-                    <div class="algo-panel-header">
+                <div class="panel">
+                    <div class="panel-header">
                         <div>
                             <h2>👥 Lista de usuarios</h2>
-                            <p>Usuarios en usuarios_db.json</p>
                         </div>
                         <button class="btn-run" style="font-size:12px;padding:8px 16px" onclick="cargarUsuarios()">↻
                             Actualizar</button>
                     </div>
-                    <div class="algo-panel-body">
-                        <div id="usuarios-lista">Cargando…</div>
+                    <div class="panel-body">
+                        <div id="usuarios-lista"><span style="color:#4A5568;font-size:13px">Cargando…</span></div>
                     </div>
                 </div>
             </section>
@@ -762,19 +1056,39 @@
 
     <script src="../assets/js/auth/session.js"></script>
     <script>
-        /* ── Guard ─────────────────────────────────────────── */
+
+        /* ── Guard y usuario ────────────────────────────────── */
         Session.requireAuth('admin');
         const user = Session.current();
         if (user) document.getElementById('sidebar-user').textContent = user.nombre;
 
-        /* ── Navegación ────────────────────────────────────── */
-        function showSection(id) {
+        /* ── Navegación secciones ───────────────────────────── */
+        function showSection(id, el) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
             document.getElementById('sec-' + id).classList.add('visible');
-            event.currentTarget.classList.add('active');
+            if (el) el.classList.add('active');
             if (id === 'usuarios') cargarUsuarios();
+            if (id === 'visualizacion') cargarImagenesExistentes();
         }
+
+        /* ── Navegación tabs de galería ─────────────────────── */
+        function showTab(id, el) {
+            document.querySelectorAll('.galeria-panel').forEach(p => p.classList.remove('visible'));
+            document.querySelectorAll('.gtab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-' + id).classList.add('visible');
+            if (el) el.classList.add('active');
+        }
+
+        /* ── Lightbox ───────────────────────────────────────── */
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('open');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('open');
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
         /* ══════════════════════════════════════════════════════
            EJECUTAR ALGORITMOS
@@ -784,11 +1098,11 @@
             const status = document.getElementById('run-status');
             const progWrap = document.getElementById('progress-wrap');
 
-            // Limpiar estado previo
             document.getElementById('results-wrap').style.display = 'none';
             document.getElementById('pedido-info-wrap').style.display = 'none';
             document.getElementById('empty-state').style.display = 'none';
             document.getElementById('ahorro-box').style.display = 'none';
+            document.getElementById('img-aviso').style.display = 'none';
 
             const nodos = parseInt(document.getElementById('inp-nodos').value) || 1500;
             const semilla = parseInt(document.getElementById('inp-semilla').value) || null;
@@ -803,12 +1117,13 @@
                 'Construyendo aristas (calles)…',
                 'Buscando par restaurante → cliente…',
                 'Ejecutando A*, Dijkstra, BFS, DFS…',
-                'Calculando métricas y comparativa…',
+                'Generando imágenes PNG…',
+                'Guardando visualizaciones…',
             ];
             let paso = 0;
             const intervalo = setInterval(() => {
-                if (paso < pasos.length) { status.textContent = pasos[paso++]; }
-            }, 1800);
+                if (paso < pasos.length) status.textContent = pasos[paso++];
+            }, 2200);
 
             try {
                 const body = { nodos };
@@ -826,15 +1141,23 @@
 
                 if (!data.ok) {
                     status.className = 'error';
-                    status.textContent = '❌ Error: ' + (data.error || 'Respuesta inválida de Python.');
+                    status.textContent = '❌ ' + (data.error || 'Error desconocido de Python.');
                     document.getElementById('empty-state').style.display = 'block';
                     return;
                 }
 
+                const totalMs = Object.values(data.resultados).reduce((s, r) => s + (r.exec_ms || 0), 0).toFixed(0);
                 status.className = 'ok';
-                status.textContent = `✅ Completado en ~${_tiempoTotal(data.resultados)} ms · ${data.n_nodos.toLocaleString()} nodos · ${data.n_aristas.toLocaleString()} aristas`;
+                status.textContent = `✅ Completado en ~${totalMs} ms · ${data.n_nodos.toLocaleString()} nodos · ${data.n_aristas.toLocaleString()} aristas`;
 
                 renderResultados(data);
+
+                // Cargar imágenes en la galería con un pequeño delay
+                // para que Python termine de escribir los archivos a disco
+                setTimeout(() => {
+                    if (data.imagenes) renderImagenes(data.imagenes);
+                    document.getElementById('img-aviso').style.display = 'block';
+                }, 500);
 
             } catch (err) {
                 clearInterval(intervalo);
@@ -847,58 +1170,41 @@
             }
         }
 
-        function _tiempoTotal(resultados) {
-            return Object.values(resultados).reduce((s, r) => s + (r.exec_ms || 0), 0).toFixed(0);
-        }
-
-        /* ── Renderizar resultados ─────────────────────────── */
+        /* ── Renderizar tabla de resultados ─────────────────── */
         function renderResultados(data) {
-            // Stats superiores
             document.getElementById('stat-nodos').textContent = data.n_nodos.toLocaleString();
             document.getElementById('stat-aristas').textContent = data.n_aristas.toLocaleString();
-            const tiempoAstar = data.resultados['A*']?.tiempo_min ?? '—';
-            document.getElementById('stat-tiempo').textContent = tiempoAstar + ' min';
+            document.getElementById('stat-tiempo').textContent = (data.resultados['A*']?.tiempo_min ?? '—') + ' min';
             document.getElementById('stat-ahorro').textContent = data.ahorro_astar_vs_dijkstra_pct + '%';
 
-            // Pedido
             document.getElementById('pc-origen-nombre').textContent = data.origen.nombre;
             document.getElementById('pc-origen-dist').textContent = data.origen.distrito;
             document.getElementById('pc-destino-nombre').textContent = data.destino.nombre;
             document.getElementById('pc-destino-dist').textContent = data.destino.distrito;
             document.getElementById('pedido-info-wrap').style.display = 'block';
 
-            // Tabla
             const orden = ['A*', 'Dijkstra', 'BFS', 'DFS'];
             const tags = { 'A*': 'tag-astar', 'Dijkstra': 'tag-dijkstra', 'BFS': 'tag-bfs', 'DFS': 'tag-dfs' };
             const colores = { 'A*': '#E74C3C', 'Dijkstra': '#3498DB', 'BFS': '#F1C40F', 'DFS': '#1ABC9C' };
-
-            // Máximo de nodos visitados para escala de barra
-            const maxVisitados = Math.max(...orden.map(a => data.resultados[a]?.nodos_visitados || 0));
-
-            const tbody = document.getElementById('results-tbody');
-            tbody.innerHTML = '';
-
-            // El ganador en tiempo de entrega
+            const maxVis = Math.max(...orden.map(a => data.resultados[a]?.nodos_visitados || 0));
             const tiempos = orden.map(a => data.resultados[a]?.tiempo_min || Infinity);
             const minTiempo = Math.min(...tiempos.filter(t => t > 0));
 
+            const tbody = document.getElementById('results-tbody');
+            tbody.innerHTML = '';
             orden.forEach(algo => {
                 const r = data.resultados[algo];
                 if (!r) return;
-
-                const esPrincipal = algo === 'A*';
-                const esMinTiempo = r.tiempo_min === minTiempo && r.tiempo_min > 0;
-                const pct = maxVisitados > 0 ? (r.nodos_visitados / maxVisitados * 100).toFixed(1) : 0;
-
+                const esMin = r.tiempo_min === minTiempo && r.tiempo_min > 0;
+                const pct = maxVis > 0 ? (r.nodos_visitados / maxVis * 100).toFixed(1) : 0;
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
             <td>
                 <span class="algo-tag ${tags[algo]}">${algo}</span>
-                ${esPrincipal ? '<span class="winner-badge">★ PRINCIPAL</span>' : ''}
+                ${algo === 'A*' ? '<span class="winner-badge">★ PRINCIPAL</span>' : ''}
             </td>
-            <td style="color:${esMinTiempo ? '#2ECDA7' : 'inherit'}">
-                ${r.tiempo_min > 0 ? r.tiempo_min + ' min' : '—'}
-                ${esMinTiempo ? ' ✓' : ''}
+            <td style="color:${esMin ? '#2ECDA7' : 'inherit'}">
+                ${r.tiempo_min > 0 ? r.tiempo_min + ' min' : '—'}${esMin ? ' ✓' : ''}
             </td>
             <td>${r.distancia_km > 0 ? r.distancia_km + ' km' : '—'}</td>
             <td>${r.costo_sol > 0 ? 'S/ ' + r.costo_sol : '—'}</td>
@@ -908,25 +1214,139 @@
             <td>
                 <div class="bar-cell">
                     <div class="bar-bg">
-                        <div class="bar-fill" style="width:${pct}%; background:${colores[algo]}"></div>
+                        <div class="bar-fill" style="width:${pct}%;background:${colores[algo]}"></div>
                     </div>
-                    <span style="font-size:11px; color:#4A5568">${pct}%</span>
+                    <span style="font-size:11px;color:#4A5568">${pct}%</span>
                 </div>
             </td>`;
                 tbody.appendChild(tr);
             });
-
             document.getElementById('results-wrap').style.display = 'block';
 
-            // Ahorro A*
             if (data.ahorro_astar_vs_dijkstra_pct > 0) {
-                const visAstar = data.resultados['A*']?.nodos_visitados || 0;
-                const visDijkstra = data.resultados['Dijkstra']?.nodos_visitados || 0;
+                const vA = data.resultados['A*']?.nodos_visitados || 0;
+                const vD = data.resultados['Dijkstra']?.nodos_visitados || 0;
                 document.getElementById('ahorro-pct').textContent = data.ahorro_astar_vs_dijkstra_pct + '% menos nodos';
                 document.getElementById('ahorro-text').textContent =
-                    `A* exploró ${visAstar.toLocaleString()} nodos vs ${visDijkstra.toLocaleString()} de Dijkstra — misma ruta óptima, mayor eficiencia.`;
+                    `A* exploró ${vA.toLocaleString()} nodos vs ${vD.toLocaleString()} de Dijkstra — misma ruta óptima, mayor eficiencia.`;
                 document.getElementById('ahorro-box').style.display = 'flex';
             }
+        }
+
+        /* ══════════════════════════════════════════════════════
+           GALERÍA DE IMÁGENES
+        ══════════════════════════════════════════════════════ */
+
+        const INFO_IMGS = {
+            'A*': { label: 'A* — Principal', clase: 'label-principal', tag: 'tag-astar' },
+            'Dijkstra': { label: 'Dijkstra', clase: 'label-dijkstra', tag: 'tag-dijkstra' },
+            'BFS': { label: 'BFS', clase: 'label-bfs', tag: 'tag-bfs' },
+            'DFS': { label: 'DFS', clase: 'label-dfs', tag: 'tag-dfs' },
+        };
+
+        function crearFrame(url, titulo, labelClass) {
+            /* Añade timestamp para evitar caché cuando se regenera */
+            const src = url + '?t=' + Date.now();
+            return `
+        <div class="img-frame" style="position:relative">
+            <span class="algo-label ${labelClass}">${titulo}</span>
+            <img src="${src}" alt="${titulo}" loading="lazy"
+                 onclick="openLightbox('${src}')"
+                 onerror="this.parentElement.innerHTML='<div class=\\'empty-state\\'><div class=\\'empty-icon\\'>⚠</div><p>Imagen no disponible</p></div>'">
+        </div>`;
+        }
+
+        function renderImagenes(imagenes) {
+            /* ── Red Lima ──────────────────────────────────────── */
+            if (imagenes.red_lima) {
+                const src = imagenes.red_lima + '?t=' + Date.now();
+                document.getElementById('frame-red').innerHTML =
+                    `<img src="${src}" alt="Red Lima" onclick="openLightbox('${src}')" loading="lazy">
+             <div class="img-caption">
+                 <span>01_red_rappi_lima.png</span>
+                 <a href="${src}" download="01_red_rappi_lima.png" class="btn-download">⬇ Descargar</a>
+             </div>`;
+                const dlRed = document.getElementById('dl-red');
+                dlRed.href = src;
+                dlRed.setAttribute('download', '01_red_rappi_lima.png');
+            }
+
+            /* ── Rutas por algoritmo ───────────────────────────── */
+            if (imagenes.rutas) {
+                const grid = document.getElementById('rutas-grid');
+                grid.innerHTML = '';
+                const orden = ['A*', 'Dijkstra', 'BFS', 'DFS'];
+                orden.forEach(algo => {
+                    const url = imagenes.rutas[algo];
+                    if (!url) return;
+                    const info = INFO_IMGS[algo];
+                    const src = url + '?t=' + Date.now();
+                    const div = document.createElement('div');
+                    div.innerHTML = `
+                <div class="img-frame" style="position:relative">
+                    <span class="algo-label ${info.clase}">${info.label}</span>
+                    <img src="${src}" alt="Ruta ${algo}" loading="lazy"
+                         onclick="openLightbox('${src}')"
+                         onerror="this.parentElement.innerHTML='<div class=\\'empty-state\\'><div class=\\'empty-icon\\'>⚠</div><p>Imagen no encontrada</p></div>'">
+                    <div class="img-caption">
+                        <span>02_${algo.toLowerCase()}_ruta.png</span>
+                        <a href="${src}" download="02_${algo.toLowerCase()}_ruta.png" class="btn-download">⬇ Descargar</a>
+                    </div>
+                </div>`;
+                    grid.appendChild(div);
+                });
+            }
+
+            /* ── Zona demanda ──────────────────────────────────── */
+            if (imagenes.zona_demanda) {
+                const src = imagenes.zona_demanda + '?t=' + Date.now();
+                document.getElementById('frame-zona').innerHTML =
+                    `<img src="${src}" alt="Zona demanda" onclick="openLightbox('${src}')" loading="lazy">
+             <div class="img-caption">
+                 <span>03_zona_alta_demanda.png</span>
+                 <a href="${src}" download="03_zona_alta_demanda.png" class="btn-download">⬇ Descargar</a>
+             </div>`;
+                const dlZona = document.getElementById('dl-zona');
+                dlZona.href = src;
+                dlZona.setAttribute('download', '03_zona_alta_demanda.png');
+            }
+
+            /* ── Dashboard métricas ────────────────────────────── */
+            if (imagenes.dashboard) {
+                const src = imagenes.dashboard + '?t=' + Date.now();
+                document.getElementById('frame-dashboard').innerHTML =
+                    `<img src="${src}" alt="Dashboard" onclick="openLightbox('${src}')" loading="lazy">
+             <div class="img-caption">
+                 <span>04_dashboard_rappi.png</span>
+                 <a href="${src}" download="04_dashboard_rappi.png" class="btn-download">⬇ Descargar</a>
+             </div>`;
+                const dlDash = document.getElementById('dl-dashboard');
+                dlDash.href = src;
+                dlDash.setAttribute('download', '04_dashboard_rappi.png');
+            }
+        }
+
+        /* ── Cargar imágenes existentes al abrir la sección ─── */
+        async function cargarImagenesExistentes() {
+            try {
+                const resp = await fetch('/backend/output_imagenes');
+                const data = await resp.json();
+                if (data.ok && Object.keys(data.disponibles).length > 0) {
+                    /* Adaptar formato disponibles → formato imagenes del bridge */
+                    const imagenes = {
+                        red_lima: data.disponibles.red_lima,
+                        zona_demanda: data.disponibles.zona_demanda,
+                        dashboard: data.disponibles.dashboard,
+                        rutas: {
+                            'A*': data.disponibles.ruta_astar,
+                            'Dijkstra': data.disponibles.ruta_dijkstra,
+                            'BFS': data.disponibles.ruta_bfs,
+                            'DFS': data.disponibles.ruta_dfs,
+                        },
+                    };
+                    renderImagenes(imagenes);
+                }
+            } catch (_) { /* silencioso si no hay imágenes previas */ }
         }
 
         /* ══════════════════════════════════════════════════════
@@ -944,21 +1364,25 @@
                 wrap.innerHTML = `
             <table class="results" style="width:100%">
                 <thead><tr>
-                    <th>Nombre</th><th>Correo</th><th>Distrito</th>
-                    <th>Estado</th><th>Acciones</th>
+                    <th>Nombre</th><th>Correo</th><th>Distrito</th><th>Estado</th><th>Acciones</th>
                 </tr></thead>
                 <tbody>
-                ${lista.map(u => `
-                    <tr>
-                        <td style="font-family:'Inter',sans-serif">${u.nombre}</td>
-                        <td style="color:#4A5568">${u.email}</td>
-                        <td style="font-family:'Inter',sans-serif">${u.distrito || '—'}</td>
-                        <td><span class="chip ${u.activo ? 'chip-green' : 'chip-red'}">${u.activo ? '● Activo' : '● Inactivo'}</span></td>
-                        <td style="display:flex;gap:8px">
-                            <button onclick="toggleUser('${u.id}')" style="background:rgba(255,209,102,0.1);border:1px solid rgba(255,209,102,0.2);color:#FFD166;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer">${u.activo ? 'Desactivar' : 'Activar'}</button>
-                            <button onclick="deleteUser('${u.id}')" style="background:rgba(255,77,109,0.1);border:1px solid rgba(255,77,109,0.2);color:#FF4D6D;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer">Eliminar</button>
-                        </td>
-                    </tr>`).join('')}
+                ${lista.map(u => `<tr>
+                    <td style="font-family:'Inter',sans-serif">${u.nombre}</td>
+                    <td style="color:#4A5568">${u.email}</td>
+                    <td style="font-family:'Inter',sans-serif">${u.distrito || '—'}</td>
+                    <td><span class="chip ${u.activo ? 'chip-green' : 'chip-red'}">${u.activo ? '● Activo' : '● Inactivo'}</span></td>
+                    <td style="display:flex;gap:8px">
+                        <button onclick="toggleUser('${u.id}')"
+                            style="background:rgba(255,209,102,0.1);border:1px solid rgba(255,209,102,0.2);color:#FFD166;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer">
+                            ${u.activo ? 'Desactivar' : 'Activar'}
+                        </button>
+                        <button onclick="deleteUser('${u.id}')"
+                            style="background:rgba(255,77,109,0.1);border:1px solid rgba(255,77,109,0.2);color:#FF4D6D;padding:4px 10px;border-radius:6px;font-size:11px;cursor:pointer">
+                            Eliminar
+                        </button>
+                    </td>
+                </tr>`).join('')}
                 </tbody>
             </table>`;
             } catch (e) {
@@ -966,15 +1390,12 @@
             }
         }
 
-        async function toggleUser(id) {
-            await Session.toggleUserStatus(id);
-            cargarUsuarios();
-        }
+        async function toggleUser(id) { await Session.toggleUserStatus(id); cargarUsuarios(); }
         async function deleteUser(id) {
             if (!confirm('¿Eliminar este usuario?')) return;
-            await Session.deleteUser(id);
-            cargarUsuarios();
+            await Session.deleteUser(id); cargarUsuarios();
         }
+
     </script>
 </body>
 

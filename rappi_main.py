@@ -12,21 +12,21 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(__file__))
 
 
-OUTPUT = "output_imagenes"
+OUTPUT = "backend/output_imagenes"
 
 
 def cargar_datos():
     """Genera dataset nuevo en cada ejecucion (nodos y aristas aleatorios)."""
     print("Generando nuevo dataset Rappi Lima (1500 nodos aleatorios)...")
     # Crea la carpeta data/ si no existe (necesario en Windows y Linux)
-    os.makedirs("data", exist_ok=True)
+    os.makedirs("backend/data", exist_ok=True)
     # Crea tambien la carpeta de imagenes si no existe
-    os.makedirs("output_imagenes", exist_ok=True)
+    os.makedirs("backend/output_imagenes", exist_ok=True)
     df_n = generar_nodos(1500)
     df_a = generar_aristas(df_n)
     # Sobreescribe CSVs con los nuevos datos
-    df_n.to_csv("data/nodos_rappi.csv", index=False)
-    df_a.to_csv("data/aristas_rappi.csv", index=False)
+    df_n.to_csv("backend/data/nodos_rappi.csv", index=False)
+    df_a.to_csv("backend/data/aristas_rappi.csv", index=False)
     return df_n, df_a
 
 

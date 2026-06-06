@@ -175,14 +175,14 @@ def generar_aristas(df_nodos, max_dist_km=3.0, max_vecinos=6):
 
 
 if __name__ == "__main__":
-    os.makedirs("data", exist_ok=True)
+    os.makedirs("backend/data", exist_ok=True)
     print("Generando nodos Rappi Lima (1500)...")
     df_nodos = generar_nodos(1500)
-    df_nodos.to_csv("data/nodos_rappi.csv", index=False)
+    df_nodos.to_csv("backend/data/nodos_rappi.csv", index=False)
 
     print("Generando aristas (calles de Lima)...")
     df_aristas = generar_aristas(df_nodos)
-    df_aristas.to_csv("data/aristas_rappi.csv", index=False)
+    df_aristas.to_csv("backend/data/aristas_rappi.csv", index=False)
 
     print(f"\nNodos  : {len(df_nodos):,}")
     print(f"Aristas: {len(df_aristas):,}")

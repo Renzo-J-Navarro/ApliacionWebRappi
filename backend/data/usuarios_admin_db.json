@@ -1,14 +1,26 @@
 [
-    {
-        "id": "admin-root",
-        "nombre": "Administrador Principal",
-        "email": "admin@rappi.pe",
-        "password": "-39c43b7d",
-        "rol": "admin",
-        "distrito": "Miraflores",
-        "telefono": "+51 999 000 000",
-        "createdAt": "2025-01-01T00:00:00.000Z",
-        "activo": true,
-        "esRaiz": true
-    }
+  {
+    "id": "admin-root",
+    "nombre": "Administrador Principal",
+    "email": "admin@rappi.pe",
+    "password": "-39c43b7d",
+    "rol": "admin",
+    "distrito": "Miraflores",
+    "telefono": "+51 999 000 000",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "activo": true,
+    "esRaiz": true
+  },
+  {
+    "id": "mq0azwj8gumqz",
+    "nombre": "Renzo Jesus Navarro Flores",
+    "email": "admrenav@rappi.pe",
+    "password": "-396fb071",
+    "rol": "admin",
+    "distrito": "San Borja",
+    "telefono": "+51 906 544 408",
+    "createdAt": "2026-06-05T02:27:02.132Z",
+    "activo": true,
+    "esRaiz": false
+  }
 ]

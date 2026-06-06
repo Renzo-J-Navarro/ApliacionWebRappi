@@ -1,0 +1,2 @@
+paso,nodo_id,nombre,tipo,distrito,via_hacia_siguiente,tiempo_min,distancia_km,costo_sol
+1,,Sin ruta encontrada,,,,,,

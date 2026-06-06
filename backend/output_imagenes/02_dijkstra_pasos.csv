@@ -1,0 +1,17 @@
+paso,nodo_id,rol,nombre,tipo,distrito,via_hacia_siguiente,tiempo_min,distancia_km,costo_sol
+1,1395,ORIGEN (Restaurante),China Wok (San Juan Lurig),restaurante,San Juan Lurig,—,1.43,0.3067,0.96
+2,895,Parada intermedia,Cliente #895 (San Juan Lurig),cliente,San Juan Lurig,—,2.47,0.7085,1.75
+3,604,Parada intermedia,Intersec. Av. Larco (San Juan Lurig),interseccion,San Juan Lurig,—,2.25,0.4049,0.82
+4,1178,Parada intermedia,Intersec. Av. Angamos (San Juan Lurig),interseccion,San Juan Lurig,—,3.38,0.9355,2.61
+5,971,Parada intermedia,Cliente #971 (San Juan Lurig),cliente,San Juan Lurig,—,2.97,1.0583,2.66
+6,526,Parada intermedia,Intersec. Av. Caminos del Inca (San Juan Lurig),interseccion,San Juan Lurig,—,2.37,0.6835,1.19
+7,1490,Hub Rappi,Hub Rappi San Juan Lurig,hub_rappi,San Juan Lurig,—,2.39,0.7427,1.29
+8,437,Parada intermedia,Cliente #437 (San Juan Lurig),cliente,San Juan Lurig,—,2.83,0.9259,2.4
+9,159,Parada intermedia,Cliente #159 (San Juan Lurig),cliente,San Juan Lurig,—,2.5,0.9052,2.37
+10,750,Parada intermedia,Cliente #750 (Villa Maria),cliente,Villa Maria,—,2.28,0.2172,1.5
+11,449,Hub Rappi,Hub Rappi Villa Maria,hub_rappi,Villa Maria,—,3.34,0.6718,2.12
+12,338,Parada intermedia,Intersec. Av. La Encalada (Villa Maria),interseccion,Villa Maria,—,1.83,0.5709,1.59
+13,863,Parada intermedia,Cliente #863 (Villa Maria),cliente,Villa Maria,—,2.94,0.7713,1.61
+14,872,Parada intermedia,Cliente #872 (Villa Maria),cliente,Villa Maria,—,2.48,0.5585,2.1
+15,1067,Parada intermedia,Cliente #1067 (Villa Maria),cliente,Villa Maria,—,1.9,0.4535,1.08
+16,1282,DESTINO (Cliente),Cliente #1282 (Villa Maria),cliente,Villa Maria,—,—,—,—
