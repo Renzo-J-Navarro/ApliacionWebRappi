@@ -112,19 +112,16 @@ def a_estrella(grafo, origen, destino, df_nodos, peso="tiempo_min"):
 
     def heuristica(nodo):
         """
-        h(n) = tiempo estimado en línea recta hasta el destino
-               × factor de congestión de la zona actual.
-
-        La multiplicación penaliza nodos en zonas congestionadas,
-        haciendo que A* los evite proactivamente.
+        h(n) = tiempo estimado en línea recta hasta el destino a velocidad máxima.
+        Es admisible (nunca sobreestima) porque la línea recta es la distancia 
+        más corta posible y VELOCIDAD_BASE_KMH es el escenario ideal.
         """
         if nodo not in coords:
             return 0.0
         lat_n, lon_n = coords[nodo]
         dist_km = haversine(lat_n, lon_n, lat_d, lon_d)
-        tiempo_est = (dist_km / VELOCIDAD_BASE_KMH) * 60.0   # minutos
-        factor = FACTOR_CONGESTION.get(demanda.get(nodo, "media"), 1.1)
-        return tiempo_est * factor
+        tiempo_est = (dist_km / VELOCIDAD_BASE_KMH) * 60.0   # minutos puros
+        return tiempo_est  # BORRA la multiplicación por el factor de congestión aquí
 
     # Estructuras principales
     g_score = {origen: 0.0}   # costo real acumulado desde origen
