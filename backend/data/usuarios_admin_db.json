@@ -22,5 +22,17 @@
     "createdAt": "2026-06-05T02:27:02.132Z",
     "activo": true,
     "esRaiz": false
+  },
+  {
+    "id": "mqu9ceaeiag54",
+    "nombre": "Miguel Alejandro Bravo Castillo Rojo",
+    "email": "adminmb@rappi.pe",
+    "password": "51bde297",
+    "rol": "admin",
+    "distrito": "Otro",
+    "telefono": "+51 985312275",
+    "createdAt": "2026-06-26T01:33:51.063Z",
+    "activo": true,
+    "esRaiz": false
   }
 ]
